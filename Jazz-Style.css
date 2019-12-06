@@ -6,7 +6,7 @@ body
 }
 ul
 {
-    position: sticky;
+    
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -15,13 +15,11 @@ ul
 }
 li 
 {
-    position: sticky;
     float: left;
 }
   
 li a 
 {
-    position: sticky;
     font-family: "Century Gothic";
     font-size: 40px;
     display: block;
@@ -68,7 +66,7 @@ div.information
     left: 200px;
     width: 80%;
     height: 100%;    
-    font-size: 50px;    
+    font-size: 70px;    
     color: #333333;
     padding: 0;    
     display: inline-block;
@@ -96,7 +94,46 @@ div.picture2 img
     object-fit: cover;
     object-position: 100% 50%;
 }
-div.timetables
+div.timetable1
+{
+    position: relative;    
+    left: 200px;
+    width: 80%;
+    height: 100%;    
+    font-size: 70px;    
+    color: #333333;
+    padding: 0;    
+    display: inline-block;
+    font-family: "Century Gothic";
+}
+div.timetable1 h2
+{
+    font-weight: 500;
+    font-size: 100px;
+}
+div.timetable1 table
+{
+    font-family: "Century Gothic";
+    font-size: 30px;    
+    border-collapse: collapse;
+    width: 100%;
+}
+div.timetable1 table td,th
+{    
+    text-align: center;
+    padding: 30px;
+}
+div.timetable1 table th
+{
+    background-color: #333333;
+    color: white;
+    font-size: 40px;
+}
+div.timetable1 table tr:nth-child(even)
+{   
+    background-color: #CCCCCC;      
+}
+div.timetable2
 {
     position: relative;    
     left: 200px;
@@ -107,6 +144,130 @@ div.timetables
     padding: 0;    
     display: inline-block;
     font-family: "Century Gothic";
+}
+div.timetable2 h2
+{
+    font-weight: 500;    
+    color: white;
+    text-align: right;
+    font-size: 100px;
+}
+div.timetable2 table
+{
+    font-family: "Century Gothic";
+    font-size: 30px;    
+    border-collapse: collapse;
+    width: 100%;
+}
+div.timetable2 table td,th
+{    
+    text-align: center;
+    padding: 30px;
+}
+div.timetable2 table th
+{
+    background-color: #333333;
+    color: white;
+    font-size: 40px;
+}
+div.timetable2 table tr:nth-child(even)
+{   
+    background-color: #CCCCCC;      
+}
+div.timetable2 table tr:nth-child(odd)
+{   
+    background-color:  #F2F2F2;       
+}
+div.timetable3
+{
+    position: relative;    
+    left: 200px;
+    width: 80%;
+    height: 100%;    
+    font-size: 50px;    
+    color: #333333;
+    padding: 0;    
+    display: inline-block;
+    font-family: "Century Gothic";
+}
+div.timetable3 h2
+{
+    font-weight: 500;
+    font-size: 100px;
+}
+div.timetable3 table
+{
+    font-family: "Century Gothic";
+    font-size: 30px;    
+    border-collapse: collapse;
+    width: 100%;
+}
+div.timetable3 table td,th
+{    
+    text-align: center;
+    padding: 30px;
+}
+div.timetable3 table th
+{
+    background-color: #333333;
+    color: white;
+    font-size: 40px;
+}
+div.timetable3 table tr:nth-child(even)
+{   
+    background-color: #CCCCCC;      
+}
+div.timetable4
+{
+    position: relative;    
+    left: 200px;
+    width: 80%;
+    height: 100%;    
+    font-size: 50px;    
+    color: #333333;
+    padding: 0;    
+    display: inline-block;
+    font-family: "Century Gothic";
+}
+div.timetable4 h2
+{
+    font-weight: 500;
+    font-size: 100px;
+    text-align: right;
+}
+div.timetable4 table
+{
+    font-family: "Century Gothic";
+    font-size: 30px;    
+    border-collapse: collapse;
+    width: 100%;
+}
+div.timetable4 table td,th
+{    
+    text-align: center;
+    padding: 30px;
+}
+div.timetable4 table th
+{
+    background-color: #333333;
+    color: white;
+    font-size: 40px;
+}
+div.timetable4 table tr:nth-child(even)
+{   
+    background-color: #CCCCCC;      
+}
+div.timetable4 table tr:nth-child(odd)
+{   
+    background-color:  #F2F2F2;       
+}
+div.backcolor2
+{
+    background-color: #39385D;    
+}
+div.backcolor4
+{
+    background-color: #CF4B7E;
 }
 @media only screen and (max-width: 800px)
 {
