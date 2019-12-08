@@ -380,9 +380,138 @@ div.cross_selling
     text-align: right;
     font-family: "Century Gothic";
     position: relative;
-    right: 200px;
+    right: 250px;
 }
-
+div.cross_selling h1
+{
+    position: relative;
+    bottom: 120px;      
+    font-size: 50px;
+    font-weight: normal;
+    white-space: nowrap;
+    color: #f4511e;
+}
+div.cross_selling h2
+{
+    position: relative;
+    bottom: 120px;   
+    right: 50px;   
+    font-size: 30px;
+    font-weight: normal;
+    white-space: nowrap;
+    color: #333333;
+}
+div.cross_selling img
+{
+    position: relative;
+    bottom: 150px;
+    height: 170px;
+    padding: 40px;
+}
+button 
+{    
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 40px;
+    padding: 10px;
+    width: 200px;    
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 30px;
+    position: relative; 
+    left: 1350px;   
+    bottom: 200px;
+    font-family: "Century Gothic";
+}
+button span
+{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+button span:after
+{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}  
+button:hover span
+{
+    padding-right: 25px;
+}  
+button:hover span:after
+{
+    opacity: 1;
+    right: 0;
+}
+div.access_passes
+{      
+    font-family: "Century Gothic"; 
+    color: #333333;
+    text-align: center; 
+    height: 800px;
+    background-color: rgba(120, 36, 76, 1);    
+}
+div.access_passes h1
+{
+    font-size: 100px;
+    color: white;
+}
+div.access_passes h2
+{
+    font-size: 30px;
+    color: white;
+    font-weight: normal;
+}
+div.access_passes select.quantity
+{    
+    box-sizing: border-box; 
+    height: 50px;   
+    margin-right: 480px;
+    font-size: 30px;   
+    font-family: "Century Gothic";
+}
+div.access_passes select.pass_type
+{ 
+    box-sizing: border-box;     
+    height: 50px;       
+    font-size: 30px;   
+    font-family: "Century Gothic";
+}
+div.access_passes h3
+{
+    display: inline-block; 
+    color: white;
+    font-size: 50px; 
+    font-weight: normal;
+}
+div.access_passes button.addcart
+{   
+    display: block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+    width: 350px;    
+    transition: all 0.5s;
+    cursor: pointer;
+    position: relative;
+    top: 0px;
+    left: 900px;
+    margin: 30px;    
+    font-family: "Century Gothic";
+}
 @media only screen and (max-width: 800px)
 {
     li a
