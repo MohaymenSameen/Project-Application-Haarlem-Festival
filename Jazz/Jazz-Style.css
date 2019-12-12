@@ -27,7 +27,7 @@ li a
     padding: 20px 80px;
     text-decoration: none;
 }
-nav a:hover
+a:hover
 {
     background-color: purple;
 }
