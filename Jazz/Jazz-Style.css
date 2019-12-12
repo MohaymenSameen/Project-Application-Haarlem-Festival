@@ -2,11 +2,11 @@ body
 {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
     background-color: #F2F2F2;
 }
 ul
-{
-    
+{    
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -20,11 +20,11 @@ li
 li a 
 {
     font-family: "Century Gothic";
-    font-size: 40px;
+    font-size: 30px;
     display: block;
     color: white;
     text-align: center;
-    padding: 20px 80px;
+    padding: 20px 50px;
     text-decoration: none;
 }
 a:hover
@@ -33,7 +33,7 @@ a:hover
 }
 div.header
 {   
-    display: flex;  
+    display: flex;      
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -41,65 +41,64 @@ div.header
 div.header img
 {      
     width: 100%;
-    height: 800px; 
+    height: 600px;    
     object-fit: cover;
     object-position: 100% 60%;
 }
 div.header p
 {    
-    font-size: 150px;
+    font-size: 8vw;
     white-space: nowrap;    
     font-family: "Century Gothic";
     padding: 20px;
     box-shadow: 1px 1px 5px 1px #222222;
     color: white;
     background-color: rgba(0,0,0,0.5);     
-    position: absolute;
-    top: 30%;
-    left: 50%;    
-    transform: translate(-50%, -50%);
+    position: absolute;        
+    left: 28%;
+    margin-left: -50px; 
+    margin-top: 180px;    
 }
 div.information
-{
-    position: relative;    
-    left: 200px;
-    width: 80%;
+{        
+    margin-left: 10%;
+    width: 100%;
     height: 100%;    
-    font-size: 70px;    
+    font-size: 3vw;    
     color: #333333;
-    padding: 0;    
+    padding: 0;  
+    margin-top: 20px;  
     display: inline-block;
-    font-family: "Century Gothic";
+    font-family: "Century Gothic";    
 }
 div.information h1
 {
     font-weight: bold;
-    position: relative;    
+    position: relative;      
     bottom: 50px;
 }
 div.information p
 {   
-    position: relative; 
+    position: relative;    
     bottom: 50px;
     width: 50%;
-    left: 50%;
-    font-size: 30px;  
-    
+    left: 35%;
+    word-wrap: break-word;   
+    font-size: 3vh;      
 }
 div.picture2 img
 {
     width: 100%;
-    height: 800px; 
+    height: 600px; 
     object-fit: cover;
     object-position: 100% 50%;
 }
 div.timetable1
 {
-    position: relative;    
-    left: 200px;
+    margin-left: 10%;
     width: 80%;
     height: 100%;    
-    font-size: 70px;    
+    font-size: 6vh;    
     color: #333333;
     padding: 0;    
     display: inline-block;
@@ -108,25 +107,25 @@ div.timetable1
 div.timetable1 h2
 {
     font-weight: 500;
-    font-size: 100px;
+    font-size: 9vh;
 }
 div.timetable1 table
 {
     font-family: "Century Gothic";
-    font-size: 30px;    
+    font-size: 24px;    
     border-collapse: collapse;
     width: 100%;
 }
 div.timetable1 table td,th
 {    
     text-align: center;
-    padding: 30px;
+    padding: 25px;
 }
 div.timetable1 table th
 {
     background-color: #333333;
     color: white;
-    font-size: 40px;
+    font-size: 30px;
 }
 div.timetable1 table tr:nth-child(even)
 {   
@@ -134,11 +133,10 @@ div.timetable1 table tr:nth-child(even)
 }
 div.timetable2
 {
-    position: relative;    
-    left: 200px;
+    margin-left: 10%;
     width: 80%;
     height: 100%;    
-    font-size: 50px;    
+    font-size: 6vh;    
     color: #333333;
     padding: 0;    
     display: inline-block;
@@ -149,25 +147,25 @@ div.timetable2 h2
     font-weight: 500;    
     color: white;
     text-align: right;
-    font-size: 100px;
+    font-size: 9vh;
 }
 div.timetable2 table
 {
     font-family: "Century Gothic";
-    font-size: 30px;    
+    font-size: 24px;    
     border-collapse: collapse;
     width: 100%;
 }
 div.timetable2 table td,th
 {    
     text-align: center;
-    padding: 30px;
+    padding: 25px;
 }
 div.timetable2 table th
 {
     background-color: #333333;
     color: white;
-    font-size: 40px;
+    font-size: 30px;
 }
 div.timetable2 table tr:nth-child(even)
 {   
@@ -179,11 +177,10 @@ div.timetable2 table tr:nth-child(odd)
 }
 div.timetable3
 {
-    position: relative;    
-    left: 200px;
+    margin-left: 10%;
     width: 80%;
     height: 100%;    
-    font-size: 50px;    
+    font-size: 6vh;    
     color: #333333;
     padding: 0;    
     display: inline-block;
@@ -191,26 +188,26 @@ div.timetable3
 }
 div.timetable3 h2
 {
-    font-weight: 500;
-    font-size: 100px;
+    font-weight: 500;    
+    font-size: 9vh;
 }
 div.timetable3 table
 {
     font-family: "Century Gothic";
-    font-size: 30px;    
+    font-size: 24px;    
     border-collapse: collapse;
     width: 100%;
 }
 div.timetable3 table td,th
 {    
     text-align: center;
-    padding: 30px;
+    padding: 25px;
 }
 div.timetable3 table th
 {
     background-color: #333333;
     color: white;
-    font-size: 40px;
+    font-size: 30px;
 }
 div.timetable3 table tr:nth-child(even)
 {   
@@ -218,11 +215,10 @@ div.timetable3 table tr:nth-child(even)
 }
 div.timetable4
 {
-    position: relative;    
-    left: 200px;
+    margin-left: 10%;
     width: 80%;
     height: 100%;    
-    font-size: 50px;    
+    font-size: 6vh;    
     color: #333333;
     padding: 0;    
     display: inline-block;
@@ -231,26 +227,26 @@ div.timetable4
 div.timetable4 h2
 {
     font-weight: 500;
-    font-size: 100px;
+    font-size: 9vh;
     text-align: right;
 }
 div.timetable4 table
 {
     font-family: "Century Gothic";
-    font-size: 30px;    
+    font-size: 24px;    
     border-collapse: collapse;
     width: 100%;
 }
 div.timetable4 table td,th
 {    
     text-align: center;
-    padding: 30px;
+    padding: 25px;
 }
 div.timetable4 table th
 {
     background-color: #333333;
     color: white;
-    font-size: 40px;
+    font-size: 30px;
 }
 div.timetable4 table tr:nth-child(even)
 {   
@@ -270,68 +266,53 @@ div.backcolor4
 }
 div.tickets
 {   
-    position: relative;
-    left: 200px;
-    width:374px;
-    height:56px;
+    margin-left: 10%; 
+    margin-top: 5%;
+    height: 00px;
     font-family: "Century Gothic"; 
-    color: #333333;
-    text-align: center;    
+    color: #333333;        
 }
 div.tickets h1
 {
     position: relative;
-    left: 250px;
-    font-size: 150px;    
+    margin: 0;    
+    left: 20%;
+    font-size: 80px;    
 }
 div.tickets h2
 {  
     position: relative;
-    bottom: 100px; 
-    left: 100px; 
-    font-size: 80px;
+    margin: 0;
+    left: 3%; 
+    font-size: 50px;
     font-weight: normal;
     white-space: nowrap;
 }
 div.tickets select.band
 {
-    position: relative;
-    width: 400px;
-    left: 50px;
-    height: 50px;
-    bottom: 150px;
+    display: inline;
     font-size: 30px;
     font-family: "Century Gothic";             
 }
 div.tickets select.date
-{
-    position: relative;
-    width: 400px;
-    height: 50px;
-    bottom: 200px;
-    left: 500px;
+{   
+    display: inline;
     font-size: 30px;   
     font-family: "Century Gothic";         
 }
 div.tickets h3
-{
-    position: relative;
-    left: 150px;
-    bottom: 200px;
+{    
+    box-sizing: inline-block;     
     font-size: 50px; 
     font-weight: normal;
 }
 div.tickets select.quantity
 {
-    position: relative;
-    width: 100px;
-    height: 50px;
-    bottom: 305px;
-    left: 365px;
+    box-sizing: border-box;         
     font-size: 30px;   
     font-family: "Century Gothic";
 }
-button.addcart
+div.tickets button.addcart
 {    
     display: inline-block;
     border-radius: 4px;
@@ -344,20 +325,17 @@ button.addcart
     width: 310px;
     transition: all 0.5s;
     cursor: pointer;
-    margin: 5px;
-    position: relative;
-    left: 500px;
-    top: 500px;
+    margin: 5px;   
     font-family: "Century Gothic";
 }
-button.addcart span
+div.tickets button.addcart span
 {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
-button.addcart span:after
+div.tickets button.addcart span:after
 {
     content: '\00bb';
     position: absolute;
@@ -366,26 +344,27 @@ button.addcart span:after
     right: -20px;
     transition: 0.5s;
 }  
-button.addcart:hover span
+div.tickets button.addcart:hover span
 {
     padding-right: 25px;
 }  
-button.addcart:hover span:after
+div.tickets button.addcart:hover span:after
 {
     opacity: 1;
     right: 0;
 }
 div.cross_selling
 {
-    text-align: right;
-    font-family: "Century Gothic";
+    text-align: center;
     position: relative;
-    right: 250px;
+    width: 85%;
+    left: 35%;    
+    font-family: "Century Gothic";    
 }
 div.cross_selling h1
 {
     position: relative;
-    bottom: 120px;      
+         
     font-size: 50px;
     font-weight: normal;
     white-space: nowrap;
@@ -394,8 +373,7 @@ div.cross_selling h1
 div.cross_selling h2
 {
     position: relative;
-    bottom: 120px;   
-    right: 50px;   
+        
     font-size: 30px;
     font-weight: normal;
     white-space: nowrap;
@@ -404,13 +382,15 @@ div.cross_selling h2
 div.cross_selling img
 {
     position: relative;
-    bottom: 150px;
-    height: 170px;
-    padding: 40px;
+    margin:4%;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+    height: 170px;    
 }
-button 
+button.cross
 {    
-    display: inline-block;
+   
     border-radius: 4px;
     background-color: #f4511e;
     border: none;
@@ -418,23 +398,22 @@ button
     text-align: center;
     font-size: 40px;
     padding: 10px;
-    width: 200px;    
+    width: 200px;   
     transition: all 0.5s;
     cursor: pointer;
-    margin: 30px;
-    position: relative; 
-    left: 1350px;   
-    bottom: 200px;
+    position: relative;
+    left: 60%;   
+    margin: 30px;       
     font-family: "Century Gothic";
 }
-button span
+button.cross span
 {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
-button span:after
+button.cross span:after
 {
     content: '\00bb';
     position: absolute;
@@ -443,11 +422,11 @@ button span:after
     right: -20px;
     transition: 0.5s;
 }  
-button:hover span
+button.cross:hover span
 {
     padding-right: 25px;
 }  
-button:hover span:after
+button.cross:hover span:after
 {
     opacity: 1;
     right: 0;
@@ -506,17 +485,15 @@ div.access_passes button.addcart
     width: 350px;    
     transition: all 0.5s;
     cursor: pointer;
-    position: relative;
-    top: 0px;
-    left: 900px;
-    margin: 30px;    
+    position: relative;    
+    left: 40%;
     font-family: "Century Gothic";
 }
 @media only screen and (max-width: 800px)
 {
-    li a
+    li 
     {
-        padding: 20px 20px;
+        display: hidden;
     }
     div.header img
     {
@@ -526,5 +503,5 @@ div.access_passes button.addcart
     div.header p
     {
         font-size: 65px;
-    }
+    }    
 }
