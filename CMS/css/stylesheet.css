@@ -26,6 +26,10 @@ a:visited{
     color: white;
 }
 
+li a:hover{
+  background-color: #6494ed;
+}
+
 li{
     display: inline-block;
     margin: 7pt;
@@ -34,6 +38,7 @@ li{
 
     padding-right: 5pt;
     padding-left: 5pt;
+    
 }
 
 .main{
