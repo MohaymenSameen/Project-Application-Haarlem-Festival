@@ -1,0 +1,27 @@
+body{
+    margin: 0%;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    background-color: #ffffff;
+    font-family: "Century Gothic";
+}
+
+#longLine{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.shortLine{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+}
+
+.menu{
+    list-style-type: none;
+}
