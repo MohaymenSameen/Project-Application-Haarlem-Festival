@@ -5,12 +5,35 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Haarlem Festival</title>
-        <link href="css/stylesheet.css" rel="stylesheet" type="text/css">
+        <link href="css/style-managePages.css" rel="stylesheet" type="text/css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+      $(document).ready(function(){
+        // Set trigger and container variables
+        var trigger = $('#sidenav ul li a'),
+            container = $('#content');
+        
+        // Fire on click
+        trigger.on('click', function(){
+          // Set $this for re-use. Set target from data attribute
+          var $this = $(this),
+            target = $this.data('target');       
+          
+          // Load target page into container
+          container.load(target + '.php');
+          
+          // Stop normal link behavior
+          return false;
+        });
+      });
+    </script>
     </head>
     <body>   
+      <nav id="sidenav">
         <ul class="main">
-            <li class="menu"><a href="managePages.html">Manage Pages</a></li>
-            <li class="menu"><a href="profile.html">Profile</a></li>
+            <li class="menu"><a href="#" data-target="managePages">Manage Pages</a></li>
+            <li class="menu"><a href="#" data-target="editProfile">Profile</a></li>
             <li class="menu"><a href="searchUsers.html">Search Users</a></li>
             <li class="menu"><a href="manageReservations.html">Manage Reservations</a></li>
             <li class="menu"><a href="invoices.html">Invoices</a></li>
@@ -19,19 +42,8 @@
             <li class="menu"><a href="scanTickets.html">Scan Tickets</a></li>
             <li class="menu"><a href="expportData.html">Export Data</a></li>
             <li class="menu"><a href="createAcc.html">Create Account</a></li>
-        </ul>     
-        <section>
-            <h1><img src="../CMS/img/managePages.png" alt="icon manage pages"> Manage Pages</h1>
-            <hr id="longLine"/>
-
-            <h2>Current pages</h2>
-            <hr class="shortLine"/>
-            <h2>Create a new page</h2>
-            <hr class="shortLine"/>
-
-
-        </section>
-
+        </ul>
+    </nav>
         <footer id="footer">
             <p class="left">All rights reserved &copy; 2019</p>
 
@@ -41,6 +53,9 @@
 
             <img class="right" src="img/youtube.png">
         </footer>
+
+        <div id="content">
+            <?php include('managePages.php'); ?>
+          </div>
     </body>
 </html>
-    
