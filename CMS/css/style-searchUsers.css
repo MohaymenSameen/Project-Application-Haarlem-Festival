@@ -14,16 +14,9 @@ body{
     padding: 0;
 }
 
-.shortLine{
-    display: block;
-    height: 1px;
+.buttonsLila{
+    color: black;
+    background: cornflowerblue;
     border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
+    border-radius: 30px;
 }
-
-.main{
-    text-decoration: none;
-    list-style-type: none;
-}
- 

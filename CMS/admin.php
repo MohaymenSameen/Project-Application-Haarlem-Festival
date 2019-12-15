@@ -34,7 +34,7 @@
         <ul class="main">
             <li class="menu"><a href="#" data-target="managePages">Manage Pages</a></li>
             <li class="menu"><a href="#" data-target="editProfile">Profile</a></li>
-            <li class="menu"><a href="searchUsers.html">Search Users</a></li>
+            <li class="menu"><a href="#" data-target="searchUsers">Search Users</a></li>
             <li class="menu"><a href="manageReservations.html">Manage Reservations</a></li>
             <li class="menu"><a href="invoices.html">Invoices</a></li>
             <li class="menu"><a href="createInvoices.html">Create Invoice</a></li>
