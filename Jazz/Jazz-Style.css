@@ -265,10 +265,10 @@ div.backcolor4
     background-color: #CF4B7E;
 }
 div.tickets
-{   
+{     
     margin-left: 10%; 
-    margin-top: 5%;
-    height: 00px;
+    margin-top: 5%;   
+    height: 150px;    
     font-family: "Century Gothic"; 
     color: #333333;        
 }
@@ -276,14 +276,14 @@ div.tickets h1
 {
     position: relative;
     margin: 0;    
-    left: 20%;
+    left: 15%;
     font-size: 80px;    
 }
 div.tickets h2
 {  
     position: relative;
     margin: 0;
-    left: 3%; 
+    left: 6%; 
     font-size: 50px;
     font-weight: normal;
     white-space: nowrap;
@@ -301,14 +301,16 @@ div.tickets select.date
     font-family: "Century Gothic";         
 }
 div.tickets h3
-{    
-    box-sizing: inline-block;     
+{           
     font-size: 50px; 
     font-weight: normal;
 }
 div.tickets select.quantity
-{
-    box-sizing: border-box;         
+{   display: inline-block;
+    position: relative;  
+    left: 17%;
+    bottom: 100px;
+    width: 60px;
     font-size: 30px;   
     font-family: "Century Gothic";
 }
@@ -326,7 +328,11 @@ div.tickets button.addcart
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;   
+    position: relative;
+    left: 12%;
+    bottom: 50px;
     font-family: "Century Gothic";
+    position: relative;                     
 }
 div.tickets button.addcart span
 {
@@ -355,26 +361,25 @@ div.tickets button.addcart:hover span:after
 }
 div.cross_selling
 {
-    text-align: center;
+    text-align: center;    
     position: relative;
-    width: 85%;
-    left: 35%;    
+    width: 40%;
+    left: 60%;    
+    bottom: 100px;
     font-family: "Century Gothic";    
 }
 div.cross_selling h1
 {
-    position: relative;
-         
-    font-size: 50px;
+    position: relative;         
+    font-size: 35px;
     font-weight: normal;
     white-space: nowrap;
     color: #f4511e;
 }
 div.cross_selling h2
 {
-    position: relative;
-        
-    font-size: 30px;
+    position: relative;        
+    font-size: 20px;
     font-weight: normal;
     white-space: nowrap;
     color: #333333;
@@ -382,38 +387,35 @@ div.cross_selling h2
 div.cross_selling img
 {
     position: relative;
-    margin:4%;
+    margin:3%;
     margin-top: 0;
-    margin-bottom: 0;
-    
-    height: 170px;    
+    margin-bottom: 0;    
+    height: 100px;    
 }
-button.cross
-{    
-   
+div.cross_selling button.cross
+{     
     border-radius: 4px;
     background-color: #f4511e;
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 40px;
+    font-size: 20px;
     padding: 10px;
-    width: 200px;   
+    width: 120px;   
     transition: all 0.5s;
     cursor: pointer;
-    position: relative;
-    left: 60%;   
-    margin: 30px;       
+    position: relative;    
+    margin: 10px;      
     font-family: "Century Gothic";
 }
-button.cross span
+div.cross_selling button.cross span
 {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
-button.cross span:after
+div.cross_selling button.cross span:after
 {
     content: '\00bb';
     position: absolute;
@@ -422,11 +424,11 @@ button.cross span:after
     right: -20px;
     transition: 0.5s;
 }  
-button.cross:hover span
+div.cross_selling button.cross:hover span
 {
     padding-right: 25px;
 }  
-button.cross:hover span:after
+div.cross_selling button.cross:hover span:after
 {
     opacity: 1;
     right: 0;
@@ -436,7 +438,7 @@ div.access_passes
     font-family: "Century Gothic"; 
     color: #333333;
     text-align: center; 
-    height: 800px;
+   
     background-color: rgba(120, 36, 76, 1);    
 }
 div.access_passes h1
@@ -474,7 +476,7 @@ div.access_passes h3
 }
 div.access_passes button.addcart
 {   
-    display: block;
+    display: inline-block;
     border-radius: 4px;
     background-color: #f4511e;
     border: none;
@@ -484,10 +486,33 @@ div.access_passes button.addcart
     padding: 20px;
     width: 350px;    
     transition: all 0.5s;
-    cursor: pointer;
-    position: relative;    
-    left: 40%;
+    cursor: pointer;   
     font-family: "Century Gothic";
+}
+div.access_passes button.addcart span
+{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+div.access_passes button.addcart span:after
+{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}  
+div.access_passes button.addcart:hover span
+{
+    padding-right: 25px;
+}  
+div.access_passes button.addcart:hover span:after
+{
+    opacity: 1;
+    right: 0;
 }
 @media only screen and (max-width: 800px)
 {
