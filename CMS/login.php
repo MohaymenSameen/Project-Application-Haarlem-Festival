@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -31,13 +34,19 @@
         <section>     
             <img  id="login" class="center" src="img/loginIcon.png" alt="Login icon">
             <form>
-                    
-                    <label> <img clas="iconsLogin"  src="img/unameicon.png" height="42" width="42"/><input type="text" placeholder="Username..."></label> <!--premesti go v stylesheet-->
-                    
-                  <label><img clas="iconsLogin" src="img/passicon.png" height="35" width="31"/><input type="password" placeholder="Password..."></label>
-                  <button id="loginButton" type="button">LOGIN</button>
-                  <button id="forogtPassButt" type="button">Forgot password?</button> 
-                    
+                <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">  
+                    <label> <img clas="iconsLogin"  src="img/unameicon.png" height="42" width="42"/><input type="text" name = "username" placeholder="Username..." class="form-control" value="<?php echo $username; ?>"></label> <!--premesti go v stylesheet-->
+                    <span class="help-block"><?php echo $username_err; ?></span>
+                </div>
+
+                <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                    <label><img clas="iconsLogin" src="img/passicon.png" height="35" width="31"/><input type="password" placeholder="Password..." name="password" class="form-control"></label>
+                    <span class="help-block"><?php echo $password_err; ?></span>
+                </div>    
+                
+                <button id="loginButton" type="button">LOGIN</button>
+                <button id="forogtPassButt" type="button">Forgot password?</button> 
+                <a href="reset-password.php">Forgot your password?</a>    
             </form> 
 > 
 

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -10,7 +9,6 @@
     <body> 
     <section>
         <h1><img src="../CMS/img/editProfileicon.png" alt="icon search users"> Create Invoice </h1>
-        <hr id="longLine"/>
     </section>
     <form>                    
         <label>E-mail Address <input type="text" ></label> 

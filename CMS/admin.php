@@ -35,13 +35,13 @@
             <li class="menu"><a href="#" data-target="managePages">Manage Pages</a></li>
             <li class="menu"><a href="#" data-target="editProfile">Profile</a></li>
             <li class="menu"><a href="#" data-target="searchUsers">Search Users</a></li>
-            <li class="menu"><a href="manageReservations.html">Manage Reservations</a></li>
-            <li class="menu"><a href="invoices.html">Invoices</a></li>
-            <li class="menu"><a href="createInvoices.html">Create Invoice</a></li>
-            <li class="menu"><a href="registerPayment.html">Register Payment</a></li>
-            <li class="menu"><a href="scanTickets.html">Scan Tickets</a></li>
-            <li class="menu"><a href="expportData.html">Export Data</a></li>
-            <li class="menu"><a href="createAcc.html">Create Account</a></li>
+            <li class="menu"><a href="manageReservations">Manage Reservations</a></li>
+            <li class="menu"><a href="invoices">Invoices</a></li>
+            <li class="menu"><a href="createInvoice">Create Invoice</a></li>
+            <li class="menu"><a href="registerPayment">Register Payment</a></li>
+            <li class="menu"><a href="scanTickets">Scan Tickets</a></li>
+            <li class="menu"><a href="exportData">Export Data</a></li>
+            <li class="menu"><a href="createAcc">Create Account</a></li>
         </ul>
     </nav>
         <footer id="footer">
