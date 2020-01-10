@@ -1,7 +1,5 @@
 <?php
-    require_once ('../controller/jazz_controller.php'); 
-   // require_once ('../model/jazz_model.php'); 
-    
+    require_once ('../controller/jazz_controller.php');   
     
     $title = null;
     $heading1=null;
@@ -18,10 +16,7 @@
     $label7=null;
     $paragraph1=null;
 
-    //$JazzModel= new JazzModel();
-    //$row = $JazzModel->getData();
-
-   $JazzController = new JazzController();
+    $JazzController = new JazzController();
     $row = $JazzController->recieveData();
     if(is_array($row))
     {
@@ -32,10 +27,6 @@
             $heading2=$res['heading_2']; 
         }
     }
-
- //  echo '<h1>'.$title.'</h1>';
-  // echo '<h1>'.$heading1.'<h1>';
-  // echo ''
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,16 +43,16 @@
         <li><a href="Jazz.html"><strong>Jazz</strong></a></li>
         <li><a href="Dance.html">Dance</a></li>
         <li><a href="Food.html">Food</a></li>
-        <li><a href="Volunteer.html">Volunteer</a></li>        
+        <li><a href="../CMS/admin.php">Volunteer</a></li>        
     </ul>
 
     <div class="header">
         <img src="../img/header.jpg">
-        <p>Haarlem Jazz</p>
+        <?php echo '<p>'.$title.'</p>';?>
     </div>
 
     <div class="information">
-        <h1>Information</h1>        
+        <?php echo '<h1>'.$heading1.'</h1>';?>        
         <p>The Haarlem Jazz Festival showcases the greatest jazz artists from the Netherlands. The Haarlem Jazz Festival is 4 days long, from the 26th of July till the 29th. Well known bands such as the Gumbo Kings, Evolve, Wicked Jazz Sounds and 16 other bands will be performing! You can buy seperate tickets or purchase access passes to see each and every band!</p>
     </div>
     
