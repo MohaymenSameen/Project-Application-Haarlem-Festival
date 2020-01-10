@@ -1,5 +1,5 @@
 <?php
-    include ('controller/createAccController.php');
+    include ('../controller/createAccController.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,14 +47,23 @@
                 <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
             </div>
+            <label>Choose a role</label>            
+          <input type = "radio" value="admin"
+                 name = "role"
+                 id = "admin"
+                 checked = "checked" />
+          <label for = "sizeSmall">admin</label>
+          <input type = "radio" value="super admin"
+                 name = "role"
+                 id = "super" />
+          <label for = "sizeMed">super admin</label>
             <div class="form-group <?php echo (!empty($phone_err)) ? 'has-error' : ''; ?>">
                 <label>Phone number</label>
                 <input type="number" name="phone" class="form-control" value="<?php echo $phone; ?>">
                 <span class="help-block"><?php echo $phone_err; ?></span>
             </div>
-            <div class="g-recaptcha" data-sitekey="6Le9l8IUAAAAAPw9-d_6wnXXWr20tbjdfipMdumV"></div>
             <div class="form-group">
-                <button type="button" class="buttonsLila">Create</button>
+                <input type="submit" class="btn btn-primary" value="Submit">
             </div>
         </form>
     </body>

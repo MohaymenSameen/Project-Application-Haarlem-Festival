@@ -1,5 +1,7 @@
 <?php
+include ('model/loginModel.php');
 
+include ('controller/loginController.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,10 +35,10 @@
         </nav>
         <section>     
             <img  id="login" class="center" src="img/loginIcon.png" alt="Login icon">
-            <form>
-                <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">  
-                    <label> <img clas="iconsLogin"  src="img/unameicon.png" height="42" width="42"/><input type="text" name = "username" placeholder="Username..." class="form-control" value="<?php echo $username; ?>"></label> <!--premesti go v stylesheet-->
-                    <span class="help-block"><?php echo $username_err; ?></span>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">>
+                <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">  
+                    <label> <img clas="iconsLogin"  src="img/unameicon.png" height="42" width="42"/><input type="text" name = "email" placeholder="E-mail..." class="form-control" value="<?php echo $email; ?>"></label> <!--premesti go v stylesheet-->
+                    <span class="help-block"><?php echo $email_err; ?></span>
                 </div>
 
                 <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
@@ -44,11 +46,9 @@
                     <span class="help-block"><?php echo $password_err; ?></span>
                 </div>    
                 
-                <button id="loginButton" type="button">LOGIN</button>
-                <button id="forogtPassButt" type="button">Forgot password?</button> 
+                <input type="submit" id="loginButton" value="LOGIN">
                 <a href="reset-password.php">Forgot your password?</a>    
             </form> 
-> 
 
         </section>
 
