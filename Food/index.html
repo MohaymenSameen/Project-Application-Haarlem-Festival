@@ -8,6 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<!-- custom css -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script src="js/jquery.js"></script>	
 </head>
 <body>
 <!-- wrapper  -->
@@ -23,7 +25,7 @@
 					<li><a href="javascript:void(0);">Volunteer</a></li>
 				</ul>
 				<div class="car_lang">
-					<div class="cart"><a href="javascript:void(0);">|0| User</a></div>
+					<div class="cart"><a href="javascript:void(0);">|0| Items</a></div>
 					<div class="lang">
 						<a href="javascript:void(0);">EN</a>
 						<a href="javascript:void(0);">NL</a>
@@ -41,7 +43,7 @@
 	</section>
 	<section class="red_bg">
 		<div class="container">
-			<a href="javascript:void(0);">CLICK HERE TO MAKE A RESERVATION</a>
+			<a href="#reservation">CLICK HERE TO MAKE A RESERVATION</a>
 		</div>
 	</section>
 
@@ -945,7 +947,7 @@
 		</div>
 	</section>
 
-	<section class="reservation_bg">
+	<section id="reservation" class="reservation_bg">
 		<div class="container">
 			<h4>Make A Reservation!</h4>
 		</div>
@@ -959,27 +961,34 @@
 						<label>Restaurant</label>
 						<select>
 							<option value="1">Select a restaurant</option>
-							<option value="2">Select a restaurant</option>
-							<option value="3">Select a restaurant</option>
-							<option value="4">Select a restaurant</option>
+							<option value="2">Mr. & Mrs.</option>
+							<option value="3">Ratatoville</option>
+							<option value="4">ML</option>
+							<option value="4">Fris</option>
+							<option value="4">Specktakle</option>
+							<option value="4">Grand Cafe Brinkman</option>
+							<option value="4">Urban Frenchy Bistro Toujours</option>
+							<option value="4">The Golden Bull</option>
 						</select>
 					</div>
 					<div class="feild_grid">
 						<label>Date</label>
 						<select>
-							<option value="1">Select a Date</option>
-							<option value="2">Select a Date</option>
-							<option value="3">Select a Date</option>
-							<option value="4">Select a Date</option>
+							<option value="1">Select a date</option>
+							<option value="2">25th of July 2020</option>
+							<option value="2">26th of July 2020</option>
+							<option value="2">27th of July 2020</option>
+							<option value="2">28th of July 2020</option>
+							<option value="2">29th of July 2020</option>
 						</select>
 					</div>
 					<div class="feild_grid">
 						<label>Time</label>
 						<select>
 							<option value="1">18:00</option>
-							<option value="2">18:00</option>
-							<option value="3">18:00</option>
-							<option value="4">18:00</option>
+							<option value="2">19:30</option>
+							<option value="3">21:00</option>
+							
 						</select>
 					</div>
 					<div class="feild_grid">
@@ -989,6 +998,18 @@
 							<option value="2">2</option>
 							<option value="3">3</option>
 							<option value="4">4</option>
+							<option value="1">5</option>
+							<option value="2">6</option>
+							<option value="3">7</option>
+							<option value="4">8</option>
+							<option value="1">9</option>
+							<option value="2">10</option>
+							<option value="3">11</option>
+							<option value="4">12</option>
+							<option value="1">13</option>
+							<option value="2">14</option>
+							<option value="3">15</option>
+							
 						</select>
 					</div>
 					<div class="feild_grid">
@@ -1062,6 +1083,21 @@ function openCity(evt, cityName) {
 	evt.currentTarget.className += " active";
 }
 document.getElementById("defaultOpen").click();
+</script>
+<script>
+	$(document).ready(function(){
+		$("a").on('click', function(event) {
+			if (this.hash !== "") {
+				event.preventDefault();
+				var hash = this.hash;
+				$('html, body').animate({
+					scrollTop: $(hash).offset().top
+					}, 2000, function(){
+					window.location.hash = hash;
+				});
+			}
+		});
+	});
 </script>
 </body>
 </html>
