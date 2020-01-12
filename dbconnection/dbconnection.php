@@ -14,10 +14,10 @@ class Database
         $this->dbUsername = "root";
         $this->dbPassword = "";
         $this->dbName = "hfitteam6_enhaarlemfestival";
-        $conn = new mysqli($this->dbServername,$this->dbUsername,$this->dbPassword,$this->dbName);
+        $conn = new mysqli($this->dbServername,$this->dbUsername,$this->dbPassword,$this->dbName);        
         return $conn;
     }
-    
+
     //mysqli real escape string function to prevent sqli injection into the database
     public function escape_string($value)
     {
