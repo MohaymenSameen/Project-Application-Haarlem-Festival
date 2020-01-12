@@ -4,23 +4,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/service/service.php';
  
 // Define variables and initialize with empty values
 $password = $confirm_password = $email = $name = $phone = $role = "";
-$password_err = $confirm_password_err = $email_err = $name_err = "";
+$password_err = $confirm_password_err = $email_err = $name_err = $phone_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST")
 { 
-
-    //defining variables for reCaptcha
-    $secretKey = "6Le9l8IUAAAAAD8OAGMs9aCpqm00nUxH0uQcZB4H";
-    $responseKey = $_POST['g-recaptcha-response'];
-    $userIP = $_SERVER['REMOTE_ADDR'];
-
-    $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$userIP";
-    $response = file_get_contents($url);
-    $response = json_decode($response);
-
-    if($response->success)
-    {
         //Validate E-mail
         if(empty(trim($_POST["email"]))){
             $email_err = "Please enter an E-mail.";
@@ -50,9 +38,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 }
             }
             
-            
-            // Close statement
-            $stmt->close();
         }
 
         //Check for Name
@@ -80,8 +65,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 }
             }
             
-            // Close statement
-            $stmt->close();
         }
         
         // Validate password
@@ -102,22 +85,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 $confirm_password_err = "Password did not match.";
             }
         }
+
         
         // Check input errors before inserting in database
         if(empty($password_err) && empty($confirm_password_err) && empty($name_err)){
             
             // Prepare an insert statement
-            $sql = "INSERT INTO user (email, name, password, phone) VALUES (?, ?, ?, ?)";
+            $sql = "INSERT INTO user (email, name, password, phone, role) VALUES (?, ?, ?, ?, ?)";
             
             if($stmt = $mysqli->prepare($sql)){
                 // Bind variables to the prepared statement as parameters
-                $stmt->bind_param("ssss",$param_email, $param_name, $param_password, $param_phone);
+                $stmt->bind_param("sssss",$param_email, $param_name, $param_password, $param_phone, $param_role);
                 
                 // Set parameters
                 $param_email = $email;
                 $param_name = $name;
                 $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-                $param_phone = $phone
+                $param_phone = $phone;
+                $param_role = $_POST['role'];
                 
                 
                 // Attempt to execute the prepared statement
@@ -128,16 +113,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                     echo "Something went wrong. Please try again later."; 
                 }
             }
-            
-            // Close statement
-            $stmt->close();
         }
         
         // Close connection <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
         $mysqli->close();
-    
-    } else{
-        echo "Verification failed! Check reCaptcha";
-    }
+   
 }
 ?>
