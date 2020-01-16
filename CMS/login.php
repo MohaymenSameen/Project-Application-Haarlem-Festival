@@ -1,3 +1,8 @@
+<?php
+include ('model/loginModel.php');
+
+include ('controller/loginController.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -30,16 +35,20 @@
         </nav>
         <section>     
             <img  id="login" class="center" src="img/loginIcon.png" alt="Login icon">
-            <form>
-                    
-                    <label> <img clas="iconsLogin"  src="img/unameicon.png" height="42" width="42"/><input type="text" placeholder="Username..."></label> <!--premesti go v stylesheet-->
-                    
-                  <label><img clas="iconsLogin" src="img/passicon.png" height="35" width="31"/><input type="password" placeholder="Password..."></label>
-                  <button id="loginButton" type="button">LOGIN</button>
-                  <button id="forogtPassButt" type="button">Forgot password?</button> 
-                    
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">>
+                <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">  
+                    <label> <img clas="iconsLogin"  src="img/unameicon.png" height="42" width="42"/><input type="text" name = "email" placeholder="E-mail..." class="form-control" value="<?php echo $email; ?>"></label> <!--premesti go v stylesheet-->
+                    <span class="help-block"><?php echo $email_err; ?></span>
+                </div>
+
+                <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                    <label><img clas="iconsLogin" src="img/passicon.png" height="35" width="31"/><input type="password" placeholder="Password..." name="password" class="form-control"></label>
+                    <span class="help-block"><?php echo $password_err; ?></span>
+                </div>    
+                
+                <input type="submit" id="loginButton" value="LOGIN">
+                <a href="reset-password.php">Forgot your password?</a>    
             </form> 
-> 
 
         </section>
 

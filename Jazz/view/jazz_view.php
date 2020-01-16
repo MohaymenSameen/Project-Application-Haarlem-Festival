@@ -1,10 +1,40 @@
+<?php
+    require_once ('../controller/jazz_controller.php');   
+    
+    $title = null;
+    $heading1=null;
+    $heading2=null;
+    $heading3=null;
+    $heading4=null;
+    $heading5=null;
+    $label1=null;
+    $label2=null;
+    $label3=null;
+    $label4=null;
+    $label5=null;
+    $label6=null;
+    $label7=null;
+    $paragraph1=null;
+
+    $JazzController = new JazzController();
+    $row = $JazzController->recieveData();
+    if(is_array($row))
+    {
+        foreach($row as $res)
+        {
+            $title=$res['title'];
+            $heading1=$res['heading_1'];
+            $heading2=$res['heading_2']; 
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="Jazz-Style.css" type="text/css" rel="stylesheet"/>
+    <link href="../Jazz-Style.css" type="text/css" rel="stylesheet"/>
     <title>Jazz</title>
 </head>
 <body>    
@@ -13,21 +43,21 @@
         <li><a href="Jazz.html"><strong>Jazz</strong></a></li>
         <li><a href="Dance.html">Dance</a></li>
         <li><a href="Food.html">Food</a></li>
-        <li><a href="Volunteer.html">Volunteer</a></li>        
+        <li><a href="../CMS/admin.php">Volunteer</a></li>        
     </ul>
 
     <div class="header">
-        <img src="./img/header.jpg">
-        <p>Haarlem Jazz</p>
+        <img src="../img/header.jpg">
+        <?php echo '<p>'.$title.'</p>';?>
     </div>
 
     <div class="information">
-        <h1>Information</h1>        
+        <?php echo '<h1>'.$heading1.'</h1>';?>        
         <p>The Haarlem Jazz Festival showcases the greatest jazz artists from the Netherlands. The Haarlem Jazz Festival is 4 days long, from the 26th of July till the 29th. Well known bands such as the Gumbo Kings, Evolve, Wicked Jazz Sounds and 16 other bands will be performing! You can buy seperate tickets or purchase access passes to see each and every band!</p>
     </div>
     
     <div class="picture2">
-        <img src="./img/location.jpg">
+        <img src="../img/location.jpg">
     </div>
 
     <div class="timetable1">
@@ -262,7 +292,7 @@
             <option value="9">9</option>
             <option value="10">10</option>            
         </select>
-        <br><br><br>
+        <br>
         <button type="button" class="addcart"><span>Add To Cart</span></button>
     </div>
     
@@ -270,13 +300,12 @@
     <div class="cross_selling">
         <h1>Add More To The Fun!</h1>
         <h2>By clicking one of the options</h2>
-        <img src="./img/food.png">
-       
-        <img src="./img/Dance.png">            
-        
-    </div>
-    <button type="button" class="cross"><span>Food</span></button>
-    <button type="button" class="cross"><span>Dance</span></button>   
+        <img src="../img/food.png">       
+        <img src="../img/Dance.png">    
+        <br>
+        <button type="button" class="cross"><span>Food</span></button>
+        <button type="button" class="cross"><span>Dance</span></button>          
+    </div>      
 
     <div class="access_passes">
         <h1>Access Passes</h1>
@@ -301,9 +330,10 @@
             <option value="8">8</option>
             <option value="9">9</option>
             <option value="10">10</option>   
-        </select>   
+        </select>  
+        <br> 
         <button type="button" class="addcart"><span>Add To Cart</span></button>
-    </div>
+        <br><br>
 
 </body>
 </html>
