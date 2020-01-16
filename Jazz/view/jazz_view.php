@@ -1,7 +1,7 @@
 <?php
     require_once ('../controller/jazz_controller.php');   
     
-    $title = null;
+   /* $title = null;
     $heading1=null;
     $heading2=null;
     $heading3=null;
@@ -19,7 +19,7 @@
     $date2=null;
     $date3=null;
     $date4=null; 
-
+                */
 
     $JazzController = new JazzController();
     $data = $JazzController->recieveData();
@@ -60,13 +60,14 @@
     <script>
             /* When the user clicks on the button, 
     toggle between hiding and showing the dropdown content */
-    function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
+    function myFunction()
+    {
+        document.getElementById("myDropdown").classList.toggle("show");
     }
 
     // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
+   /* window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
         var i;
         for (i = 0; i < dropdowns.length; i++) {
@@ -76,7 +77,8 @@
         }
         }
     }
-    }
+    }*/
+
     </script>
     <div class="navbar">
         <ul>
@@ -357,6 +359,14 @@
         <br> 
         <button type="button" class="addcart"><span>Add To Cart</span></button>
         <br><br>
-
+    </div>
+    <div class="footer">
+        
+        <p class="left">All rights reserved &copy; 2019</p>            
+        <img class="right" src="../../Home/img/facebook.png">
+        <img class="right" src="../../Home/img/instagram.png">
+        <img class="right" src="../../Home/img/youtube.png">
+        <img class="right" src="../../Home/img/logo_H.png">
+    </div>
 </body>
 </html>

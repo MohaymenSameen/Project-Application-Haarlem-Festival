@@ -573,6 +573,38 @@ div.access_passes button.addcart:hover span:after
     opacity: 1;
     right: 0;
 }
+div.footer
+{
+  height: 150px; 
+  width: 100%;
+  position: relative;
+  
+  background-color: black;
+  color: white;
+  font-family: "Century Gothic";
+  display: flex;  
+  white-space: nowrap;
+}
+
+.left
+{
+  color: #fff;
+  background-color: #000;
+  margin-top:2%;
+  margin-left: 1%;
+  float: left;  
+}
+
+.right
+{
+  background-color: #000;
+  position: relative;
+  left: 62%; 
+  top: 20px;
+  height: 50px;  
+  width: 5%;
+  object-fit: scale-down;
+}
 @media only screen and (max-width: 800px)
 {
     li 

@@ -60,10 +60,10 @@ div.countdown
   position: relative;
   background-color: rgb(255, 0, 0);
   color: white;
-  margin-left: 36%;
+  margin-left: 33%;
   height: 130px;
   box-shadow: 1px 1px 5px 1px #222222;
-  width: 30%;
+  width: 35%;
   bottom: 350px;    
   text-align: center;   
   font-size: 40px; 
