@@ -3,6 +3,7 @@ body{
     font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
     background-color: #ffffff;
     font-family: "Century Gothic";
+    overflow-x: hidden;
 }
 div.navbar ul
 {    
