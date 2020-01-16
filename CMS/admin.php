@@ -7,7 +7,7 @@
         <title>Haarlem Festival</title>
         <link href="css/style-managePages.css" rel="stylesheet" type="text/css">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
         <script>
       $(document).ready(function(){
         // Set trigger and container variables
@@ -30,20 +30,40 @@
     </script>
     </head>
     <body>   
-      <nav id="sidenav">
-        <ul class="main">
-            <li class="menu"><a href="#" data-target="managePages">Manage Pages</a></li>
-            <li class="menu"><a href="#" data-target="editProfile">Profile</a></li>
-            <li class="menu"><a href="#" data-target="searchUsers">Search Users</a></li>
-            <li class="menu"><a href="manageReservations">Manage Reservations</a></li>
-            <li class="menu"><a href="invoices">Invoices</a></li>
-            <li class="menu"><a href="createInvoice">Create Invoice</a></li>
-            <li class="menu"><a href="registerPayment">Register Payment</a></li>
-            <li class="menu"><a href="scanTickets">Scan Tickets</a></li>
-            <li class="menu"><a href="exportData">Export Data</a></li>
-            <li class="menu"><a href="createAcc">Create Account</a></li>
+    <div class="navbar">
+        <ul>
+            <li><a href="../../Home/view/home_view.php">Home</a></li>
+            <li><a href="jazz_view.php"><strong>Jazz</strong></a></li>
+            <li><a href="Dance.html">Dance</a></li>
+            <li><a href="Food.html">Food</a></li>
+            <li><a href="../CMS/admin.php">Volunteer</a></li>
+
+           
+           <div class="dropdown">
+            <button class="dropbtn" onclick="myFunction()"><img src="../Jazz/img/shopping_cart.png"><span>Items</span></button>     
+
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            </div>
         </ul>
-    </nav>
+      </div>
+      <nav id="sidenav">
+        <ul>
+            <li><a href="#" data-target="managePages">Manage Pages</a></li>
+            <li><a href="#" data-target="editProfile">Profile</a></li>
+            <li><a href="#" data-target="searchUsers">Search Users</a></li>
+            <li><a href="manageReservations">Manage Reservations</a></li>
+            <li><a href="invoices">Invoices</a></li>
+            <li><a href="createInvoice">Create Invoice</a></li>
+            <li><a href="registerPayment">Register Payment</a></li>
+            <li><a href="scanTickets">Scan Tickets</a></li>
+            <li><a href="exportData">Export Data</a></li>
+            <li><a href="createAcc">Create Account</a></li>
+        </ul>
+      </nav>
         <footer id="footer">
             <p class="left">All rights reserved &copy; 2019</p>
 

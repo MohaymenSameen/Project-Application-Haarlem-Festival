@@ -9,7 +9,7 @@
     </head>
     <body>    
         <section>
-            <h1><img src="../CMS/img/managePages.png" alt="icon manage pages"> Manage Pages</h1>
+            <h1><img src="img/managePages.png" alt="icon manage pages"> Manage Pages</h1>
             <hr id="longLine"/>
 
             <h2>Current pages</h2>
