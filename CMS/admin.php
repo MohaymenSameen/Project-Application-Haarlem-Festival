@@ -64,7 +64,13 @@
             <li><a href="createAcc">Create Account</a></li>
         </ul>
       </nav>
-        <footer id="footer">
+      
+        <div id="content">
+            <?php include('managePages.php'); ?>
+        </div>
+    </body>
+    
+    <footer id="footer">
             <p class="left">All rights reserved &copy; 2019</p>
 
             <img class="right" src="img/logo_H.png">
@@ -74,8 +80,4 @@
             <img class="right" src="img/youtube.png">
         </footer>
 
-        <div id="content">
-            <?php include('managePages.php'); ?>
-          </div>
-    </body>
 </html>

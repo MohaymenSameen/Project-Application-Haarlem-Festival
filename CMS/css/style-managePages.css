@@ -126,4 +126,15 @@ nav#sidenav li a{
     text-decoration: none;
     color: #ffffff;
 }
+
+h1 img{
+width: 35px;
+height: 35px;
+}
+
+div#content{
+position: relative;
+left:15%;
+bottom: 700px;
+}
  
