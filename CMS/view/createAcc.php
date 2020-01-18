@@ -40,7 +40,7 @@
             </div>
             <div class="form-group">
                 <label>Choose a role:</label>    
-                <label for = "sizeSmall">admin</label>
+                <label for = "sizeSmall">volunteer</label>
                 <input id = "rad" type = "radio" value="admin"
                     name = "role"
                     id = "admin"

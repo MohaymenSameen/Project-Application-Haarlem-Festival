@@ -9,7 +9,7 @@
     </head>
     <body> 
     <section>
-        <h1><img src="../CMS/img/editProfileicon.png" alt="icon search users"> Create Invoice </h1>
+        <h1><img src="img/editProfileicon.png" alt="icon search users"> Edit Profile </h1>
         <hr id="longLine"/>
     </section>
     <form>                    
@@ -18,7 +18,7 @@
         <label>Confirm Password<input type="password"></label>        
         <label>Phone Number<input type="text"></label><label>
         
-        <button class="buttonsLila" type="button">Save Changes</button>
+        <button class="buttonsLila" type="button">Save</button>
     </form> 
 
 </body>

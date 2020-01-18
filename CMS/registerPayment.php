@@ -9,7 +9,7 @@
     </head>
     <body>    
         <section>
-            <h1><img src="../CMS/img/registerPayment.png" alt="icon search users"> Register Payment</h1>
+            <h1><img src="img/registerPayment.png" alt="icon search users"> Register Payment</h1>
             <hr id="longLine"/>
         </section>
         <section>
