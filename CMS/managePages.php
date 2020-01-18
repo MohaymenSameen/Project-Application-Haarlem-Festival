@@ -18,9 +18,10 @@
             <hr id = "secondSL" class="shortLine"/>
 
             <ul class="pagesList">
-                <li><a href="./jazz" >Jazz</a></li>
-                <li><a href="dance.php" >Dance</a></li>
-                <li><a href="home.php" >Home</a></li>
+                <li>Jazz</a></li>
+                <!--<button><a href="./jazz" ><a href="./jazz" ></button>-->
+                <li>Dance</a></li>
+                <li>Home</a></li>
             </ul>
         </section>
     </body>
