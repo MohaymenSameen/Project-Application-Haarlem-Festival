@@ -37,9 +37,9 @@
             </ul>
 
             <ul class="removePage">
-                <li><input type="submit" id="JazzR" value="Remove "></li>
-                <li><input type="submit" id="DanceR" value="Remove "></li>
-                <li><input type="submit" id="HomeR" value="Remove "></li>
+                <li><input type="submit" id="JazzR" value="Remove"></li>
+                <li><input type="submit" id="DanceR" value="Remove"></li>
+                <li><input type="submit" id="HomeR" value="Remove"></li>
             </ul>
              
             <input type="submit" id="createNewPage" value="+ ">

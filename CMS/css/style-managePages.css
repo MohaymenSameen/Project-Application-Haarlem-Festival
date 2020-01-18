@@ -103,7 +103,7 @@ div.navbar button.dropbtn span
 .shortLine{
     display: block;
     height: 1px;
-    width: 30%;
+    width: 32%;
     border: 0;
     border-top: 1px solid #ccc;
     margin: 1em 0;
@@ -159,11 +159,12 @@ h1{
 hr#firstSL{
     position: relative;
     top: 20px;
-    right: 535px;
+    right: 528px;
 }
 hr#secondSL{
     position: relative;
     bottom: 50px;
+    left: 80px;
 }
 
 ul.pagesList li{
@@ -226,7 +227,7 @@ ul.removePage li input{
     color: #ffffff;
     background-color: #FF3232;
     height: 30px;
-    width: 4%;
+    width: 5%;
 }
 
 input#createNewPage{
