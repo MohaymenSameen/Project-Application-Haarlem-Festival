@@ -72,5 +72,22 @@
                 return $rows;
             }            
         }
+        public function getPrice($group, $time)
+        {            
+            $sql="SELECT price FROM jazz_timetable WHERE band='$group' AND date='$time'";
+            $result = $this->connect()->query($sql);              
+            $num_rows=$result->num_rows;
+            if($num_rows>0)
+            {
+            
+                while($row= $result->fetch_assoc())
+                {
+                   // $rows[]=$row;      
+                     return $row['price'];                 
+                }
+                //return $rows;
+            } 
+            // WHERE 
+        }
     }
 ?>

@@ -1,5 +1,5 @@
 <?php
-    require_once ('../controller/jazz_controller.php');   
+    require_once ('../controller/jazz_controller.php');  
     
    /* $title = null;
     $heading1=null;
@@ -18,8 +18,7 @@
     $date1=null;
     $date2=null;
     $date3=null;
-    $date4=null; 
-                */
+    $date4=null; */               
 
     $JazzController = new JazzController();
     $data = $JazzController->recieveData();
@@ -27,7 +26,7 @@
     $timetable2 = $JazzController->recieveTimetable2();
     $timetable3 = $JazzController->recieveTimetable3();
     $timetable4 = $JazzController->recieveTimetable4();
-
+    
     foreach($data as $res)
     {
         $title=$res['title'];
@@ -44,6 +43,13 @@
         $label6=$res['label_6'];
         $label7=$res['label_7'];
         $paragraph1=$res['paragraph_1'];
+    }
+
+    if(isset($_POST["add"]))
+    {
+        $_SESSION['date']=$_POST['date'];
+        $_SESSION['band']=$_POST['band'];
+        $_SESSION['quan']=$_POST['quantity'];         
     }
        
 ?>
@@ -87,20 +93,22 @@
             <li><a href="Dance.html">Dance</a></li>
             <li><a href="Food.html">Food</a></li>
             <li><a href="../CMS/admin.php">Volunteer</a></li>
-
-           
-           <div class="dropdown">
+        </ul>
+    </div>
+    <div class="dropdown">
             <button class="dropbtn" onclick="myFunction()"><img src="../img/shopping_cart.png"><span>Items</span></button>     
 
             <div id="myDropdown" class="dropdown-content">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <?php
+                //make else thing with empty shopping cart
+                    echo '<h2>'.$_SESSION['date'].'</h2>';
+                    echo '<h2>'.$_SESSION['band'].'</h2>';
+                    echo '<h2>'.$_SESSION['quan'].'</h2>';
+                    $price = $JazzController->recievePrice($_SESSION['band'], $_SESSION['date']);
+                    echo '<h2>'.$price.'</h2>';
+                ?>
             </div>
-            </div>
-        </ul>
     </div>
-
     <div class="header">
         <img src="../img/header.jpg">
         <?php echo '<p>'.$title.'</p>';?>
@@ -242,12 +250,13 @@
         </div>
     </div>    
 
-    <div class="tickets">
+    <div class="tickets">   
+        <form method="POST">        
         <?php echo '<h1>'.$heading3.'</h1>';
         echo '<h2>'.$label1.'</h2>';?>        
         <br>
 
-        <select class="date">
+        <select class="date" name="date">
            <!-- <option value="Thursday, 26th July">Thursday, 26th July</option>
             <option value="Friday, 27th July">Friday, 27th July</option>
             <option value="Saturday, 28th July">Saturday, 28th July</option>
@@ -256,69 +265,70 @@
             
             foreach($timetable1 as $res)
             {                     
-            echo '<option value="thursday">'.$res['date'].'</option>';
+            echo '<option>'.$res['date'].'</option>';
             break;
             }
             foreach($timetable2 as $res)
             {                     
-            echo '<option value="friday">'.$res['date'].'</option>';
+            echo '<option>'.$res['date'].'</option>';
             break;
             }
             foreach($timetable3 as $res)
             {                     
-            echo '<option value="saturday">'.$res['date'].'</option>';
+            echo '<option>'.$res['date'].'</option>';
             break;
             }
             foreach($timetable4 as $res)
             {                     
-            echo '<option value="sunday">'.$res['date'].'</option>';
+            echo '<option>'.$res['date'].'</option>';
             break;
             }
      
             ?>
         </select>
 
-        <select class="band">
+        <select class="band" name="band">
             <!--<option value="Gumbo Kings">Gumbo Kings</option>
             <option value="Evolve">Evolve</option>
             <option value="Ntjam Rosie">Ntjam Rosie</option>
             <option value="Wicked Jazz Sounds">Wicked Jazz Sounds</option>
             <option value="Tom Thomsom Assemble">Tom Thomsom Assemble</option>
             <option value="Jonna Frazer">Jonna Frazer</option>!-->
-            <?php
-            
-            
+            <?php            
                 foreach($timetable1 as $res)
                 {                     
-                echo '<option value="thursday">'.$res['band'].'</option>';
+                    echo '<option>'.$res['band'].'</option>';                   
                 }
                 foreach($timetable2 as $res)
                 {                     
-                echo '<option value="thursday">'.$res['band'].'</option>';
+                    echo '<option>'.$res['band'].'</option>';                    
                 }
                 foreach($timetable3 as $res)
                 {                     
-                echo '<option value="thursday">'.$res['band'].'</option>';
-                }                    
+                    echo '<option>'.$res['band'].'</option>';                    
+                }                                  
             ?>
         </select>        
-
+        
         <?php echo '<h3>'.$label2.'</h3>';?>       
 
-        <select class="quantity">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>            
+        <select class="quantity" name="quantity">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>            
         </select>
         <br>
-        <button type="button" class="addcart"><span>Add To Cart</span></button>
+                 
+            <input type="hidden" name="add" value="add"/>
+            <button type="submit" class="addcart"><span>Add To Cart</span></button>
+        </form>
     </div>
     
 
@@ -357,7 +367,7 @@
             <option value="10">10</option>   
         </select>  
         <br> 
-        <button type="button" class="addcart"><span>Add To Cart</span></button>
+        <button type="button" class="addcartacc"><span>Add To Cart</span></button>
         <br><br>
     </div>
     <div class="footer">

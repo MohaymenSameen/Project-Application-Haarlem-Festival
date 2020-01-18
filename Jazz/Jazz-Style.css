@@ -3,7 +3,7 @@ body
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-color: #F2F2F2;
+    background-color: #F2F2F2;    
 }
 div.navbar ul
 {    
@@ -14,7 +14,7 @@ div.navbar ul
     position: fixed;
     width: 100%;
     background-color:black;    
-    z-index: 999;
+    z-index: 2;
 }
 div.navbar li 
 {
@@ -34,7 +34,7 @@ div.navbar a:hover
 {
     background-color: purple;
 }
-div.navbar button.dropbtn
+div.dropdown button.dropbtn
 {
     margin-left: 10px;
     width: 250px;
@@ -42,6 +42,7 @@ div.navbar button.dropbtn
     border-radius: 30px;
     position: relative;
     top: 12px;
+    left: 370%;
     background-color: #f4511e;
     border-style: none;
     cursor: pointer;
@@ -51,45 +52,55 @@ div.navbar button.dropbtn
     font-size: 30px;
     color: white;
     font-family: "Century Gothic";
+    z-index: 4;
 }
-div.navbar button.dropbtn:hover
+div.dropdown button.dropbtn:hover
 {
     background-color:rgb(182, 0, 0);    
 }
-div.navbar button.dropbtn img
+div.dropdown button.dropbtn img
 {
     padding-top: 5px;
     height: 30px;   
 }
-div.navbar button.dropbtn span
+div.dropdown button.dropbtn span
 {
     padding-left: 20px;
 } 
-  .dropdown {
-    position: relative;
+div.dropdown 
+{
+    position: fixed;
     display: inline-block;
-  }
-  
-  .dropdown-content {
+    z-index: 5;
+}  
+div.dropdown div.dropdown-content
+{
     display: none;
-    position: absolute;
+    position: relative;
+    top: 10px;
+    left: 370%;
     background-color: #f1f1f1;
     min-width: 160px;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
+    z-index: 5;
+}  
+div.dropdown div.dropdown-content a
+{
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
-  
-  .dropdown a:hover {background-color: #ddd;}
-  
-  .show {display: block;}
+    z-index: 1;
+}  
+div.dropdown div.dropdown a:hover
+{
+    background-color: #ddd;
+}  
+div.dropdown div.show
+{
+    display: block;    
+}
 div.header
 {   
     display: flex;      
@@ -533,7 +544,7 @@ div.access_passes h3
     font-size: 50px; 
     font-weight: normal;
 }
-div.access_passes button.addcart
+div.access_passes button.addcartacc
 {   
     display: inline-block;
     border-radius: 4px;
@@ -548,14 +559,14 @@ div.access_passes button.addcart
     cursor: pointer;   
     font-family: "Century Gothic";
 }
-div.access_passes button.addcart span
+div.access_passes button.addcartacc span
 {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
-div.access_passes button.addcart span:after
+div.access_passes button.addcartacc span:after
 {
     content: '\00bb';
     position: absolute;
@@ -564,11 +575,11 @@ div.access_passes button.addcart span:after
     right: -20px;
     transition: 0.5s;
 }  
-div.access_passes button.addcart:hover span
+div.access_passes button.addcartacc:hover span
 {
     padding-right: 25px;
 }  
-div.access_passes button.addcart:hover span:after
+div.access_passes button.addcartacc:hover span:after
 {
     opacity: 1;
     right: 0;
@@ -578,7 +589,6 @@ div.footer
   height: 150px; 
   width: 100%;
   position: relative;
-  
   background-color: black;
   color: white;
   font-family: "Century Gothic";

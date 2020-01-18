@@ -1,11 +1,10 @@
 <?php
     require_once ('../model/jazz_model.php');
     class JazzController extends JazzModel
-    {       
+    {  
         public function recieveData()
         {            
-            $row = $this->getData();
-            
+            $row = $this->getData();            
             return $row;
         }
         public function recieveTimetable1()
@@ -26,6 +25,11 @@
         public function recieveTimetable4()
         {                        
             $row = $this->getTimetable4();            
+            return $row;
+        }
+        public function recievePrice($group, $date)
+        {
+            $row = $this->getPrice($group, $date);
             return $row;
         }
     }
