@@ -12,9 +12,9 @@
             <h1><img src="img/managePages.png" alt="icon manage pages"> Manage Pages</h1>
             <hr id="longLine"/>
 
-            <h2>Current pages</h2>
+            <h2 id ="nxt">Current pages</h2>
             <hr class="shortLine"/>
-            <h2>Create a new page</h2>
+            <h2 id = "nxt2">Create a new page</h2>
             <hr class="shortLine"/>
         </section>
     </body>

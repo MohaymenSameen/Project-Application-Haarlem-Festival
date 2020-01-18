@@ -103,6 +103,7 @@ div.navbar button.dropbtn span
 .shortLine{
     display: block;
     height: 1px;
+    width: 23%;
     border: 0;
     border-top: 1px solid #ccc;
     margin: 1em 0;
@@ -137,5 +138,20 @@ div#content{
 position: relative;
 left:15%;
 bottom: 700px;
+}
+
+h2#nxt{
+bottom: 50px;
+}
+h2#nxt2{
+position: relative;
+left: 40%;
+bottom: 60px;
+}
+
+h1{
+    font-size: 40px;
+    position: relative;
+    left: 10%;
 }
  
