@@ -240,4 +240,24 @@ input#createNewPage{
     height: 30px;
     width: 30%;
 }
+
+div.footer
+{
+  height: 150px; 
+  width: 100%;
+  position: relative;
+  background-color: black;
+  color: white;
+  font-family: "Century Gothic";
+  display: flex;  
+  white-space: nowrap;
+}
+
+div.footer img{
+    height: 70px;
+    width: 70px;
+    position: relative;
+    top: 10px;
+    left: 1000px;
+  }
  

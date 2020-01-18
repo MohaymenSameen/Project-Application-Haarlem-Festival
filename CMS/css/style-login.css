@@ -173,9 +173,29 @@ div.navbar button.dropbtn span
   }
 
   section form div label img.iconsLogin{
-    border:5px solid #ffffff;
+    border-image:5px solid #ffffff;
   }
 
 .forma a{
   color: #ffffff;
+}
+
+div.footer
+{
+  height: 100px; 
+  width: 100%;
+  position: relative;
+  background-color: black;
+  color: white;
+  font-family: "Century Gothic";
+  display: flex;  
+  white-space: nowrap;
+}
+
+div.footer img{
+  height: 70px;
+  width: 70px;
+  position: relative;
+  top: 10px;
+  left: 1000px;
 }

@@ -52,14 +52,13 @@ include ('controller/loginController.php');
 
         </section>
 
-        <footer id="footer">
-            <p class="left">All rights reserved &copy; 2019</p>
-
+        
+        <div class="footer">
+        
+        <p class="left">All rights reserved &copy; 2019</p>            
             <img class="right" src="img/logo_H.png">
             <img class="right" src="img/facebook.png">
             <img class="right" src="img/instagram.png">
-
-            <img class="right" src="img/youtube.png">
-        </footer>
+        </div>
     </body>
 </html>
