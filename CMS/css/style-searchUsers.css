@@ -57,8 +57,7 @@ div input#createAcc{
 }
 form button#saveProfile{
     position: relative;
-    top: 50px;
+    top: 145px;
     right: 80px;
     width: 80px;
-
 }
