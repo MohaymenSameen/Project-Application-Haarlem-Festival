@@ -153,13 +153,13 @@ bottom: 50px;
 h1{
     font-size: 40px;
     position: relative;
-    left: 10%;
+    left: 5%;
 }
 
 hr#firstSL{
     position: relative;
     top: 20px;
-    right: 590px;
+    right: 535px;
 }
 hr#secondSL{
     position: relative;
@@ -199,7 +199,7 @@ ul.editENButtons li{
     text-align: center;    
     border-radius: 5px;
     text-decoration: none;
-    bottom: 80px;
+    bottom: 100;
     list-style: none;
 }
 ul.editENButtons li input{
@@ -208,5 +208,35 @@ ul.editENButtons li input{
     background-color: #ED9F57;
     height: 30px;
     width: 4%;
+}
+
+ul.removePage li{   
+    position: relative;
+    right: 360px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;    
+    border-radius: 5px;
+    text-decoration: none;
+    bottom: 100;
+    list-style: none;
+}
+ul.removePage li input{
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #FF3232;
+    height: 30px;
+    width: 4%;
+}
+
+input#createNewPage{
+    position: relative;
+    bottom: 100;
+    right: 60px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #00ff00;
+    height: 30px;
+    width: 30%;
 }
  
