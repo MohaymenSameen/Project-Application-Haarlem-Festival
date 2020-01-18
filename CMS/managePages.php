@@ -16,6 +16,12 @@
             <hr id = "firstSL" class="shortLine"/>
             <h2 id = "nxt2">Create a new page</h2>
             <hr id = "secondSL" class="shortLine"/>
+
+            <ul class="pagesList">
+                <li><a href="./jazz" >Jazz</a></li>
+                <li><a href="dance.php" >Dance</a></li>
+                <li><a href="home.php" >Home</a></li>
+            </ul>
         </section>
     </body>
 </html>

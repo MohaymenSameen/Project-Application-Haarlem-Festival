@@ -165,4 +165,10 @@ hr#secondSL{
     position: relative;
     bottom: 50px;
 }
+
+ul.pagesList li{
+    position: relative;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
  
