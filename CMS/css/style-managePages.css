@@ -171,4 +171,11 @@ ul.pagesList li{
     margin-top: 25px;
     margin-bottom: 25px;
 }
+
+ul.editNLButtons li{
+    position: relative;
+    left: 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
  

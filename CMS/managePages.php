@@ -23,6 +23,13 @@
                 <li>Dance</a></li>
                 <li>Home</a></li>
             </ul>
+
+            <ul class="editNLButtons">
+                <li><input type="submit" value="JazzNL"></li>
+                <li><input type="submit" value="DanceNL"></li>
+                <li><input type="submit" value="HomeNL"></li>
+            </ul>
+
         </section>
     </body>
 </html>
