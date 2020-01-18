@@ -13,9 +13,9 @@
             <hr id="longLine"/>
 
             <h2 id ="nxt">Current pages</h2>
-            <hr class="shortLine"/>
+            <hr id = "firstSL" class="shortLine"/>
             <h2 id = "nxt2">Create a new page</h2>
-            <hr class="shortLine"/>
+            <hr id = "secondSL" class="shortLine"/>
         </section>
     </body>
 </html>
