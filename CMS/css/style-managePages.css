@@ -103,7 +103,7 @@ div.navbar button.dropbtn span
 .shortLine{
     display: block;
     height: 1px;
-    width: 23%;
+    width: 30%;
     border: 0;
     border-top: 1px solid #ccc;
     margin: 1em 0;
@@ -172,10 +172,41 @@ ul.pagesList li{
     margin-bottom: 25px;
 }
 
-ul.editNLButtons li{
+ul.editNLButtons li{   
     position: relative;
-    left: 30px;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    right: 560px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;    
+    border-radius: 5px;
+    text-decoration: none;
+    bottom: 80px;
+    list-style: none;
+}
+ul.editNLButtons li input{
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #ED9F57;
+    height: 30px;
+    width: 4%;
+}
+
+ul.editENButtons li{   
+    position: relative;
+    right: 460px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;    
+    border-radius: 5px;
+    text-decoration: none;
+    bottom: 80px;
+    list-style: none;
+}
+ul.editENButtons li input{
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #ED9F57;
+    height: 30px;
+    width: 4%;
 }
  

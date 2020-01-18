@@ -25,9 +25,15 @@
             </ul>
 
             <ul class="editNLButtons">
-                <li><input type="submit" value="JazzNL"></li>
-                <li><input type="submit" value="DanceNL"></li>
-                <li><input type="submit" value="HomeNL"></li>
+                <li><input type="submit" id="JazzNL" value="Edit NL"></li>
+                <li><input type="submit" id="DanceNL" value="Edit NL"></li>
+                <li><input type="submit" id="HomeNL" value="Edit NL"></li>
+            </ul>
+
+            <ul class="editENButtons">
+                <li><input type="submit" id="JazzEN" value="Edit EN "></li>
+                <li><input type="submit" id="DanceEN" value="Edit EN "></li>
+                <li><input type="submit" id="HomeEN" value="Edit EN "></li>
             </ul>
 
         </section>
