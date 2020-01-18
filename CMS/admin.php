@@ -55,13 +55,13 @@
             <li><a href="#" data-target="managePages">Manage Pages</a></li>
             <li><a href="#" data-target="editProfile">Profile</a></li>
             <li><a href="#" data-target="searchUsers">Search Users</a></li>
-            <li><a href="manageReservations">Manage Reservations</a></li>
-            <li><a href="invoices">Invoices</a></li>
-            <li><a href="createInvoice">Create Invoice</a></li>
-            <li><a href="registerPayment">Register Payment</a></li>
-            <li><a href="scanTickets">Scan Tickets</a></li>
-            <li><a href="exportData">Export Data</a></li>
-            <li><a href="createAcc">Create Account</a></li>
+            <li><a href="#" data-target="">Manage Reservations</a></li>
+            <li><a href="#" data-target="invoices">Invoices</a></li>
+            <li><a href="#" data-target="createInvoice">Create Invoice</a></li>
+            <li><a href="#" data-target="registerPayment">Register Payment</a></li>
+            <li><a href="#" data-target="">Scan Tickets</a></li>
+            <li><a href="#" data-target="">Export Data</a></li>
+            <li><a href="#" data-target="view/createAcc">Create Account</a></li>
         </ul>
       </nav>
       

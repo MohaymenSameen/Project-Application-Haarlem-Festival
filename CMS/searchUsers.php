@@ -9,13 +9,13 @@
     </head>
     <body>    
         <section>
-            <h1><img src="../CMS/img/searchUsersicon.png" alt="icon search users"> Search Users</h1>
+            <h1><img src="img/searchUsersicon.png" alt="icon search users"> Search Users</h1>
             <hr id="longLine"/>
         </section>
         <form>                    
             <label>Name <input type="text" ></label>         
-            <label>Email Address<input type="text" ></label>
-            <label>Registration Date<input type="text" placeholde="(dd/mm/yyyy)" ></label> <!-- not sure for this one-->
+            <label>Email Address <input type="text" ></label>
+            <label>Registration Date <input type="text" placeholde="(dd/mm/yyyy)" ></label> <!-- not sure for this one-->
             <button class="buttonsLila" type="button">Search</button>
             
         </form> 
