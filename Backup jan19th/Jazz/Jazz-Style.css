@@ -1,0 +1,680 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #F2F2F2;    
+}
+div.navbar ul
+{    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    background-color:black;    
+    z-index: 2;
+}
+div.navbar li 
+{
+    float: left;    
+}  
+div.navbar li a 
+{
+    font-family: "Century Gothic";
+    font-size: 30px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 50px;
+    text-decoration: none;   
+}
+div.navbar a:hover
+{
+    background-color: purple;
+}
+div.dropdown button.dropbtn
+{
+    margin-left: 10px;
+    width: 250px;
+    height: 50px;
+    border-radius: 30px;
+    position: relative;
+    top: 12px;
+    /*left:370%*/
+    left: 970px;
+    background-color: #f4511e;
+    border-style: none;
+    cursor: pointer;
+    transition: 0.3s;
+    padding-left: 50px;
+    text-align: left;
+    font-size: 30px;
+    color: white;
+    font-family: "Century Gothic";
+    z-index: 4;
+}
+div.dropdown button.dropbtn:hover
+{
+    background-color:rgb(182, 0, 0);    
+}
+div.dropdown button.dropbtn img
+{
+    padding-top: 5px;
+    height: 30px;   
+}
+div.dropdown button.dropbtn span
+{
+    padding-left: 20px;
+} 
+div.dropdown 
+{
+    position: fixed;
+    display: inline-block;   
+    z-index: 5;   
+}  
+div.dropdown div.dropdown-content
+{
+    display: none;   
+    background-color: #f1f1f1;
+    min-width: 160px; 
+    width: 400px;      
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 5;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0;
+    padding-bottom: 10px;
+}  
+div.dropdown div.dropdown-content h2
+{
+    font-family: "Century Gothic";    
+}
+div.dropdown div.dropdown-content h2#band
+{
+    font-family: "Century Gothic";
+    font-size: 20px;
+    font-weight: normal;
+}
+div.dropdown div.dropdown-content h2#quantity
+{
+    font-family: "Century Gothic";
+    font-size: 20px;
+    font-weight: bold;
+}
+div.dropdown div.show
+{
+    display: block;
+    position: relative;   
+    top: 30px; 
+    /*left:370%*/
+    left: 920px;    
+}
+div.dropdown button.delete
+{
+    background-color: #f4511e;
+    border-style: none;
+    color: white;
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    position: relative;
+    left: 70%;
+    bottom: 70px;
+    transition: 0.3s;
+}
+div.dropdown button.delete:hover
+{
+    background-color: rgb(182, 0, 0);
+}
+div.dropdown button.checkout
+{
+    background-color: #f4511e;
+    border-style: none;
+    color: white;
+    cursor: pointer;
+    width: 150px;
+    height: 30px;
+    margin-top: 30px;
+    position: relative;
+    left: 18%;    
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.3s;
+}
+div.dropdown button.checkout:hover
+{
+    background-color: rgb(182, 0, 0);
+}
+div.header
+{   
+    display: flex;      
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+div.header img
+{      
+    width: 100%;
+    height: 600px;    
+    object-fit: cover;
+    object-position: 100% 60%;
+}
+div.header p
+{    
+    font-size: 8vw;
+    white-space: nowrap;    
+    font-family: "Century Gothic";
+    padding: 20px;
+    box-shadow: 1px 1px 5px 1px #222222;
+    color: white;
+    background-color: rgba(0,0,0,0.5);     
+    position: absolute;        
+    left: 28%;
+    margin-left: -50px; 
+    margin-top: 180px;    
+}
+div.information
+{        
+    margin-left: 10%;
+    width: 100%;
+    height: 100%;    
+    font-size: 3vw;    
+    color: #333333;
+    padding: 0;  
+    margin-top: 20px;  
+    display: inline-block;
+    font-family: "Century Gothic";    
+}
+div.information h1
+{
+    font-weight: bold;
+    position: relative;      
+    bottom: 50px;
+}
+div.information p
+{   
+    position: relative;    
+    bottom: 50px;
+    width: 50%;
+    left: 35%;
+    word-wrap: break-word;   
+    font-size: 3vh;      
+}
+div.picture2 img
+{
+    width: 100%;
+    height: 600px; 
+    object-fit: cover;
+    object-position: 100% 50%;
+}
+div.timetable1
+{
+    margin-left: 10%;
+    width: 80%;
+    height: 100%;    
+    font-size: 6vh;    
+    color: #333333;
+    padding: 0;    
+    display: inline-block;
+    font-family: "Century Gothic";
+}
+div.timetable1 h2
+{
+    font-weight: 500;
+    font-size: 9vh;
+}
+div.timetable1 table
+{
+    font-family: "Century Gothic";
+    font-size: 24px;    
+    border-collapse: collapse;
+    width: 100%;
+}
+div.timetable1 table td,th
+{    
+    text-align: center;
+    padding: 25px;
+}
+div.timetable1 table th
+{
+    background-color: #333333;
+    color: white;
+    font-size: 30px;
+}
+div.timetable1 table tr:nth-child(even)
+{   
+    background-color: #CCCCCC;      
+}
+div.timetable2
+{
+    margin-left: 10%;
+    width: 80%;
+    height: 100%;    
+    font-size: 6vh;    
+    color: #333333;
+    padding: 0;    
+    display: inline-block;
+    font-family: "Century Gothic";
+}
+div.timetable2 h2
+{
+    font-weight: 500;    
+    color: white;
+    text-align: right;
+    font-size: 9vh;
+}
+div.timetable2 table
+{
+    font-family: "Century Gothic";
+    font-size: 24px;    
+    border-collapse: collapse;
+    width: 100%;
+}
+div.timetable2 table td,th
+{    
+    text-align: center;
+    padding: 25px;
+}
+div.timetable2 table th
+{
+    background-color: #333333;
+    color: white;
+    font-size: 30px;
+}
+div.timetable2 table tr:nth-child(even)
+{   
+    background-color: #CCCCCC;      
+}
+div.timetable2 table tr:nth-child(odd)
+{   
+    background-color:  #F2F2F2;       
+}
+div.timetable3
+{
+    margin-left: 10%;
+    width: 80%;
+    height: 100%;    
+    font-size: 6vh;    
+    color: #333333;
+    padding: 0;    
+    display: inline-block;
+    font-family: "Century Gothic";
+}
+div.timetable3 h2
+{
+    font-weight: 500;    
+    font-size: 9vh;
+}
+div.timetable3 table
+{
+    font-family: "Century Gothic";
+    font-size: 24px;    
+    border-collapse: collapse;
+    width: 100%;
+}
+div.timetable3 table td,th
+{    
+    text-align: center;
+    padding: 25px;
+}
+div.timetable3 table th
+{
+    background-color: #333333;
+    color: white;
+    font-size: 30px;
+}
+div.timetable3 table tr:nth-child(even)
+{   
+    background-color: #CCCCCC;      
+}
+div.timetable4
+{
+    margin-left: 10%;
+    width: 80%;
+    height: 100%;    
+    font-size: 6vh;    
+    color: #333333;
+    padding: 0;    
+    display: inline-block;
+    font-family: "Century Gothic";
+}
+div.timetable4 h2
+{
+    font-weight: 500;
+    font-size: 9vh;
+    text-align: right;
+}
+div.timetable4 table
+{
+    font-family: "Century Gothic";
+    font-size: 24px;    
+    border-collapse: collapse;
+    width: 100%;
+}
+div.timetable4 table td,th
+{    
+    text-align: center;
+    padding: 25px;
+}
+div.timetable4 table th
+{
+    background-color: #333333;
+    color: white;
+    font-size: 30px;
+}
+div.timetable4 table tr:nth-child(even)
+{   
+    background-color: #CCCCCC;      
+}
+div.timetable4 table tr:nth-child(odd)
+{   
+    background-color: white;       
+}
+div.backcolor2
+{
+    background-color: #39385D;    
+}
+div.backcolor4
+{
+    background-color: #CF4B7E;
+}
+div.tickets
+{     
+    margin-left: 10%; 
+    margin-top: 5%;   
+    height: 150px;    
+    font-family: "Century Gothic"; 
+    color: #333333;        
+}
+div.tickets h1
+{
+    position: relative;
+    margin: 0;    
+    left: 15%;
+    font-size: 80px;    
+}
+div.tickets h2
+{  
+    position: relative;
+    margin: 0;
+    left: 6%; 
+    font-size: 50px;
+    font-weight: normal;
+    white-space: nowrap;
+}
+div.tickets select.band
+{
+    display: inline;
+    font-size: 30px;
+    font-family: "Century Gothic";             
+}
+div.tickets select.date
+{   
+    display: inline;
+    font-size: 30px;   
+    font-family: "Century Gothic";         
+}
+div.tickets h3
+{           
+    font-size: 50px; 
+    font-weight: normal;
+}
+div.tickets select.quantity
+{   display: inline-block;
+    position: relative;  
+    left: 17%;
+    bottom: 100px;
+    width: 60px;
+    font-size: 30px;   
+    font-family: "Century Gothic";
+}
+div.tickets button.addcart
+{    
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+    width: 310px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;   
+    position: relative;
+    left: 12%;
+    bottom: 50px;
+    font-family: "Century Gothic";
+    position: relative;                     
+}
+div.tickets button.addcart span
+{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+div.tickets button.addcart span:after
+{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}  
+div.tickets button.addcart:hover span
+{
+    padding-right: 25px;
+}  
+div.tickets button.addcart:hover span:after
+{
+    opacity: 1;
+    right: 0;
+}
+div.cross_selling
+{
+    text-align: center;    
+    position: relative;
+    width: 40%;
+    left: 60%;    
+    bottom: 100px;
+    font-family: "Century Gothic";    
+}
+div.cross_selling h1
+{
+    position: relative;         
+    font-size: 35px;
+    font-weight: normal;
+    white-space: nowrap;
+    color: #f4511e;
+}
+div.cross_selling h2
+{
+    position: relative;        
+    font-size: 20px;
+    font-weight: normal;
+    white-space: nowrap;
+    color: #333333;
+}
+div.cross_selling img
+{
+    position: relative;
+    margin:3%;
+    margin-top: 0;
+    margin-bottom: 0;    
+    height: 100px;    
+}
+div.cross_selling button.cross
+{     
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 120px;   
+    transition: all 0.5s;
+    cursor: pointer;
+    position: relative;    
+    margin: 10px;      
+    font-family: "Century Gothic";
+}
+div.cross_selling button.cross span
+{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+div.cross_selling button.cross span:after
+{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}  
+div.cross_selling button.cross:hover span
+{
+    padding-right: 25px;
+}  
+div.cross_selling button.cross:hover span:after
+{
+    opacity: 1;
+    right: 0;
+}
+div.access_passes
+{      
+    font-family: "Century Gothic"; 
+    color: #333333;
+    text-align: center; 
+   
+    background-color: rgba(120, 36, 76, 1);    
+}
+div.access_passes h1
+{
+    font-size: 100px;
+    color: white;
+}
+div.access_passes h2
+{
+    font-size: 30px;
+    color: white;
+    font-weight: normal;
+}
+div.access_passes select.quantity
+{    
+    box-sizing: border-box; 
+    height: 50px;   
+    margin-right: 480px;
+    font-size: 30px;   
+    font-family: "Century Gothic";
+}
+div.access_passes select.pass_type
+{ 
+    box-sizing: border-box;     
+    height: 50px;       
+    font-size: 30px;   
+    font-family: "Century Gothic";
+}
+div.access_passes h3
+{
+    display: inline-block; 
+    color: white;
+    font-size: 50px; 
+    font-weight: normal;
+}
+div.access_passes button.addcartacc
+{   
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+    width: 350px;    
+    transition: all 0.5s;
+    cursor: pointer;   
+    font-family: "Century Gothic";
+}
+div.access_passes button.addcartacc span
+{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+div.access_passes button.addcartacc span:after
+{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}  
+div.access_passes button.addcartacc:hover span
+{
+    padding-right: 25px;
+}  
+div.access_passes button.addcartacc:hover span:after
+{
+    opacity: 1;
+    right: 0;
+}
+div.footer
+{
+  height: 150px; 
+  width: 100%;
+  position: relative;
+  background-color: black;
+  color: white;
+  font-family: "Century Gothic";
+  display: flex;  
+  white-space: nowrap;
+}
+
+.left
+{
+  color: #fff;
+  background-color: #000;
+  margin-top:2%;
+  margin-left: 1%;
+  float: left;  
+}
+
+.right
+{
+  background-color: #000;
+  position: relative;
+  left: 62%; 
+  top: 20px;
+  height: 50px;  
+  width: 5%;
+  object-fit: scale-down;
+}
+@media only screen and (max-width: 800px)
+{
+    li 
+    {
+        display: hidden;
+    }
+    div.header img
+    {
+        width: 100%;
+        height: 500px;        
+    }
+    div.header p
+    {
+        font-size: 65px;
+    }    
+}

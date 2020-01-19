@@ -1,0 +1,163 @@
+body
+{
+  margin: 0;
+  padding: 0px;
+  overflow: hidden;
+  background-color: #F2F2F2;  
+}
+div.navbar ul
+{    
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  background-color:black;    
+  z-index: 999;
+}
+div.navbar li 
+{
+  float: left;    
+}  
+div.navbar li a 
+{
+  font-family: "Century Gothic";
+  font-size: 30px;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 50px;
+  text-decoration: none;
+  
+}
+div.navbar a:hover
+{
+  background-color: rgb(32, 32, 202);
+}
+img
+{    
+  width: 100%;
+  height: 700px;    
+  object-fit: cover;
+  object-position: 100% 90%;
+  margin: 0;
+  padding: 0;
+}
+h1
+{
+  font-size: 8vw;       
+  font-family: "Century Gothic";
+  padding: 20px;
+  color: white;
+  background-color: rgba(0,0,0,0.5);     
+  position: absolute;      
+  margin-left: 17%; 
+  margin-top: 180px;    
+}
+div.countdown
+{
+  position: relative;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  margin-left: 33%;
+  height: 130px;
+  box-shadow: 1px 1px 5px 1px #222222;
+  width: 35%;
+  bottom: 350px;    
+  text-align: center;   
+  font-size: 40px; 
+  font-family: "Century Gothic";
+}
+div.countdown h2#text
+{    
+  font-size: 20px;
+  position: relative;
+  bottom: 50px;
+  margin-left: 30px;
+}
+/*.secondary{
+  float: right;
+  padding-right: 20%;
+}
+
+#img logo_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:251px;
+  height:141px;
+}
+#logo {
+  border-width:0px;
+  position:absolute;
+  left:1629px;
+  top:80px;
+  width:251px;
+  height:141px;
+}
+
+#logo_div {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:239px;
+  height:239px;
+  background:inherit;
+  background-color:rgba(255, 255, 255, 1);
+  box-sizing:border-box;
+  border-width:1px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:0px;
+  -moz-box-shadow:5px 5px 5px rgba(0, 0, 0, 0.349019607843137);
+  -webkit-box-shadow:5px 5px 5px rgba(0, 0, 0, 0.349019607843137);
+  box-shadow:5px 5px 5px rgba(0, 0, 0, 0.349019607843137);
+}
+#logo_square {
+  border-width:0px;
+  position:absolute;
+  left:1633px;
+  top:0px;
+  width:239px;
+  height:239px;
+  -webkit-transform:rotate(45deg);
+  -moz-transform:rotate(45deg);
+  -ms-transform:rotate(45deg);
+  transform:rotate(45deg);
+}
+*/
+div.footer
+{
+  height: 150px; 
+  width: 100%;
+  position: relative;
+  bottom:200px;
+  background-color: black;
+  color: white;
+  font-family: "Century Gothic";
+  display: flex;  
+  white-space: nowrap;
+}
+
+.left
+{
+  color: #fff;
+  background-color: #000;
+  margin-top:2%;
+  margin-left: 1%;
+  float: left;  
+}
+
+.right
+{
+  background-color: #000;
+  position: relative;
+  left: 62%; 
+  top: 20px;
+  height: 50px;  
+  width: 5%;
+  object-fit: scale-down;
+}

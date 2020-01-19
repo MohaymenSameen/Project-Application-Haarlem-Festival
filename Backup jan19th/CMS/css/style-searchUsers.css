@@ -1,0 +1,63 @@
+body{
+    margin: 0%;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    background-color: #ffffff;
+    font-family: "Century Gothic";
+}
+
+#longLine{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.buttonsLila{
+    color: #ffffff;
+    background: cornflowerblue;
+    border: 0;
+    height: 30px;
+    width: 80px;
+    border-radius: 10px;
+
+}
+.withIcon{
+    background: url(../img/u632.png) no-repeat scroll 7px 7px;
+padding-left:30px;
+}
+
+div.form-group label{
+    float: left;
+    clear: left;
+    text-align: right;
+    width: 250px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    margin-right: 10px;
+    
+}
+div.form-group input {
+    float: left;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    width: 250px;
+}
+div.form-group input#rad{
+    position: relative;
+    right: 120px;
+    top: 3px;
+} 
+div input#createAcc{
+    position: relative;
+    top: 50px;
+    right: 80px;
+    width: 80px;
+}
+form button#saveProfile{
+    position: relative;
+    top: 145px;
+    right: 80px;
+    width: 80px;
+}
