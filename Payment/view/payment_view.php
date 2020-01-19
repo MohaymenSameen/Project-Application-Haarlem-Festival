@@ -30,7 +30,6 @@
         </div>
         <?php
             echo '<h2 id="band">'.$_SESSION['band']," (",$_SESSION['date'],") ".'</h2>'; 
-            
             if(isset($_SESSION['band']))
             {
                 if($_SESSION['quan'] != 1)
@@ -71,10 +70,24 @@
             {
                 session_destroy();
                 header("Location: ../../Home/view/home_view.php");
-            }            
+            }   
+            echo ' <hr>';
+                
+            if($_SESSION['price'] == "Free")
+            {
+                echo '<h3>'."Cart Total: ",$_SESSION['price'].'</h3>';
+
+            }
+            else
+            {
+                $newPrice = $_SESSION['quan'] * $_SESSION['price'];
+                echo '<h3>'."Cart Total: &euro; ",$newPrice.'</h3>';
+            }
+
         ?>
-        <hr>
-        <h3>Cart Total: <?php echo '&euro;',$newPrice?> </h3>
+       
+        
+       
         </form>
     </div>
 
