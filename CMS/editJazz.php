@@ -8,7 +8,7 @@
     </head>
     <body> 
     <section>
-        <h1><img src="../CMS/img/editProfileicon.png" alt="icon search users"> Create Invoice </h1>
+        <h1><img src="img/editProfileicon.png" alt="icon search users"> Edit Jazz Page </h1>
     </section>
     <form>                    
         <label>E-mail Address <input type="text" ></label> 

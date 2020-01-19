@@ -1,3 +1,6 @@
+<?php
+    include ('controller/createAccController.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,16 +12,32 @@
     </head>
     <body> 
     <section>
-        <h1><img src="../CMS/img/editProfileicon.png" alt="icon search users"> Create Invoice </h1>
+        <h1><img src="img/editProfileicon.png" alt="icon search users"> Edit Profile </h1>
         <hr id="longLine"/>
     </section>
     <form>                    
-        <label>E-mail Address <input type="text" ></label> 
-        <label>Password<input type="password"></label>
-        <label>Confirm Password<input type="password"></label>        
-        <label>Phone Number<input type="text"></label><label>
-        
-        <button class="buttonsLila" type="button">Save Changes</button>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
+                <label>E-mail Address</label>
+                <input type="email" name="email" value="<?php echo $email; ?>">
+                <span><?php echo $email_err; ?></span>
+            </div>
+            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                <label>Password</label>
+                <input type="password" name="password" value="<?php echo $password; ?>">
+                <span><?php echo $password_err; ?></span>
+            </div>
+            <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
+                <label>Confirm Password</label>
+                <input type="password" name="confirm_password" value="<?php echo $confirm_password; ?>">
+                <span><?php echo $confirm_password_err; ?></span>
+            </div>
+            <div class="form-group <?php echo (!empty($phone_err)) ? 'has-error' : ''; ?>">
+                <label>Phone number</label>
+                <input type="number" name="phone" class="form-control" value="<?php echo $phone; ?>">
+                <span class="help-block"><?php echo $phone_err; ?></span>
+            </div>        
+        <button class="buttonsLila" id="saveProfile" type="button">Save</button>
     </form> 
 
 </body>

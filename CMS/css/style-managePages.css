@@ -103,6 +103,7 @@ div.navbar button.dropbtn span
 .shortLine{
     display: block;
     height: 1px;
+    width: 32%;
     border: 0;
     border-top: 1px solid #ccc;
     margin: 1em 0;
@@ -138,4 +139,125 @@ position: relative;
 left:15%;
 bottom: 700px;
 }
+
+h2#nxt{
+    position: relative;
+    top: 20px;
+}
+h2#nxt2{
+position: relative;
+left: 40%;
+bottom: 50px;
+}
+
+h1{
+    font-size: 40px;
+    position: relative;
+    left: 5%;
+}
+
+hr#firstSL{
+    position: relative;
+    top: 20px;
+    right: 528px;
+}
+hr#secondSL{
+    position: relative;
+    bottom: 50px;
+    left: 80px;
+}
+
+ul.pagesList li{
+    position: relative;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+ul.editNLButtons li{   
+    position: relative;
+    right: 560px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;    
+    border-radius: 5px;
+    text-decoration: none;
+    bottom: 80px;
+    list-style: none;
+}
+ul.editNLButtons li input{
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #ED9F57;
+    height: 30px;
+    width: 4%;
+}
+
+ul.editENButtons li{   
+    position: relative;
+    right: 460px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;    
+    border-radius: 5px;
+    text-decoration: none;
+    bottom: 100;
+    list-style: none;
+}
+ul.editENButtons li input{
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #ED9F57;
+    height: 30px;
+    width: 4%;
+}
+
+ul.removePage li{   
+    position: relative;
+    right: 360px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;    
+    border-radius: 5px;
+    text-decoration: none;
+    bottom: 100;
+    list-style: none;
+}
+ul.removePage li input{
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #FF3232;
+    height: 30px;
+    width: 5%;
+}
+
+input#createNewPage{
+    position: relative;
+    bottom: 100;
+    right: 60px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #00ff00;
+    height: 30px;
+    width: 30%;
+}
+
+div.footer
+{
+  height: 150px; 
+  width: 100%;
+  position: relative;
+  background-color: black;
+  color: white;
+  font-family: "Century Gothic";
+  display: flex;  
+  white-space: nowrap;
+}
+
+div.footer img{
+    height: 70px;
+    width: 70px;
+    position: relative;
+    top: 10px;
+    left: 1000px;
+  }
  

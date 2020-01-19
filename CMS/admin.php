@@ -33,7 +33,7 @@
     <div class="navbar">
         <ul>
             <li><a href="../../Home/view/home_view.php">Home</a></li>
-            <li><a href="jazz_view.php"><strong>Jazz</strong></a></li>
+            <li><a href="jazz_view.php">Jazz</a></li>
             <li><a href="Dance.html">Dance</a></li>
             <li><a href="Food.html">Food</a></li>
             <li><a href="../CMS/admin.php">Volunteer</a></li>
@@ -55,29 +55,28 @@
             <li><a href="#" data-target="managePages">Manage Pages</a></li>
             <li><a href="#" data-target="editProfile">Profile</a></li>
             <li><a href="#" data-target="searchUsers">Search Users</a></li>
-            <li><a href="manageReservations">Manage Reservations</a></li>
-            <li><a href="invoices">Invoices</a></li>
-            <li><a href="createInvoice">Create Invoice</a></li>
-            <li><a href="registerPayment">Register Payment</a></li>
-            <li><a href="scanTickets">Scan Tickets</a></li>
-            <li><a href="exportData">Export Data</a></li>
-            <li><a href="createAcc">Create Account</a></li>
+            <li><a href="#" data-target="">Manage Reservations</a></li>
+            <li><a href="#" data-target="invoices">Invoices</a></li>
+            <li><a href="#" data-target="createInvoice">Create Invoice</a></li>
+            <li><a href="#" data-target="registerPayment">Register Payment</a></li>
+            <li><a href="#" data-target="">Scan Tickets</a></li>
+            <li><a href="#" data-target="">Export Data</a></li>
+            <li><a href="#" data-target="view/createAcc">Create Account</a></li>
         </ul>
       </nav>
       
         <div id="content">
             <?php include('managePages.php'); ?>
         </div>
-    </body>
-    
-    <footer id="footer">
-            <p class="left">All rights reserved &copy; 2019</p>
 
+        
+        <div class="footer">
+        
+        <p class="left">All rights reserved &copy; 2019</p>            
             <img class="right" src="img/logo_H.png">
             <img class="right" src="img/facebook.png">
             <img class="right" src="img/instagram.png">
-
-            <img class="right" src="img/youtube.png">
-        </footer>
+        </div>
+    </body>    
 
 </html>

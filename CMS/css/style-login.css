@@ -4,99 +4,93 @@ body{
     background-image: url("../img/background.jpg");
 }
 
-nav{
-    background-color: #000;
-    overflow: hidden;
-}
 
-ul {
+div.navbar ul
+{    
     list-style-type: none;
-    font-size: 24pt;
-    background-color: #000;
-    color: #fff;
-}
-
-a:link{
-    text-decoration: none;
-    color: white;
-}
-
-a:visited{
-    text-decoration: none;
-    color: white;
-}
-
-li a:hover{
-  background-color: #6494ed;
-}
-
-li{
-    display: inline-block;
-    margin: 7pt;
-    margin-top: 0pt;
-    margin-bottom: 0pt;
-    padding-right: 5pt;
-    padding-left: 5pt;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     
+    width: 100%;
+    background-color:black;    
+    z-index: 999;
 }
-
-.main{
-    float: left;
+div.navbar li 
+{
+    float: left;    
+}  
+div.navbar li a 
+{
+    font-family: "Century Gothic";
+    font-size: 30px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 50px;
+    text-decoration: none;   
 }
-
-
-.secondary{
-    float: right;
-    padding-right: 20%;
+div.navbar a:hover
+{
+    background-color: rgb(169, 123, 184);
 }
+div.navbar button.dropbtn
+{
+    margin-left: 10px;
+    width: 250px;
+    height: 50px;
+    border-radius: 30px;
+    position: relative;
+    top: 12px;
+    background-color: #f4511e;
+    border-style: none;
+    cursor: pointer;
+    transition: 0.3s;
+    padding-left: 50px;
+    text-align: left;
+    font-size: 30px;
+    color: white;
+    font-family: "Century Gothic";
+}
+div.navbar button.dropbtn:hover
+{
+    background-color:rgb(182, 0, 0);    
+}
+div.navbar button.dropbtn img
+{
+    padding-top: 5px;
+    height: 30px;   
+}
+div.navbar button.dropbtn span
+{
+    padding-left: 20px;
+} 
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
 
-#logo_img {
-    border-width:0px;
-    position:absolute;
-    left:0px;
-    top:0px;
-    width:251px;
-    height:141px;
-  }
-  #logo {
-    border-width:0px;
-    position:absolute;
-    left:1629px;
-    top:80px;
-    width:251px;
-    height:141px;
-  }
-
-  #logo_div {
-    border-width:0px;
-    position:absolute;
-    left:0px;
-    top:0px;
-    width:239px;
-    height:239px;
-    background:inherit;
-    background-color:rgba(255, 255, 255, 1);
-    box-sizing:border-box;
-    border-width:1px;
-    border-style:solid;
-    border-color:rgba(121, 121, 121, 1);
-    border-radius:0px;
-    -moz-box-shadow:5px 5px 5px rgba(0, 0, 0, 0.349019607843137);
-    -webkit-box-shadow:5px 5px 5px rgba(0, 0, 0, 0.349019607843137);
-    box-shadow:5px 5px 5px rgba(0, 0, 0, 0.349019607843137);
-  }
-  #logo_square {
-    border-width:0px;
-    position:absolute;
-    left:1633px;
-    top:0px;
-    width:239px;
-    height:239px;
-    -webkit-transform:rotate(45deg);
-    -moz-transform:rotate(45deg);
-    -ms-transform:rotate(45deg);
-    transform:rotate(45deg);
-  }
 
   
 
@@ -134,7 +128,7 @@ li{
 
   #login{
     height: 550px;
-    width: 30%;
+    width: 40%;
   }
 
   #loginButton{
@@ -148,3 +142,60 @@ li{
     background: transparent;
     border: 0;
   }
+
+  section form.forma{
+    position: relative;
+    bottom: 120px;
+    left: 650px;
+  }
+
+  section form.forma div{
+    border: 1px;
+    border-color: #fff;
+  }
+
+  input#loginButton{
+    color: #ffffff;
+    background: cornflowerblue;
+    border: 0;
+    height: 35px;
+    width: 100px;
+    border-radius: 10px;
+    position: relative;
+    left: 50px;
+    margin-top: 20px;
+    
+  }
+  section form.forma a{
+    position: relative;
+    top: 60px;
+    right: 90px;
+  }
+
+  section form div label img.iconsLogin{
+    border-image:5px solid #ffffff;
+  }
+
+.forma a{
+  color: #ffffff;
+}
+
+div.footer
+{
+  height: 100px; 
+  width: 100%;
+  position: relative;
+  background-color: black;
+  color: white;
+  font-family: "Century Gothic";
+  display: flex;  
+  white-space: nowrap;
+}
+
+div.footer img{
+  height: 70px;
+  width: 70px;
+  position: relative;
+  top: 10px;
+  left: 1000px;
+}

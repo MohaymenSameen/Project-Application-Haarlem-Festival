@@ -15,12 +15,49 @@ body{
 }
 
 .buttonsLila{
-    color: black;
+    color: #ffffff;
     background: cornflowerblue;
     border: 0;
-    border-radius: 30px;
+    height: 30px;
+    width: 80px;
+    border-radius: 10px;
+
 }
 .withIcon{
     background: url(../img/u632.png) no-repeat scroll 7px 7px;
 padding-left:30px;
+}
+
+div.form-group label{
+    float: left;
+    clear: left;
+    text-align: right;
+    width: 250px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    margin-right: 10px;
+    
+}
+div.form-group input {
+    float: left;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    width: 250px;
+}
+div.form-group input#rad{
+    position: relative;
+    right: 120px;
+    top: 3px;
+} 
+div input#createAcc{
+    position: relative;
+    top: 50px;
+    right: 80px;
+    width: 80px;
+}
+form button#saveProfile{
+    position: relative;
+    top: 145px;
+    right: 80px;
+    width: 80px;
 }
