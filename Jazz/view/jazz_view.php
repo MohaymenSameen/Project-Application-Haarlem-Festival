@@ -1,6 +1,6 @@
 <?php
     require_once ('../controller/jazz_controller.php');  
-    
+    session_start();
    /* $title = null;
     $heading1=null;
     $heading2=null;
@@ -99,15 +99,57 @@
             <button class="dropbtn" onclick="myFunction()"><img src="../img/shopping_cart.png"><span>Items</span></button>     
 
             <div id="myDropdown" class="dropdown-content">
+                <form method="POST">
                 <?php
-                //make else thing with empty shopping cart
-                    echo '<h2>'.$_SESSION['date'].'</h2>';
-                    echo '<h2>'.$_SESSION['band'].'</h2>';
-                    echo '<h2>'.$_SESSION['quan'].'</h2>';
-                    $price = $JazzController->recievePrice($_SESSION['band'], $_SESSION['date']);
-                    echo '<h2>'.$price.'</h2>';
-                ?>
+                    if(isset($_SESSION['band']))
+                    {
+                        echo '<h2 id="recent">Recently Added Items</h2>';
+                        echo '<h2 id="band">'.$_SESSION['band']," (",$_SESSION['date'],") ".'</h2>';                        
+                        $price = $JazzController->recievePrice($_SESSION['band'], $_SESSION['date']);
+                        $_SESSION['price']=$price;
+                        
+                        if($_SESSION['quan'] != 1)
+                        {
+                            if($price == "Free")
+                            {
+                                echo '<h2 id="quantity">'.$_SESSION['quan'],"x   ",$price.'</h2>';
+                            }
+                            else
+                            {
+                                $newPrice = $_SESSION['quan'] * $price;
+                                echo '<h2 id="quantity">'.$_SESSION['quan'],"x   &euro;",$newPrice.'</h2>';
+                            }                                                       
+                        }
+                        else
+                        {
+                            if($price == "Free")
+                            {
+                                echo '<h2 id="quantity">'.$_SESSION['quan'],"x   ",$price.'</h2>';
+
+                            }
+                            else
+                            {
+                                echo '<h2 id="quantity">'.$_SESSION['quan'],"x   &euro;",$price.'</h2>';
+                            }
+                        }
+                        echo '<input type="hidden" name="delete" value="add"/>';
+                        echo '<button type="submit" class="delete">X</button>';
+
+                        echo("<button type='button' class='checkout' onclick=\"location.href='../../Payment/view/payment_view.php'\">Check Out</button>");
+                    }
+                    else
+                    {
+                        echo '<h2 id="empty">Shopping Cart Empty</h2>';
+                    }
+                    if(isset($_POST['delete']))
+                    {
+                        session_destroy();
+                        header("Location: jazz_view.php");
+                    }
+                ?>    
+                </form>
             </div>
+            
     </div>
     <div class="header">
         <img src="../img/header.jpg">
@@ -147,7 +189,7 @@
                     .$res['location']."</td><td>"
                     .$res['timing']."</td><td>"
                     .$res['band']."</td><td>"
-                    .$res['price']."</td></tr>";
+                    ,"&euro;".$res['price']."</td></tr>";
                 }                     
             ?>                           
             </tr>           
@@ -179,7 +221,7 @@
                     .$res['location']."</td><td>"
                     .$res['timing']."</td><td>"
                     .$res['band']."</td><td>"
-                    .$res['price']."</td></tr>";
+                    ,"&euro;".$res['price']."</td></tr>";
                 }                     
             ?>                
             </tr>           
@@ -210,7 +252,7 @@
                     .$res['location']."</td><td>"
                     .$res['timing']."</td><td>"
                     .$res['band']."</td><td>"
-                    .$res['price']."</td></tr>";
+                    ,"&euro;".$res['price']."</td></tr>";
                 }                     
             ?>                
             </tr>            
@@ -324,8 +366,7 @@
             <option>9</option>
             <option>10</option>            
         </select>
-        <br>
-                 
+        <br>                 
             <input type="hidden" name="add" value="add"/>
             <button type="submit" class="addcart"><span>Add To Cart</span></button>
         </form>

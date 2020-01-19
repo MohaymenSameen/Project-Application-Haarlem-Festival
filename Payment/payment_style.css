@@ -1,0 +1,280 @@
+body
+{
+    margin: 0;
+    padding: 0;    
+    background-color: #F2F2F2;    
+    font-family: "Century Gothic";
+}
+div.navbar ul
+{    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;    
+    width: 100%;
+    background-color:black;    
+    z-index: 2;   
+}
+div.navbar li 
+{
+    float: left;    
+}  
+div.navbar li a 
+{
+    font-family: "Century Gothic";
+    font-size: 30px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 50px;
+    text-decoration: none;   
+}
+div.navbar a:hover
+{
+    background-color: rgb(184, 0, 0);
+}
+h1
+{
+    color: #333333; 
+    font-size: 100px; 
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    margin-left: 15%;    
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
+h2
+{
+    color: #333333; 
+    font-size: 20px; 
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    margin-left: 16%;    
+}
+div.review
+{    
+    margin-top: 80px;
+    text-align: left;
+    width:70%;
+    margin-left: 15%;
+    border-style: solid;
+    border-radius: 7px;
+    border-top: none;
+    border-width: 1px;
+}
+div.review div#heading
+{    
+    text-align: center;   
+    height: 40px;
+    background-color: #f4511e;    
+    border-radius: 7px; 
+    border-style: solid;  
+    border-width: 1px;      
+}
+div.review div#heading h1
+{
+    font-size: 30px;
+    margin: 0;
+    color: white;
+}
+div.review h2
+{
+    margin-top: 20px;
+    padding: 10px;
+    margin-left: 10%;
+}
+div.review hr
+{
+    width: 80%;
+}
+div.review button.delete
+{
+    background-color: #f4511e;
+    border-style: none;
+    color: white;
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    position: relative;    
+    left: 85%;
+    bottom: 100px;
+    transition: 0.3s;
+}
+div.review button.delete:hover
+{
+    background-color: rgb(182, 0, 0);
+}
+div.review h3
+{
+    margin-left: 10%;
+    font-size: 30px;
+}
+div.customer
+{    
+    margin-top: 80px;
+    width:33%;
+    margin-left: 15%;
+    border-style: solid;
+    border-radius: 7px;
+    border-top: none;
+    border-width: 1px;
+    float: left;    
+}
+div.customer form.inline
+{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+div.customer form.inline input
+{
+    vertical-align: middle;
+    margin: 20px 10px 10px 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-family: "Century Gothic";
+    font-size: 20px;
+}
+div.customer form.inline input#email
+{
+    width: 87.3%;
+}
+div.customer div#heading2
+{    
+    text-align: center;   
+    height: 40px;
+    background-color: #f4511e;    
+    border-radius: 7px; 
+    border-style: solid;  
+    border-width: 1px;      
+}
+div.customer div#heading2 h1
+{
+    font-size: 30px;
+    margin: 0;
+    color: white;
+}
+div.customer h2
+{
+    margin-top: 20px;
+    padding: 10px;
+}
+div.customer hr
+{
+    width: 80%;
+}
+div.customer h3
+{
+    text-align: right;
+    margin-right: 10%;
+}
+div.payment
+{    
+    margin-top: 80px;
+    width:33%;
+    margin-left: 4%;
+    border-style: solid;
+    border-radius: 7px;
+    border-top: none;
+    border-width: 1px;
+    float: left;      
+}
+div.payment div#heading3
+{    
+    text-align: center;   
+    height: 40px;
+    background-color: #f4511e;    
+    border-radius: 7px; 
+    border-style: solid;  
+    border-width: 1px;      
+}
+div.payment div#heading3 h1
+{
+    font-size: 30px;
+    margin: 0;
+    color: white;
+}
+div.payment form label
+{
+    font-size: 30px;
+    padding: 20px;
+}
+button.checkout
+{    
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+    width: 310px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;      
+    font-family: "Century Gothic";    
+    margin-top: 50px; 
+    margin-bottom: 20px;  
+    position: relative; 
+    right: 8%;
+}
+button.checkout span
+{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+button.checkout span:after
+{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}  
+button.checkout:hover span
+{
+    padding-right: 25px;
+}  
+button.checkout:hover span:after
+{
+    opacity: 1;
+    right: 0;
+}
+div.footer
+{
+  height: 150px; 
+  width: 100%;
+  position: relative;
+  background-color: black;
+  color: white;
+  font-family: "Century Gothic";
+  display: flex;  
+  white-space: nowrap;
+}
+
+.left
+{
+  color: #fff;
+  background-color: #000;
+  margin-top:2%;
+  margin-left: 1%;
+  float: left;  
+}
+
+.right
+{
+  background-color: #000;
+  position: relative;
+  left: 62%; 
+  top: 20px;
+  height: 50px;  
+  width: 5%;
+  object-fit: scale-down;
+}
+
+

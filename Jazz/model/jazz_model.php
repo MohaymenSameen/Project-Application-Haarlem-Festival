@@ -83,7 +83,7 @@
                 while($row= $result->fetch_assoc())
                 {
                    // $rows[]=$row;      
-                     return $row['price'];                 
+                    return $row['price'];                 
                 }
                 //return $rows;
             } 
