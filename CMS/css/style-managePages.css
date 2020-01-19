@@ -176,12 +176,11 @@ ul.pagesList li{
 ul.editNLButtons li{   
     position: relative;
     right: 560px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;    
-    border-radius: 5px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    text-align: center; 
     text-decoration: none;
-    bottom: 80px;
+    bottom: 140px;
     list-style: none;
 }
 ul.editNLButtons li input{
@@ -190,17 +189,17 @@ ul.editNLButtons li input{
     background-color: #ED9F57;
     height: 30px;
     width: 4%;
+    border-radius: 5px;
 }
 
 ul.editENButtons li{   
     position: relative;
     right: 460px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;    
-    border-radius: 5px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    text-align: center; 
     text-decoration: none;
-    bottom: 100;
+    bottom: 284px;
     list-style: none;
 }
 ul.editENButtons li input{
@@ -209,17 +208,17 @@ ul.editENButtons li input{
     background-color: #ED9F57;
     height: 30px;
     width: 4%;
+    border-radius: 5px;
 }
 
 ul.removePage li{   
     position: relative;
     right: 360px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;    
-    border-radius: 5px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    text-align: center; 
     text-decoration: none;
-    bottom: 100;
+    bottom: 428px;
     list-style: none;
 }
 ul.removePage li input{
@@ -228,17 +227,19 @@ ul.removePage li input{
     background-color: #FF3232;
     height: 30px;
     width: 5%;
+    border-radius: 5px;
 }
 
 input#createNewPage{
     position: relative;
-    bottom: 100;
-    right: 60px;
+    bottom: 575px;
+    left: 585px;
     text-decoration: none;
     color: #ffffff;
     background-color: #00ff00;
     height: 30px;
     width: 30%;
+    border-radius: 5px;
 }
 
 div.footer
