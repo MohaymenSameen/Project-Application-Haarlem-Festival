@@ -11,12 +11,26 @@
         <h1><img src="img/editProfileicon.png" alt="icon search users"> Edit Jazz Page </h1>
     </section>
     <form>                    
-        <label>E-mail Address <input type="text" ></label> 
-        <label>Password<input type="password"></label>
-        <label>Confirm Password<input type="password"></label>        
-        <label>Phone Number<input type="text"></label><label>
+        <label>Header title: <input type="text" ></label> 
+        <form action="/action_page.php">
+            <label>Header image: <input type="text" ></label> 
+            <input type="file" name="pic" accept="image/*">
+            
+        </form>
+        <label>Paragraph 1:<input type="text"></label>
+        <label>Paragraph 1 text:<input type="text"></label>
+        <form action="/action_page.php">
+            <label>Intermediate image: <input type="text" ></label> 
+            <input type="file" name="pic" accept="image/*">
+            
+        </form>        
+        <label>Program Dates:<input type="text"></label><label>
+        <label>Date 1:<input type="text"></label><label>
+        <label>Date 2:<input type="text"></label><label> 
+        <label>Date 3:<input type="text"></label><label>  
+            
         
-        <button class="buttonsLila" type="button">Save Changes</button>
+        <button class="buttonsLila" type="button">Save</button>
     </form> 
 
 </body>

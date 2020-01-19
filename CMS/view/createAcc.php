@@ -54,7 +54,7 @@
             <div class="form-group <?php echo (!empty($phone_err)) ? 'has-error' : ''; ?>">
                 <label>Phone number</label>
                 <input type="number" name="phone" class="form-control" value="<?php echo $phone; ?>">
-                <span class="help-block"><?php echo $phone_err; ?></span>
+                <span><?php echo $phone_err; ?></span>
             </div>
             <div class="form-group" >
                 <input class = "buttonsLila" id= "createAcc" type="submit" class="btn btn-primary" value="Create">
