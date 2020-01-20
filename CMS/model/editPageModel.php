@@ -1,9 +1,9 @@
 <?php
  require_once('../../dbconnection/dbconnection.php');
- class EditProfileModel extends Database
+ class EditPageModel extends Database
  {
-    public function getData($email){
-        $sql="SELECT * from user WHERE email='$email'";
+    public function getDataJazz(){
+        $sql="SELECT * from user WHERE email='$email'"; //dovyrshi tova query i napravi za vseki edit page taka 
         $result = $this->connect()->query($sql); //izvyrshvaneto na stmt
         $row=$result->fetch_assoc(); //gets the result and stores it in array row
         $count=$result->num_rows;

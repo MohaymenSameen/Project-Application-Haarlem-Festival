@@ -1,5 +1,25 @@
 <?php
-    include ('controller/createAccController.php');
+    include('../controller/editProfileController.php');
+    session_start();
+    $controller = new EditProfileController();
+    $data = $controller->ReceiveData($_SESSION['email']); //using the session email that was use to log in and storing it into "data"
+    
+    //taking the info that we received from "data"
+    foreach($data as $res){
+        $password=$res['password'];
+        $phone=$res['phone'];
+    }
+    //isset($_POST['submit'])
+    
+    if($_SERVER["REQUEST_METHOD"] == "POST") { 
+        header("location: ../../Jazz/view/jazz_view.php");
+        $newEmail = $_POST['email'];
+        $NewPass = $_POST['password'];
+        $NewPhone = $_POST['phone'];
+        
+        $update = $controller->UpdateData($newEmail, $NewPass, $NewPhone);
+    } 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +27,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Haarlem Festival</title>
+        <title>Edit Profile</title>
         <link href="css/style-searchUsers.css" rel="stylesheet" type="text/css">
     </head>
     <body> 
@@ -16,31 +36,23 @@
         <hr id="longLine"/>
     </section>
     <section class="secondsections">
-    <form>                    
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
+    <form method="POST" action="#"> 
+            <div class="form-group">
                 <label>E-mail Address</label>
-                <input type="email" name="email" value="<?php echo $email; ?>">
-                <span><?php echo $email_err; ?></span>
-            </div>
-            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                <input type="text" name="email" value="<?php echo $_SESSION['email']; ?>">
+                            
                 <label>Password</label>
                 <input type="password" name="password" value="<?php echo $password; ?>">
-                <span><?php echo $password_err; ?></span>
-            </div>
-            <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                <label>Confirm Password</label>
-                <input type="password" name="confirm_password" value="<?php echo $confirm_password; ?>">
-                <span><?php echo $confirm_password_err; ?></span>
-            </div>
-            <div class="form-group <?php echo (!empty($phone_err)) ? 'has-error' : ''; ?>">
+              
                 <label>Phone number</label>
-                <input type="number" name="phone" class="form-control" value="<?php echo $phone; ?>">
-                <span class="help-block"><?php echo $phone_err; ?></span>
-            </div>        
-        <button class="buttonsLila" id="saveProfile" type="button">Save</button>
+                <input type="text" name="phone" value="<?php echo $phone; ?>">
+                
+            </div> 
+                 
+            <input type="submit" name="submit" value="Save"/>
     </form> 
-</section>
+
+    </section>
 
 </body>
 </html>
