@@ -45,33 +45,67 @@
     <section>
         <h1>Edit Dance Page </h1>
     </section>
-    <form>                    
-        <label>Header title: <input type="text" ></label> 
-        <form action="/action_page.php">
-            <label>Header image: <input type="text" ></label> 
-            <input type="file" name="pic" accept="image/*">
-            
-        </form>
-        <label>Paragraph 1 title:<input type="text"></label>
-        <label>Paragraph 1 subtitle:<input type="text"></label>
-        <label>Paragraph 1 text:<input type="text"></label>
-        <label>Text Box 1:<input type="text"></label>
-        <label>Text Box 2:<input type="text"></label>
-        <label>Text Box 3:<input type="text"></label>
-        <label>Text Box 4:<input type="text"></label>
-        <form action="/action_page.php">
-            <label>Intermediate image: <input type="text" ></label> 
-            <input type="file" name="pic" accept="image/*">
-            
-        </form>        
-        <label>Program Dates:<input type="text"></label><label>
-        <label>Date 1:<input type="text"></label><label>
-        <label>Date 2:<input type="text"></label><label> 
-        <label>Date 3:<input type="text"></label><label>  
-            
-        
-        <button class="buttonsLila" type="button">Save</button>
-    </form> 
+    <section> 
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <div class="form-group">
+                <label>Header title:</label>
+                <input type="text" name="headerTitleD" value="<?php echo $headerTitleD; ?>">
+            </div>
+            <form action="/action_page.php">
+                <label>Header image:</label> 
+                <input type="file" name="picDHeader" accept="image/*">            
+            </form>
+            <div class="form-group">
+                <label>Paragraph 1 title:</label>
+                <input type="text" name="phTitleD" value="<?php echo $phTitle; ?>">
+            </div>
+            <div class="form-group">
+                <label>Paragraph 1 subtitle:</label>
+                <input type="text" name="phSubitleD" value="<?php echo $phTitle; ?>">
+            </div>
+            <div class="form-group">
+                <label>Paragraph 1 text:</label>
+                <input type="text" name="phTxtD" value="<?php echo $phTxt; ?>">
+            </div>
+            <div class="form-group">
+                <label>Text Box 1:</label>
+                <input type="text" name="box1" value="<?php echo $box1; ?>">
+            </div>
+            <div class="form-group">
+                <label>Text Box 2:</label>
+                <input type="text" name="box2" value="<?php echo $box2; ?>">
+            </div>
+            <div class="form-group">
+                <label>Text Box 3:</label>
+                <input type="text" name="box3" value="<?php echo $box3; ?>">
+            </div>
+            <div class="form-group">
+                <label>Text Box 4:</label>
+                <input type="text" name="box4" value="<?php echo $box4; ?>">
+            </div>
+            <form action="/action_page.php">
+                <label>Intermediate image:</label> 
+                <input type="file" name="picD" accept="image/*">            
+            </form>
+            <div class="form-group">
+                <label>Program Dates:</label>
+                <input type="text" name="datesHeaderD" value="<?php echo $datesHeader; ?>">
+            </div>
+            <div class="form-group">
+                <label>Date 1:</label>
+                <input type="text" name="date1D" value="<?php echo $date1; ?>">
+            </div>
+            <div class="form-group">
+                <label>Date 2:</label>
+                <input type="text" name="date2D" value="<?php echo $date2; ?>">
+            </div>
+            <div class="form-group">
+                <label>Date 3:</label>
+                <input type="text" name="date3D" value="<?php echo $date3; ?>">
+            </div>
 
+            <button class="buttonsLila" type="button">Save</button>
+        </form>
+    </section> 
 </body>
 </html>

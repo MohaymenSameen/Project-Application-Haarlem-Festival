@@ -43,19 +43,24 @@
       </nav>
       
     <section>
-        <h1>Edit Dance Page </h1>
+        <h1>Edit Home Page </h1>
     </section>
-    <form>                    
-        <label>Header title: <input type="text" ></label> 
-        <form action="/action_page.php">
-            <label>Header image: <input type="text" ></label> 
-            <input type="file" name="pic" accept="image/*">            
-        </form>
-        
-        <label>Date 1:<input type="text"></label><label>              
-        
+    <form>
+        <div class="form-group">
+                        <label>Header title:</label>
+                        <input type="text" name="headerTitleHome" value="<?php echo $headerTitleHome; ?>">
+                    </div>
+                    <form action="/action_page.php">
+                        <label>Header image:</label> 
+                        <input type="file" name="picHome" accept="image/*">            
+                    </form>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="text" name="dateHome" value="<?php echo $dateHome; ?>">
+                    </div>
+        </div>       
         <button class="buttonsLila" type="button">Save</button>
-    </form> 
+</form>     
 
 </body>
 </html>
