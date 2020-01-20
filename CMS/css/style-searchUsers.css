@@ -172,7 +172,7 @@ div.footer
 {
   height: 60px; 
   width: 100%;
-  position: relative;
+  position: fixed;
   background-color: black;
   color: white;
   font-family: "Century Gothic";

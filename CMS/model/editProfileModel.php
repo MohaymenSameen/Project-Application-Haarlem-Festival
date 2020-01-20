@@ -16,7 +16,7 @@
     
 
     public function updateData($email, $password, $phone){
-        echo $email;
+
     $sql="UPDATE `user` SET email ='$email', `password`='$password', phone='$phone' WHERE email='{$_SESSION['email']}'";
         $result = $this->connect()->query($sql); //izvyrshvaneto na stmt
     }
