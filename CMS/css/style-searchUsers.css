@@ -147,3 +147,69 @@ form button#saveProfile{
     right: 80px;
     width: 80px;
 }
+button#saveD{
+    position: relative;
+    top: 630px;
+    right: 100px;
+    width: 100px;
+    }
+
+button#saveJ{
+    position: relative;
+    top: 330px;
+    right: 100px;
+    width: 100px;
+    }
+
+    button#saveH{
+        position: relative;
+        top: 230px;
+        right: 100px;
+        width: 100px;
+        }
+
+div.footer
+{
+  height: 60px; 
+  width: 100%;
+  position: relative;
+  background-color: black;
+  color: white;
+  font-family: "Century Gothic";
+  display: flex;  
+  white-space: nowrap;
+  bottom: 0;
+  
+}
+
+div.footer img{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: 10px;
+    left: 1000px;
+  }
+
+  section h1#headerEdit{
+      position: relative;
+      left: 38%;
+      font-size: 40px;
+  }
+
+  li#backBtn{
+      background-color: red;
+      list-style: none;
+      width: 100px;      
+      height: 30px;
+      text-decoration: none;
+      position: relative;
+      top: 10px;
+      border-radius: 5px;
+      text-align: center;
+      color: #ffffff;
+  }
+
+  section.secondsections{
+      position: relative;
+      top: 60px;
+  }

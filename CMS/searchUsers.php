@@ -8,10 +8,11 @@
         <link href="css/style-searchUsers.css" rel="stylesheet" type="text/css">
     </head>
     <body>    
-        <section>
+        <section class="section">
             <h1><img src="img/searchUsersicon.png" alt="icon search users"> Search Users</h1>
             <hr id="longLine"/>
         </section>
+        <section class="secondsections">
         <form>                    
             <label>Name <input type="text" ></label>         
             <label>Email Address <input type="text" ></label>
@@ -29,6 +30,7 @@
                 <th>E-mail Address</th>
             </tr>
         </table>
+</section>
     </body>
 </html>
     

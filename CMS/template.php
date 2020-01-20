@@ -7,6 +7,7 @@
         <link href="css/style-edits.css" rel="stylesheet" type="text/css">
     </head>
     <body> 
+    <li id="backBtn"><a href="../admin.php">Back CMS</a></li>
     <section>
         <h1>Create Page </h1>
     </section>

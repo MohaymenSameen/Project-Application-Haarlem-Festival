@@ -28,8 +28,10 @@
         </ul>
       </div>
  
+      <li id="backBtn"><a href="../admin.php">Back to CMS</a></li>
     <section>
-        <h1>Edit Dance Page </h1>
+        <h1 id="headerEdit">Edit Dance Page </h1>
+        <hr id="longLine"/>
     </section>
     <section> 
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -37,10 +39,12 @@
                 <label>Header title:</label>
                 <input type="text" name="headerTitleD" value="<?php echo $headerTitleD; ?>">
             </div>
-            <form action="/action_page.php">
-                <label>Header image:</label> 
-                <input type="file" name="picDHeader" accept="image/*">            
-            </form>
+            <div class="form-group">
+                <form action="/action_page.php">
+                    <label>Header image:</label> 
+                    <input type="file" name="picDHeader" accept="image/*">            
+                </form>
+            </div>
             <div class="form-group">
                 <label>Paragraph 1 title:</label>
                 <input type="text" name="phTitleD" value="<?php echo $phTitle; ?>">
@@ -69,10 +73,12 @@
                 <label>Text Box 4:</label>
                 <input type="text" name="box4" value="<?php echo $box4; ?>">
             </div>
-            <form action="/action_page.php">
-                <label>Intermediate image:</label> 
-                <input type="file" name="picD" accept="image/*">            
-            </form>
+            <div class="form-group">
+                <form action="/action_page.php">
+                    <label>Intermediate image:</label> 
+                    <input type="file" name="picD" accept="image/*">            
+                </form>
+            </div>
             <div class="form-group">
                 <label>Date 1:</label>
                 <input type="text" name="date1D" value="<?php echo $date1; ?>">
@@ -105,8 +111,27 @@
                 <label>Pass type 4</label>
                 <input type="text" name="PT4" value="<?php echo $PY4; ?>">
             </div>
-            <button class="buttonsLila" type="button">Save</button>
+            
+            <button id="saveD" class="buttonsLila"  type="button">Save</button>
+            <div class="form-group"> 
+            <label>             </label>
+            </div>
+            <div class="form-group"> 
+            <label>             </label>
+            </div>
+            <div class="form-group"> 
+            <label>             </label>
+            </div>
         </form>
+
     </section> 
+
+    <div class="footer">
+        
+        <p class="left">All rights reserved &copy; 2019</p>            
+            <img class="right" src="img/logo_H.png">
+            <img class="right" src="img/facebook.png">
+            <img class="right" src="img/instagram.png">
+        </div>
 </body>
 </html>

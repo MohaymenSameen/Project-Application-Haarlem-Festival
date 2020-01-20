@@ -8,7 +8,7 @@
         <link href="css/style-managePages.css" rel="stylesheet" type="text/css">
     </head>
     <body>    
-        <section>
+        <section class="section">
             <h1><img src="img/managePages.png" alt="icon manage pages"> Manage Pages</h1>
             <hr id="longLine"/>
 
@@ -24,17 +24,26 @@
                 <li>Home</a></li>
             </ul>
 
-            <ul class="editNLButtons">
-                <li><input type="submit" id="JazzNL" value="Edit NL"></li>
-                <li><input type="submit" id="DanceNL" value="Edit NL"></li>
-                <li><input type="submit" id="HomeNL" value="Edit NL"></li>
-            </ul>
+            <div class="editNLButtons">
+                <a href="editJazzNL.php">Edit NL</a>               
+            </div>
+            <div class="editNLButtons">
+                <a href="editDanceNL.php">Edit NL</a>               
+            </div>
+            <div class="editNLButtons">
+                <a href="editHomeNL.php">Edit NL</a>
+            </div>
 
-            <ul class="editENButtons">
-                <li><input type="submit" id="JazzEN" value="Edit EN "></li>
-                <li><input type="submit" id="DanceEN" value="Edit EN "></li>
-                <li><input type="submit" id="HomeEN" value="Edit EN "></li>
-            </ul>
+            <div class="editENButtons">
+                <a href="editJazzEN.php">Edit EN</a>               
+            </div>
+            <div class="editENButtons">
+                <a href="editDanceEN.php">Edit EN</a>               
+            </div>
+            <div class="editENButtons">
+                <a href="editHomeEN.php">Edit EN</a>
+            </div>
+            
 
             <ul class="removePage">
                 <li><input type="submit" id="JazzR" value="Remove"></li>

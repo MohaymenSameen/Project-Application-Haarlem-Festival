@@ -11,10 +11,11 @@
         <link href="css/style-searchUsers.css" rel="stylesheet" type="text/css">
     </head>
     <body> 
-    <section>
+    <section class="section">
         <h1><img src="img/editProfileicon.png" alt="icon search users"> Edit Profile </h1>
         <hr id="longLine"/>
     </section>
+    <section class="secondsections">
     <form>                    
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
@@ -39,6 +40,7 @@
             </div>        
         <button class="buttonsLila" id="saveProfile" type="button">Save</button>
     </form> 
+</section>
 
 </body>
 </html>

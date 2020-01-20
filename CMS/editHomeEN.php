@@ -27,40 +27,36 @@
             </div>
         </ul>
       </div>
-      <nav id="sidenav">
-        <ul>
-            <li><a href="#" data-target="managePages">Manage Pages</a></li>
-            <li><a href="#" data-target="editProfile">Profile</a></li>
-            <li><a href="#" data-target="searchUsers">Search Users</a></li>
-            <li><a href="#" data-target="">Manage Reservations</a></li>
-            <li><a href="#" data-target="invoices">Invoices</a></li>
-            <li><a href="#" data-target="createInvoice">Create Invoice</a></li>
-            <li><a href="#" data-target="registerPayment">Register Payment</a></li>
-            <li><a href="#" data-target="">Scan Tickets</a></li>
-            <li><a href="#" data-target="">Export Data</a></li>
-            <li><a href="#" data-target="view/createAcc">Create Account</a></li>
-        </ul>
-      </nav>
-      
+      <li id="backBtn"><a href="../admin.php">Back CMS</a></li>
     <section>
-        <h1>Edit Home Page </h1>
+        <h1 id="headerEdit">Edit Home Page </h1>
+        <hr id="longLine"/>
     </section>
     <form>
         <div class="form-group">
                         <label>Header title:</label>
                         <input type="text" name="headerTitleHome" value="<?php echo $headerTitleHome; ?>">
                     </div>
-                    <form action="/action_page.php">
-                        <label>Header image:</label> 
-                        <input type="file" name="picHome" accept="image/*">            
-                    </form>
+                    <div class="form-group">
+                        <form action="/action_page.php">
+                            <label>Header image:</label> 
+                            <input type="file" name="picHome" accept="image/*">            
+                        </form>
+                    </div>
                     <div class="form-group">
                         <label>Date</label>
                         <input type="text" name="dateHome" value="<?php echo $dateHome; ?>">
                     </div>
         </div>       
-        <button class="buttonsLila" type="button">Save</button>
-</form>     
+        <button class="buttonsLila" id="saveH" type="button">Save</button>
+</form>   
+<div class="footer">
+        
+        <p class="left">All rights reserved &copy; 2019</p>            
+            <img class="right" src="img/logo_H.png">
+            <img class="right" src="img/facebook.png">
+            <img class="right" src="img/instagram.png">
+        </div>  
 
 </body>
 </html>
