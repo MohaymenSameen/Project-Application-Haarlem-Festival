@@ -1,10 +1,54 @@
+<?php
+    include('../controller/editPageController.php');
+    session_start();
+    $controller = new EditPageController();
+    $data = $controller->ReceiveDataDance(); //using the session email that was use to log in and storing it into "data"
+    
+    //taking the info that we received from "data"
+    foreach($data as $res){
+        $TitleD=$res['title'];
+        $headerTitleD=$res['heading'];
+        $phTitleD=$res['subheading'];
+        $phTxtD=$res['parinformationagraph_1'];
+        $box1=$res['bubble1'];
+        $box2=$res['bubble2'];
+        $box3=$res['bubble3'];
+        $box4=$res['bubble4'];
+        $CStxt=$res['cross_sell'];
+        $PY1=$res['pass1'];
+        $PY2=$res['pass2'];
+        $PY3=$res['pass3'];
+        $PY4=$res['pass4'];
+
+    }
+    
+    //$_SERVER["REQUEST_METHOD"] == "POST"
+    if(isset($_POST['submit'])) { 
+        header("location: ../../Jazz/view/jazz_view.php");
+        $NewTitleD=$res['title'];
+        $NewheaderTitleD=$res['heading'];
+        $NewphTitleD=$res['subheading'];
+        $NewphTxtD=$res['parinformationagraph_1'];
+        $Newbox1=$res['bubble1'];
+        $Newbox2=$res['bubble2'];
+        $Newbox3=$res['bubble3'];
+        $Newbox4=$res['bubble4'];
+        $NewCStxt=$res['cross_sell'];
+        $NewPY1=$res['pass1'];
+        $NewPY2=$res['pass2'];
+        $NewPY3=$res['pass3'];
+        $NewPY4=$res['pass4'];
+        
+        $update = $controller->UpdateDataDance($NewTitleD, $NewheaderTitleD, $NewphTitleD, $NewphTxtD, $Newbox1, $Newbox2, $Newbox3, $Newbox4, $NewCStxt, $NewPY1,$NewPY2,$NewPY3,$NewPY4);
+    } 
+?>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Haarlem Festival</title>
-        <link href="css/style-searchUsers.css" rel="stylesheet" type="text/css">
+        <link href="../css/style-searchUsers.css" rel="stylesheet" type="text/css">
     </head>
     <body> 
     <div class="navbar">
@@ -46,16 +90,20 @@
                 </form>
             </div>
             <div class="form-group">
+                <label>Title:</label>
+                <input type="text" name="TitleD" value="<?php echo $TitleD; ?>">
+            </div>
+            <div class="form-group">
                 <label>Paragraph 1 title:</label>
-                <input type="text" name="phTitleD" value="<?php echo $phTitle; ?>">
+                <input type="text" name="phTitleD" value="<?php echo $phTitleD; ?>">
             </div>
             <div class="form-group">
                 <label>Paragraph 1 subtitle:</label>
-                <input type="text" name="phSubitleD" value="<?php echo $phTitle; ?>">
+                <input type="text" name="phSubitleD" value="<?php echo $phTitleD; ?>">
             </div>
             <div class="form-group">
                 <label>Paragraph 1 text:</label>
-                <input type="text" name="phTxtD" value="<?php echo $phTxt; ?>">
+                <input type="text" name="phTxtD" value="<?php echo $phTxtD; ?>">
             </div>
             <div class="form-group">
                 <label>Text Box 1:</label>
@@ -78,18 +126,6 @@
                     <label>Intermediate image:</label> 
                     <input type="file" name="picD" accept="image/*">            
                 </form>
-            </div>
-            <div class="form-group">
-                <label>Date 1:</label>
-                <input type="text" name="date1D" value="<?php echo $date1; ?>">
-            </div>
-            <div class="form-group">
-                <label>Date 2:</label>
-                <input type="text" name="date2D" value="<?php echo $date2; ?>">
-            </div>
-            <div class="form-group">
-                <label>Date 3:</label>
-                <input type="text" name="date3D" value="<?php echo $date3; ?>">
             </div>
             <div class="form-group">
                 <label>Cross-selling text:</label>

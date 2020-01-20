@@ -38,7 +38,7 @@
                 <a href="/view/editJazzEN.php">Edit EN</a>               
             </div>
             <div class="editENButtons">
-                <a href="editDanceEN.php">Edit EN</a>               
+                <a href="/view/editDanceEN.php">Edit EN</a>               
             </div>
             <div class="editENButtons">
                 <a href="editHomeEN.php">Edit EN</a>

@@ -21,7 +21,7 @@
         $NewPhar = $_POST['paragraph_1'];
         $NewHead = $_POST['heading_2'];
         
-        $update = $controller->UpdateData($newTitle, $NewHeader, $NewPhar, $NewHead);
+        $update = $controller->UpdateDataJazz($newTitle, $NewHeader, $NewPhar, $NewHead);
     } 
 ?>
 <html lang="en">

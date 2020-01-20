@@ -10,9 +10,9 @@
             return $var;
         }
 
-        public function UpdateDataJazz($title, $heading1, $ph1, $heading2, $heading3){
+        public function UpdateDataJazz($title, $heading1, $ph1, $heading2){
             $Model=new editPageModel();
-            $var = $Model->updateDataJazz($title, $heading1, $ph1, $heading2, $heading3);            
+            $var = $Model->updateDataJazz($title, $heading1, $ph1, $heading2);            
         }
 
         public function ReceiveDataDance(){
