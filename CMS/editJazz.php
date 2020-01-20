@@ -27,21 +27,6 @@
             </div>
         </ul>
       </div>
-      <nav id="sidenav">
-        <ul>
-            <li><a href="#" data-target="managePages">Manage Pages</a></li>
-            <li><a href="#" data-target="editProfile">Profile</a></li>
-            <li><a href="#" data-target="searchUsers">Search Users</a></li>
-            <li><a href="#" data-target="">Manage Reservations</a></li>
-            <li><a href="#" data-target="invoices">Invoices</a></li>
-            <li><a href="#" data-target="createInvoice">Create Invoice</a></li>
-            <li><a href="#" data-target="registerPayment">Register Payment</a></li>
-            <li><a href="#" data-target="">Scan Tickets</a></li>
-            <li><a href="#" data-target="">Export Data</a></li>
-            <li><a href="#" data-target="view/createAcc">Create Account</a></li>
-        </ul>
-      </nav>
-      
     <section>
         <h1>Edit Jazz Page </h1>
     </section>

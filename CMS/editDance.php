@@ -27,21 +27,7 @@
             </div>
         </ul>
       </div>
-      <nav id="sidenav">
-        <ul>
-            <li><a href="#" data-target="managePages">Manage Pages</a></li>
-            <li><a href="#" data-target="editProfile">Profile</a></li>
-            <li><a href="#" data-target="searchUsers">Search Users</a></li>
-            <li><a href="#" data-target="">Manage Reservations</a></li>
-            <li><a href="#" data-target="invoices">Invoices</a></li>
-            <li><a href="#" data-target="createInvoice">Create Invoice</a></li>
-            <li><a href="#" data-target="registerPayment">Register Payment</a></li>
-            <li><a href="#" data-target="">Scan Tickets</a></li>
-            <li><a href="#" data-target="">Export Data</a></li>
-            <li><a href="#" data-target="view/createAcc">Create Account</a></li>
-        </ul>
-      </nav>
-      
+ 
     <section>
         <h1>Edit Dance Page </h1>
     </section>
@@ -88,10 +74,6 @@
                 <input type="file" name="picD" accept="image/*">            
             </form>
             <div class="form-group">
-                <label>Program Dates:</label>
-                <input type="text" name="datesHeaderD" value="<?php echo $datesHeader; ?>">
-            </div>
-            <div class="form-group">
                 <label>Date 1:</label>
                 <input type="text" name="date1D" value="<?php echo $date1; ?>">
             </div>
@@ -103,7 +85,26 @@
                 <label>Date 3:</label>
                 <input type="text" name="date3D" value="<?php echo $date3; ?>">
             </div>
-
+            <div class="form-group">
+                <label>Cross-selling text:</label>
+                <input type="text" name="CStxt" value="<?php echo $CStxt; ?>">
+            </div>
+            <div class="form-group">
+                <label>Pass type 1:</label>
+                <input type="text" name="PT1" value="<?php echo $PY1; ?>">
+            </div>
+            <div class="form-group">
+                <label>Pass type 2:</label>
+                <input type="text" name="PT2" value="<?php echo $PY2; ?>">
+            </div>
+            <div class="form-group">
+                <label>Pass type 3</label>
+                <input type="text" name="PT3" value="<?php echo $PT3; ?>">
+            </div>
+            <div class="form-group">
+                <label>Pass type 4</label>
+                <input type="text" name="PT4" value="<?php echo $PY4; ?>">
+            </div>
             <button class="buttonsLila" type="button">Save</button>
         </form>
     </section> 
