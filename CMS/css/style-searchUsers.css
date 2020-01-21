@@ -149,8 +149,8 @@ form button#saveProfile{
 }
 button#saveD{
     position: relative;
-    top: 630px;
-    right: 100px;
+    top: 30px;
+    left:40px;
     width: 100px;
     }
 

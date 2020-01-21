@@ -6,10 +6,10 @@
     
     //taking the info that we received from "data"
     foreach($data as $res){
-        $TitleD=$res['title'];
-        $headerTitleD=$res['heading'];
+        $TitleD=$res['heading'];
+        $headerTitleD=$res['title'];
         $phTitleD=$res['subheading'];
-        $phTxtD=$res['parinformationagraph_1'];
+        $phTxtD=$res['information'];
         $box1=$res['bubble1'];
         $box2=$res['bubble2'];
         $box3=$res['bubble3'];
@@ -25,8 +25,8 @@
     //$_SERVER["REQUEST_METHOD"] == "POST"
     if(isset($_POST['submit'])) { 
         header("location: ../../Jazz/view/jazz_view.php");
-        $NewTitleD=$res['title'];
-        $NewheaderTitleD=$res['heading'];
+        $NewTitleD=$res['heading'];
+        $NewheaderTitleD=$res['title'];
         $NewphTitleD=$res['subheading'];
         $NewphTxtD=$res['parinformationagraph_1'];
         $Newbox1=$res['bubble1'];
@@ -94,12 +94,8 @@
                 <input type="text" name="TitleD" value="<?php echo $TitleD; ?>">
             </div>
             <div class="form-group">
-                <label>Paragraph 1 title:</label>
+                <label>Subtitle:</label>
                 <input type="text" name="phTitleD" value="<?php echo $phTitleD; ?>">
-            </div>
-            <div class="form-group">
-                <label>Paragraph 1 subtitle:</label>
-                <input type="text" name="phSubitleD" value="<?php echo $phTitleD; ?>">
             </div>
             <div class="form-group">
                 <label>Paragraph 1 text:</label>
@@ -140,11 +136,11 @@
                 <input type="text" name="PT2" value="<?php echo $PY2; ?>">
             </div>
             <div class="form-group">
-                <label>Pass type 3</label>
-                <input type="text" name="PT3" value="<?php echo $PT3; ?>">
+                <label>Pass type 3:</label>
+                <input type="text" name="PT3" value="<?php echo $PY3; ?>">
             </div>
             <div class="form-group">
-                <label>Pass type 4</label>
+                <label>Pass type 4:</label>
                 <input type="text" name="PT4" value="<?php echo $PY4; ?>">
             </div>
             
@@ -162,12 +158,5 @@
 
     </section> 
 
-    <div class="footer">
-        
-        <p class="left">All rights reserved &copy; 2019</p>            
-            <img class="right" src="img/logo_H.png">
-            <img class="right" src="img/facebook.png">
-            <img class="right" src="img/instagram.png">
-        </div>
 </body>
 </html>
