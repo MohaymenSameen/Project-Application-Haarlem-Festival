@@ -591,7 +591,7 @@ div.access_passes h3
     font-size: 50px; 
     font-weight: normal;
 }
-div.access_passes button.addcartacc
+div.access_passes button.addcart
 {   
     display: inline-block;
     border-radius: 4px;
@@ -606,14 +606,14 @@ div.access_passes button.addcartacc
     cursor: pointer;   
     font-family: "Century Gothic";
 }
-div.access_passes button.addcartacc span
+div.access_passes button.addcart span
 {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
-div.access_passes button.addcartacc span:after
+div.access_passes button.addcart span:after
 {
     content: '\00bb';
     position: absolute;
@@ -622,11 +622,11 @@ div.access_passes button.addcartacc span:after
     right: -20px;
     transition: 0.5s;
 }  
-div.access_passes button.addcartacc:hover span
+div.access_passes button.addcart:hover span
 {
     padding-right: 25px;
 }  
-div.access_passes button.addcartacc:hover span:after
+div.access_passes button.addcart:hover span:after
 {
     opacity: 1;
     right: 0;

@@ -4,14 +4,14 @@
     {
         public function getCountdown()
         {
-            $sql="SELECT * FROM home_countdown ORDER BY id DESC";
+            $sql="SELECT * FROM home_countdown";
             $result = $this->connect()->query($sql);              
-                       
-            while($row=$result->fetch_array())
-            {                   
-                $rows[]=$row;                
-                return $rows;           
-            }            
+            $row = $result->fetch_assoc();   
+            if($row)
+            {
+                $rows[]=$row;
+                return $rows;
+            }                      
         }
     }
 ?>

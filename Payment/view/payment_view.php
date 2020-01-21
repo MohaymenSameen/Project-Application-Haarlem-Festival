@@ -28,10 +28,10 @@
         <div id="heading">
             <h1>1. Order Review</h1>
         </div>
-        <?php
-            echo '<h2 id="band">'.$_SESSION['band']," (",$_SESSION['date'],") ".'</h2>'; 
+        <?php           
             if(isset($_SESSION['band']))
             {
+                echo '<h2 id="band">'.$_SESSION['band']," (",$_SESSION['date'],") ".'</h2>'; 
                 if($_SESSION['quan'] != 1)
                 {
                     if($_SESSION['price'] == "Free")
@@ -49,17 +49,19 @@
                     if($_SESSION['price'] == "Free")
                     {
                         echo '<h2 id="quantity">'.$_SESSION['quan'],"x   ",$_SESSION['price'].'</h2>';
-
                     }
                     else
                     {
                         echo '<h2 id="quantity">'.$_SESSION['quan'],"x   &euro;",$_SESSION['price'].'</h2>';
                     }
-                }    
-                  
-                
+                }                
+            }            
+            if(isset($_SESSION['pass']))
+            {
+                echo '<h2 id="band">'.$_SESSION['pass'].'</h2>'; 
+                echo '<h2 id="quantity">'.$_SESSION['quant'],"x &euro;  ",$_SESSION['accprice'].'</h2>';                
             }
-            else
+            if(empty($_SESSION['pass']) && empty($_SESSION['band']))
             {
                 header("Location: ../../Home/view/home_view.php");
             }
@@ -73,21 +75,29 @@
             }   
             echo ' <hr>';
                 
-            if($_SESSION['price'] == "Free")
+            if(isset($_SESSION['price']) && $_SESSION['price'] == "Free")
             {
                 echo '<h3>'."Cart Total: ",$_SESSION['price'].'</h3>';
-
             }
-            else
+            else if(isset($_SESSION['price']) && $_SESSION['price'] != "Free")
             {
                 $newPrice = $_SESSION['quan'] * $_SESSION['price'];
                 echo '<h3>'."Cart Total: &euro; ",$newPrice.'</h3>';
             }
 
-        ?>
-       
-        
-       
+            if(isset($_SESSION['pass']))
+            {
+                if($_SESSION['quant'] != 1)
+                {
+                    $newPrice = $_SESSION['quant'] * $_SESSION['accprice'];
+                    echo '<h3>'."Cart Total: &euro; ",$newPrice.'</h3>';
+                }
+                else
+                {
+                    echo '<h3>'."Cart Total: &euro;",$_SESSION['accprice'].'</h3>';
+                }
+            }
+        ?>      
         </form>
     </div>
 
@@ -109,10 +119,10 @@
             <h1>3. Payment Method</h1>
         </div>
         <form method="POST">
-        <br><br>
+        <br><br><br><br>
             <input type="radio" name="payment" value="Credit Card" style="width:20px; height:20px; margin-left: 10%;"><label>Credit Card</label><br><br><br>
             <input type="radio" name="payment" value="Pin" style="width:20px; height:20px; margin-left: 10%;"><label>Pin</label><br><br><br>
-            <input type="radio" name="payment" value="Cash" style="width:20px; height:20px; margin-left: 10%;"><label>Cash</label><br><br><br><br>
+            <input type="radio" name="payment" value="Cash" style="width:20px; height:20px; margin-left: 10%;"><label>Cash</label><br><br><br><br><br><br><br><br>
         </form>
     </div>
     <button type="submit" class="checkout"><span>Checkout</span></button>

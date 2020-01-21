@@ -6,12 +6,12 @@
         {
             $sql="SELECT * FROM jazz_content_en";
             $result = $this->connect()->query($sql);              
-            $row=$result->fetch_assoc();
-            while($row)
+            $row=$result->fetch_assoc();//fetching array in row variable
+            if($row) 
             {
-                $rows[]=$row;    
-                return $rows;                          
-            }            
+                $rows[]=$row;//storing row in an array;
+            }                      
+            return $rows;                                         
         }
         public function getTimetable1()
         {
@@ -36,8 +36,7 @@
             {
                 while($row= $result->fetch_assoc())
                 {
-                    $rows[]=$row;
-                                             
+                    $rows[]=$row;                                             
                 }
                 return $rows;
             }            
@@ -51,8 +50,7 @@
             {
                 while($row= $result->fetch_assoc())
                 {
-                    $rows[]=$row;
-                                             
+                    $rows[]=$row;                                             
                 }
                 return $rows;
             }            
@@ -66,8 +64,7 @@
             {
                 while($row= $result->fetch_assoc())
                 {
-                    $rows[]=$row;
-                                             
+                    $rows[]=$row;                                             
                 }
                 return $rows;
             }            
@@ -76,18 +73,11 @@
         {            
             $sql="SELECT price FROM jazz_timetable WHERE band='$group' AND date='$time'";
             $result = $this->connect()->query($sql);              
-            $num_rows=$result->num_rows;
-            if($num_rows>0)
-            {
-            
-                while($row= $result->fetch_assoc())
-                {
-                   // $rows[]=$row;      
-                    return $row['price'];                 
-                }
-                //return $rows;
-            } 
-            // WHERE 
+            $row=$result->fetch_assoc();
+            if($row)
+            {   
+                return $row['price'];     
+            }             
         }
     }
 ?>

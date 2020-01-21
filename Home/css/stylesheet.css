@@ -61,13 +61,14 @@ div.countdown
   background-color: rgb(255, 0, 0);
   color: white;
   margin-left: 33%;
+  margin-top: 5%;
   height: 130px;
   box-shadow: 1px 1px 5px 1px #222222;
   width: 35%;
   bottom: 350px;    
   text-align: center;   
   font-size: 40px; 
-  font-family: "Century Gothic";
+  font-family: "Century Gothic"; 
 }
 div.countdown h2#text
 {    
@@ -131,10 +132,10 @@ div.countdown h2#text
 */
 div.footer
 {
-  height: 150px; 
+  height: 300px; 
   width: 100%;
   position: relative;
-  bottom:200px;
+  bottom:250px;
   background-color: black;
   color: white;
   font-family: "Century Gothic";

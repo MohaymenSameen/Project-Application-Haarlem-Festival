@@ -131,15 +131,16 @@ div.customer form.inline
 div.customer form.inline input
 {
     vertical-align: middle;
-    margin: 20px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
     padding: 10px;
+    width: 100%;
     border: 1px solid #ddd;
     font-family: "Century Gothic";
     font-size: 20px;
 }
 div.customer form.inline input#email
 {
-    width: 87.3%;
+    width: 100%;
 }
 div.customer div#heading2
 {    
@@ -218,7 +219,8 @@ button.checkout
     margin-top: 50px; 
     margin-bottom: 20px;  
     position: relative; 
-    right: 8%;
+    left: 40%;
+    
 }
 button.checkout span
 {

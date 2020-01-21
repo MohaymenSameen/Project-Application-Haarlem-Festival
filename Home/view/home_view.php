@@ -22,7 +22,8 @@
     </head>
     <body>
     <script>
-        var countDownDate = <?php echo strtotime("$date $h:$m:$s" ) ?> * 1000;
+        //setting the data we're counting down to
+        var countDownDate = <?php echo strtotime("$date $h:$m:$s" ) ?> * 1000;        
         var now = <?php echo time() ?> * 1000;
 
         // Update the count down every 1 second
@@ -36,53 +37,29 @@
         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        // Output the result in an element with id="demo"
+        // Output the result in an element with id="time and text"
         document.getElementById("time").innerHTML = days +" : "+hours+" : "+minutes +" : "+seconds;
         document.getElementById("text").innerHTML = "Days " + "Hours " + "Minutes " + "Seconds ";
-        document.getElementById("text").style.wordSpacing = "50px";
-        // If the count down is over, write some text 
-        if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("time").innerHTML = "EXPIRED";
-        }
-            
+        document.getElementById("text").style.wordSpacing = "50px";                  
         }, 1000);        
     </script>
     
         <div class="navbar">
             <ul>
-                <li><a href="../../Home/Home.html"><strong>Home</strong></a></li>
+                <li><a href="../../Home/view/home_view.php"><strong>Home</strong></a></li>
                 <li><a href="../../Jazz/view/jazz_view.php">Jazz</a></li>
-                <li><a href="Dance.html">Dance</a></li>
-                <li><a href="Food.html">Food</a></li>
+                <li><a href="../../Dance/Dance.html">Dance</a></li>
+                <li><a href="../../Food/Food.html">Food</a></li>
                 <li><a href="../CMS/admin.php">Volunteer</a></li>         
             </ul>
         </div>        
             <h1>Haarlem Festival</h1>
-            <img src="../img/banner.jpeg">
-        
+            <img src="../img/banner.jpeg">       
        
         <div class="countdown">
             <h2 id="time"></h2>
             <h2 id="text"></h2>
         </div>
-        
-        
-           <!-- <ul class="secondary">
-                <li><a>EN</a></li>
-                <li><a>|</a></li>
-                <li><a>NL</a></li>
-            </ul>
-            <div id="logo_square">
-                    <div id="logo_div" class=""></div>
-                  </div>
-            <div id="logo">
-                    <img id="logo_img" class="img " src="img/logo.png"/>
-                  </div>
-            !-->
-
-       
-
         <div class="footer">
             
             <p class="left">All rights reserved &copy; 2019</p>            
