@@ -1,6 +1,6 @@
 <?php
     require_once ('../model/dance_model.php');
-    class DanceController extends DanceModel
+    class DanceController extends DanceModel //wrong way to implement mvc?
     {       
         public function recieveData()
         {            
@@ -21,11 +21,6 @@
         public function recieveTimetable3()
         {                        
             $row = $this->getTimetable3();            
-            return $row;
-        }
-        public function recieveTimetable4()
-        {                        
-            $row = $this->getTimetable4();            
             return $row;
         }
     }

@@ -3,8 +3,12 @@ body
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-color: #F2F2F2;
+    background-color: #FFFFFF;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
 }
+
+/*----------------------------------------------------- Navbar -----------------------------------------------------*/
+
 div.navbar ul
 {    
     list-style-type: none;
@@ -90,76 +94,159 @@ div.navbar button.dropbtn span
   .dropdown a:hover {background-color: #ddd;}
   
   .show {display: block;}
+
+/*----------------------------------------------------- Header -----------------------------------------------------*/
+
 div.header
 {   
     display: flex;      
     width: 100%;
     height: 100%;
     overflow: hidden;
+    margin-bottom: 0px;
 }
 div.header img
 {      
     width: 100%;
-    height: 600px;    
+    height: 600px;
+
 }
 div.header p
 {    
-    font-size: 130pt;    
+    opacity: 0.89;
+    font-size: 125pt; 
+    font-weight: bold;  
     font-family: "Century Gothic";
     color: white;    
     position: absolute;        
-    left: 25%;   
+    left: 37%;   
 }
+
+button#ticketButton{
+    position: relative;
+    right: 20px;
+    bottom: 70px;
+    float: right;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #E2011B;
+    border-radius: 8px;
+    border: none;
+}
+
+button#ticketButton a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 22pt;
+}
+
+/*----------------------------------------------------- Information Section -----------------------------------------------------*/
+
 div.information
-{        
-    margin-left: 10%;
+{      
     width: 100%;
     height: 100%;    
-    font-size: 3vw;    
-    color: #333333;
+    background-color: #E4E4E4;
     padding: 0;  
-    margin-top: 20px;  
+    margin: 10px;  
     display: inline-block;
-    font-family: "Century Gothic";    
+    font-family: "Century Gothic";
+    border-radius: 45px;
+    
+    height: 520px;
 }
 div.information h1
 {
+    margin-bottom: 0px;
+    font-size: 40pt;
     font-weight: bold;
-    position: relative;      
-    bottom: 50px;
+    text-align: center;
+    color: #333333;
 }
-div.information p
+div.information h2
 {   
-    position: relative;    
-    bottom: 50px;
-    width: 50%;
-    left: 35%;
-    word-wrap: break-word;   
-    font-size: 3vh;      
+    font-size: 30pt;
+    text-align: center;
+    font-weight: normal;
+    color: #010106;    
 }
+div.information p{
+    font-size: 22pt;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width:  425px;
+    height: 241px;
+}
+div.information p.bubbles{
+    background-color: #33013C;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    border-radius: 45px;
+    display: flex;
+    align-items: center;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #797979;
+    position: absolute;
+}
+div.information p#bubble1{
+    width: 320px;
+    height: 213px;
+    left: 40px;
+    top: 650px;
+}
+div.information p#bubble2{
+    width: 353px;
+    height: 165px;
+    left: 90px;
+    top: 890px;
+}
+div.information p#bubble3{
+    width: 320px;
+    height: 213px;
+    right: 30px;
+    top: 650px;
+}
+div.information p#bubble4{
+    width: 353px;
+    height: 165px;
+    right: 50px;
+    top: 890px;
+}
+
+div.information p#disclaimer{
+    display: inline;
+    font-size: 14pt;
+    color: #333333;
+}
+
+/*----------------------------------------------------- Timetables -----------------------------------------------------*/
+
 div.timetable1
 {
-    margin-left: 10%;
+    margin-left: 5%;
     width: 80%;
     height: 100%;    
-    font-size: 6vh;    
-    color: #000000;
-    padding: 0;    
+    font-size: 50pt;    
+    color: #000000;   
     display: inline-block;
-    font-family: "Century Gothic";
 }
 div.timetable1 h2
 {
     color:  #ffffff;
-    font-weight: 500;
-    font-size: 9vh;
+    font-weight: bold;
+    font-size: 50;
 }
 div.timetable1 table
 {
-    font-family: "Century Gothic";
-    font-size: 24px;    
+    font-size: 20pt;    
     border-collapse: collapse;
     width: 100%;
+    margin-left: 8%;
 }
 div.timetable1 table td,th
 {    
@@ -170,7 +257,7 @@ div.timetable1 table th
 {
     background-color: #333333;
     color: white;
-    font-size: 30px;
+    font-size: 20pt;
 }
 div.timetable1 table tr:nth-child(even)
 {   
@@ -180,30 +267,50 @@ div.timetable1 table tr:nth-child(odd)
 {   
     background-color: #FFFFFF;      
 }
+div.timetable1 button#ticketButton2{
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #E2011B;
+    border-radius: 8px;
+    border: none;
+}
+div.timetable1 button#ticketButton2 a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 22pt;
+}
+
+
+
 div.timetable2
 {
-    margin-left: 10%;
-    width: 80%;
+    margin-right: 0%;
+    width: 90%;
     height: 100%;    
-    font-size: 6vh;    
-    color: #333333;
-    padding: 0;    
+    font-size: 50pt;    
+    color: #000000;   
     display: inline-block;
-    font-family: "Century Gothic";
 }
 div.timetable2 h2
 {
-    font-weight: 500;    
-    color: white;
+    color:  #333333;
+    font-weight: bold;
+    font-size: 50;
     text-align: right;
-    font-size: 9vh;
 }
 div.timetable2 table
 {
-    font-family: "Century Gothic";
-    font-size: 24px;    
+    font-size: 20pt;    
     border-collapse: collapse;
     width: 100%;
+    margin-left:5%;
+    margin-right: 8%;
 }
 div.timetable2 table td,th
 {    
@@ -224,28 +331,48 @@ div.timetable2 table tr:nth-child(odd)
 {   
     background-color:  #F2F2F2;       
 }
+
+div.timetable2 button#ticketButton2{
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #E2011B;
+    border-radius: 8px;
+    border: none;
+}
+div.timetable2 button#ticketButton2 a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 22pt;
+}
+
+
+
 div.timetable3
 {
-    margin-left: 10%;
+    margin-left: 5%;
     width: 80%;
     height: 100%;    
-    font-size: 6vh;    
-    color: #333333;
-    padding: 0;    
+    font-size: 50pt;  
     display: inline-block;
-    font-family: "Century Gothic";
 }
 div.timetable3 h2
 {
-    font-weight: 500;    
-    font-size: 9vh;
+    color:  #ffffff;
+    font-weight: bold;
+    font-size: 50;
 }
 div.timetable3 table
 {
-    font-family: "Century Gothic";
-    font-size: 24px;    
+    font-size: 20pt;    
     border-collapse: collapse;
     width: 100%;
+    margin-left: 8%;
 }
 div.timetable3 table td,th
 {    
@@ -266,263 +393,36 @@ div.timetable3 table tr:nth-child(odd)
 {   
     background-color: #FFFFFF;      
 }
+
+div.timetable3 button#ticketButton2{
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #E2011B;
+    border-radius: 8px;
+    border: none;
+}
+div.timetable3 button#ticketButton2 a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 22pt;
+}
 div.backcolor1{
     background-color: #33013C;
+    border-radius: 45px;
 }
 div.backcolor2
 {
     background-color: #E4E4E4;    
+    border-radius: 45px;
 }
-div.tickets
-{     
-    margin-left: 10%; 
-    margin-top: 5%;   
-    height: 150px;    
-    font-family: "Century Gothic"; 
-    color: #333333;        
-}
-div.tickets h1
-{
-    position: relative;
-    margin: 0;    
-    left: 15%;
-    font-size: 80px;    
-}
-div.tickets h2
-{  
-    position: relative;
-    margin: 0;
-    left: 6%; 
-    font-size: 50px;
-    font-weight: normal;
-    white-space: nowrap;
-}
-div.tickets select.band
-{
-    display: inline;
-    font-size: 30px;
-    font-family: "Century Gothic";             
-}
-div.tickets select.date
-{   
-    display: inline;
-    font-size: 30px;   
-    font-family: "Century Gothic";         
-}
-div.tickets h3
-{           
-    font-size: 50px; 
-    font-weight: normal;
-}
-div.tickets select.quantity
-{   display: inline-block;
-    position: relative;  
-    left: 17%;
-    bottom: 100px;
-    width: 60px;
-    font-size: 30px;   
-    font-family: "Century Gothic";
-}
-div.tickets button.addcart
-{    
-    display: inline-block;
-    border-radius: 4px;
-    background-color: #f4511e;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 40px;
-    padding: 20px;
-    width: 310px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;   
-    position: relative;
-    left: 12%;
-    bottom: 50px;
-    font-family: "Century Gothic";
-    position: relative;                     
-}
-div.tickets button.addcart span
-{
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-div.tickets button.addcart span:after
-{
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}  
-div.tickets button.addcart:hover span
-{
-    padding-right: 25px;
-}  
-div.tickets button.addcart:hover span:after
-{
-    opacity: 1;
-    right: 0;
-}
-div.cross_selling
-{
-    text-align: center;    
-    position: relative;
-    width: 40%;
-    left: 60%;    
-    bottom: 100px;
-    font-family: "Century Gothic";    
-}
-div.cross_selling h1
-{
-    position: relative;         
-    font-size: 35px;
-    font-weight: normal;
-    white-space: nowrap;
-    color: #f4511e;
-}
-div.cross_selling h2
-{
-    position: relative;        
-    font-size: 20px;
-    font-weight: normal;
-    white-space: nowrap;
-    color: #333333;
-}
-div.cross_selling img
-{
-    position: relative;
-    margin:3%;
-    margin-top: 0;
-    margin-bottom: 0;    
-    height: 100px;    
-}
-div.cross_selling button.cross
-{     
-    border-radius: 4px;
-    background-color: #f4511e;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 20px;
-    padding: 10px;
-    width: 120px;   
-    transition: all 0.5s;
-    cursor: pointer;
-    position: relative;    
-    margin: 10px;      
-    font-family: "Century Gothic";
-}
-div.cross_selling button.cross span
-{
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-div.cross_selling button.cross span:after
-{
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}  
-div.cross_selling button.cross:hover span
-{
-    padding-right: 25px;
-}  
-div.cross_selling button.cross:hover span:after
-{
-    opacity: 1;
-    right: 0;
-}
-div.access_passes
-{      
-    font-family: "Century Gothic"; 
-    color: #333333;
-    text-align: center; 
-   
-    background-color: rgba(120, 36, 76, 1);    
-}
-div.access_passes h1
-{
-    font-size: 100px;
-    color: white;
-}
-div.access_passes h2
-{
-    font-size: 30px;
-    color: white;
-    font-weight: normal;
-}
-div.access_passes select.quantity
-{    
-    box-sizing: border-box; 
-    height: 50px;   
-    margin-right: 480px;
-    font-size: 30px;   
-    font-family: "Century Gothic";
-}
-div.access_passes select.pass_type
-{ 
-    box-sizing: border-box;     
-    height: 50px;       
-    font-size: 30px;   
-    font-family: "Century Gothic";
-}
-div.access_passes h3
-{
-    display: inline-block; 
-    color: white;
-    font-size: 50px; 
-    font-weight: normal;
-}
-div.access_passes button.addcart
-{   
-    display: inline-block;
-    border-radius: 4px;
-    background-color: #f4511e;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 40px;
-    padding: 20px;
-    width: 350px;    
-    transition: all 0.5s;
-    cursor: pointer;   
-    font-family: "Century Gothic";
-}
-div.access_passes button.addcart span
-{
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-div.access_passes button.addcart span:after
-{
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}  
-div.access_passes button.addcart:hover span
-{
-    padding-right: 25px;
-}  
-div.access_passes button.addcart:hover span:after
-{
-    opacity: 1;
-    right: 0;
-}
+
+/*----------------------------------------------------- Footer -----------------------------------------------------*/
 div.footer
 {
   height: 150px; 
@@ -554,20 +454,4 @@ div.footer
   height: 50px;  
   width: 5%;
   object-fit: scale-down;
-}
-@media only screen and (max-width: 800px)
-{
-    li 
-    {
-        display: hidden;
-    }
-    div.header img
-    {
-        width: 100%;
-        height: 500px;        
-    }
-    div.header p
-    {
-        font-size: 65px;
-    }    
 }
