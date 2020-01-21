@@ -8,10 +8,11 @@
         <link href="css/style-searchUsers.css" rel="stylesheet" type="text/css">
     </head>
     <body>    
-        <section>
+        <section class="section">
             <h1><img src="img/createInvoice icon.png" alt="icon search users"> Create Invoice </h1>
             <hr id="longLine"/>
         </section>
+        <section class="secondsections">
         <form>                    
             <label>Name <input type="text" ></label> 
             <label>Mobile Number<input type="text"></label>
@@ -26,5 +27,6 @@
             <button class="buttonsLila" type="button">Create Invoice</button>
             
         </form> 
+</section>
     </body>
 </html>

@@ -8,10 +8,11 @@
         <link href="css/style-searchUsers.css" rel="stylesheet" type="text/css">
     </head>
     <body>    
-        <section>
+        <section class="section">
             <h1><img src="img/invoicesicon.png" alt="icon search users">Invoices</h1>
             <hr id="longLine"/>
         </section>
+        <section class="secondsections">
         <section>
             <form>
                 <label>Search by Invoice ID: <input type="text" placeholde="000354" ></label>
@@ -32,7 +33,7 @@
             <button class="buttonsLila" type="button">Download</button>
             <label>*To download an invoice, select it in the the table and click the button </label>
         </section>
-
+</section>
         
     </body>
 </html>
