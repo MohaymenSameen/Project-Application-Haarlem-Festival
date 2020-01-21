@@ -1,5 +1,11 @@
 <?php
     session_start();
+    if(isset($_POST['submit']))
+        {
+            echo '<a href="../../Home/view/home_view.php">home </a>';
+            session_destroy();
+            exit("Thank you for your purchase!! Please click on the link to return to the home page");           
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -96,7 +102,7 @@
                 {
                     echo '<h3>'."Cart Total: &euro;",$_SESSION['accprice'].'</h3>';
                 }
-            }
+            }            
         ?>      
         </form>
     </div>
@@ -125,7 +131,10 @@
             <input type="radio" name="payment" value="Cash" style="width:20px; height:20px; margin-left: 10%;"><label>Cash</label><br><br><br><br><br><br><br><br>
         </form>
     </div>
+    <form method="POST">
+    <input type="hidden" name="submit">
     <button type="submit" class="checkout"><span>Checkout</span></button>
+    </form>
     <div class="footer">
         
         <p class="left">All rights reserved &copy; 2019</p>            
