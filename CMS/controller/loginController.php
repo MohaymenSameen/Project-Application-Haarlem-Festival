@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             
     // Check if e-mail is empty
-    if(empty(trim($_POST["email"]))){
+    if(empty(trim($_POST["email"]))){ //removes white space
         $email_err = "Please enter your email.";
     } else{
         $email = trim($_POST["email"]);
@@ -74,8 +74,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }
         }
         
-        // Close statement
-        //$stmt->close();
     }
 
     // Close connection <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">pod rel stylesheet

@@ -1,0 +1,457 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #FFFFFF;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+}
+
+/*----------------------------------------------------- Navbar -----------------------------------------------------*/
+
+div.navbar ul
+{    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    background-color:black;    
+    z-index: 999;
+}
+div.navbar li 
+{
+    float: left;    
+}  
+div.navbar li a 
+{
+    font-family: "Century Gothic";
+    font-size: 30px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 50px;
+    text-decoration: none;   
+}
+div.navbar a:hover
+{
+    background-color: purple;
+}
+div.navbar button.dropbtn
+{
+    margin-left: 10px;
+    width: 250px;
+    height: 50px;
+    border-radius: 30px;
+    position: relative;
+    top: 12px;
+    background-color: #f4511e;
+    border-style: none;
+    cursor: pointer;
+    transition: 0.3s;
+    padding-left: 50px;
+    text-align: left;
+    font-size: 30px;
+    color: white;
+    font-family: "Century Gothic";
+}
+div.navbar button.dropbtn:hover
+{
+    background-color:rgb(182, 0, 0);    
+}
+div.navbar button.dropbtn img
+{
+    padding-top: 5px;
+    height: 30px;   
+}
+div.navbar button.dropbtn span
+{
+    padding-left: 20px;
+} 
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
+
+/*----------------------------------------------------- Header -----------------------------------------------------*/
+
+div.header
+{   
+    display: flex;      
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-bottom: 0px;
+}
+div.header img
+{      
+    width: 100%;
+    height: 600px;
+
+}
+div.header p
+{    
+    opacity: 0.89;
+    font-size: 125pt; 
+    font-weight: bold;  
+    font-family: "Century Gothic";
+    color: white;    
+    position: absolute;        
+    left: 37%;   
+}
+
+button#ticketButton{
+    position: relative;
+    right: 20px;
+    bottom: 70px;
+    float: right;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #E2011B;
+    border-radius: 8px;
+    border: none;
+}
+
+button#ticketButton a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 22pt;
+}
+
+/*----------------------------------------------------- Information Section -----------------------------------------------------*/
+
+div.information
+{      
+    width: 100%;
+    height: 100%;    
+    background-color: #E4E4E4;
+    padding: 0;  
+    margin: 10px;  
+    display: inline-block;
+    font-family: "Century Gothic";
+    border-radius: 45px;
+    
+    height: 520px;
+}
+div.information h1
+{
+    margin-bottom: 0px;
+    font-size: 40pt;
+    font-weight: bold;
+    text-align: center;
+    color: #333333;
+}
+div.information h2
+{   
+    font-size: 30pt;
+    text-align: center;
+    font-weight: normal;
+    color: #010106;    
+}
+div.information p{
+    font-size: 22pt;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width:  425px;
+    height: 241px;
+}
+div.information p.bubbles{
+    background-color: #33013C;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    border-radius: 45px;
+    display: flex;
+    align-items: center;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #797979;
+    position: absolute;
+}
+div.information p#bubble1{
+    width: 320px;
+    height: 213px;
+    left: 40px;
+    top: 650px;
+}
+div.information p#bubble2{
+    width: 353px;
+    height: 165px;
+    left: 90px;
+    top: 890px;
+}
+div.information p#bubble3{
+    width: 320px;
+    height: 213px;
+    right: 30px;
+    top: 650px;
+}
+div.information p#bubble4{
+    width: 353px;
+    height: 165px;
+    right: 50px;
+    top: 890px;
+}
+
+div.information p#disclaimer{
+    display: inline;
+    font-size: 14pt;
+    color: #333333;
+}
+
+/*----------------------------------------------------- Timetables -----------------------------------------------------*/
+
+div.timetable1
+{
+    margin-left: 5%;
+    width: 80%;
+    height: 100%;    
+    font-size: 50pt;    
+    color: #000000;   
+    display: inline-block;
+}
+div.timetable1 h2
+{
+    color:  #ffffff;
+    font-weight: bold;
+    font-size: 50;
+}
+div.timetable1 table
+{
+    font-size: 20pt;    
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: 8%;
+}
+div.timetable1 table td,th
+{    
+    text-align: center;
+    padding: 25px;
+}
+div.timetable1 table th
+{
+    background-color: #333333;
+    color: white;
+    font-size: 20pt;
+}
+div.timetable1 table tr:nth-child(even)
+{   
+    background-color: #CCCCCC;      
+}
+div.timetable1 table tr:nth-child(odd)
+{   
+    background-color: #FFFFFF;      
+}
+div.timetable1 button#ticketButton2{
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #E2011B;
+    border-radius: 8px;
+    border: none;
+}
+div.timetable1 button#ticketButton2 a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 22pt;
+}
+
+
+
+div.timetable2
+{
+    margin-right: 0%;
+    width: 90%;
+    height: 100%;    
+    font-size: 50pt;    
+    color: #000000;   
+    display: inline-block;
+}
+div.timetable2 h2
+{
+    color:  #333333;
+    font-weight: bold;
+    font-size: 50;
+    text-align: right;
+}
+div.timetable2 table
+{
+    font-size: 20pt;    
+    border-collapse: collapse;
+    width: 100%;
+    margin-left:5%;
+    margin-right: 8%;
+}
+div.timetable2 table td,th
+{    
+    text-align: center;
+    padding: 25px;
+}
+div.timetable2 table th
+{
+    background-color: #333333;
+    color: white;
+    font-size: 30px;
+}
+div.timetable2 table tr:nth-child(even)
+{   
+    background-color: #CCCCCC;      
+}
+div.timetable2 table tr:nth-child(odd)
+{   
+    background-color:  #F2F2F2;       
+}
+
+div.timetable2 button#ticketButton2{
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #E2011B;
+    border-radius: 8px;
+    border: none;
+}
+div.timetable2 button#ticketButton2 a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 22pt;
+}
+
+
+
+div.timetable3
+{
+    margin-left: 5%;
+    width: 80%;
+    height: 100%;    
+    font-size: 50pt;  
+    display: inline-block;
+}
+div.timetable3 h2
+{
+    color:  #ffffff;
+    font-weight: bold;
+    font-size: 50;
+}
+div.timetable3 table
+{
+    font-size: 20pt;    
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: 8%;
+}
+div.timetable3 table td,th
+{    
+    text-align: center;
+    padding: 25px;
+}
+div.timetable3 table th
+{
+    background-color: #333333;
+    color: white;
+    font-size: 30px;
+}
+div.timetable3 table tr:nth-child(even)
+{   
+    background-color: #CCCCCC;      
+}
+div.timetable3 table tr:nth-child(odd)
+{   
+    background-color: #FFFFFF;      
+}
+
+div.timetable3 button#ticketButton2{
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #E2011B;
+    border-radius: 8px;
+    border: none;
+}
+div.timetable3 button#ticketButton2 a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 22pt;
+}
+div.backcolor1{
+    background-color: #33013C;
+    border-radius: 45px;
+}
+div.backcolor2
+{
+    background-color: #E4E4E4;    
+    border-radius: 45px;
+}
+
+/*----------------------------------------------------- Footer -----------------------------------------------------*/
+div.footer
+{
+  height: 150px; 
+  width: 100%;
+  position: relative;
+  
+  background-color: black;
+  color: white;
+  font-family: "Century Gothic";
+  display: flex;  
+  white-space: nowrap;
+}
+
+.left
+{
+  color: #fff;
+  background-color: #000;
+  margin-top:2%;
+  margin-left: 1%;
+  float: left;  
+}
+
+.right
+{
+  background-color: #000;
+  position: relative;
+  left: 62%; 
+  top: 20px;
+  height: 50px;  
+  width: 5%;
+  object-fit: scale-down;
+}

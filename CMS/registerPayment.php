@@ -8,10 +8,11 @@
         <link href="css/style-searchUsers.css" rel="stylesheet" type="text/css">
     </head>
     <body>    
-        <section>
+        <section class="section">
             <h1><img src="img/registerPayment.png" alt="icon search users"> Register Payment</h1>
             <hr id="longLine"/>
         </section>
+        <section class="secondsections">
         <section>
             <form>
                 <label>Search Order ID <input type="text" placeholde="000354" ></label>
@@ -38,6 +39,6 @@
             <button id="greedButton" type="button">Paid</button>
         </section>
 
-        
+</section>
     </body>
 </html>

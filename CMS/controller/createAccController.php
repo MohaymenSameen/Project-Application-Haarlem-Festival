@@ -101,14 +101,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 $param_email = $email;
                 $param_name = $name;
                 $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-                $param_phone = $phone;
+                $param_phone = $_POST['phone'];
                 $param_role = $_POST['role'];
                 
                 
                 // Attempt to execute the prepared statement
                 if($stmt->execute()){
-                    // Redirect to login page
-                    echo"Account successfully created! ";
+                   
+                    header("Location: created.php");
                 } else{
                     echo "Something went wrong. Please try again later."; 
                 }
