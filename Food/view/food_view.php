@@ -34,11 +34,12 @@
 		<div class="container">
 			<div class="nav_grid">
 				<ul class="nav_link">
-					<li><a href="javascript:void(0);">Home</a></li>
-					<li><a href="javascript:void(0);">Jazz</a></li>
-					<li><a href="javascript:void(0);">Dance</a></li>
-					<li><a href="javascript:void(0);">Food</a></li>
-					<li><a href="javascript:void(0);">Volunteer</a></li>
+					
+					<li><a href="../../../Project-Application-Haarlem-Festival/Home/view/home_view.php">Home</a></li>
+					<li><a href="../../../Project-Application-Haarlem-Festival/Jazz/jazz_view.php">Jazz</a></li>
+					<li><a href="../../../Project-Application-Haarlem-Festival/Dance/view/dance_view.php">Dance</a></li>
+					<li><a href="../../../Project-Application-Haarlem-Festival/Food/view/food_view.php"><strong>Food</strong></a></li>
+					<li><a href="../../../Project-Application-Haarlem-Festival/CMS/login.php">Volunteer</a></li>
 				</ul>
 				<div class="car_lang">
 					<button class="dropbtn" onclick="myFunction()"><img src="../images/shopping_cart.png"><span>Items</span></button>
