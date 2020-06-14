@@ -1,21 +1,29 @@
 <?php
     class ShoppingCart
     {
+        //adding ticket to shopping cart
         public function createShoppingCart($tickets)
         {
+            //if session exists
             if(isset($_SESSION['shopping_cart']))
-            {            
+            {   
+                //count the elements and add ticket to cart         
                 $count = count($_SESSION['shopping_cart']);               
                 $_SESSION['shopping_cart'][$count] = $tickets;                
             }
             else
-            {              
+            {        
+                //if session not set add a new ticket      
                 $_SESSION['shopping_cart'][0] = $tickets;                  
             }           
         }
+        //display shopping cart
         public function displayShoppingCart()
         {
+            //getting full url 
             $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+            //if cart is not empty
             if(!empty($_SESSION['shopping_cart']))
             {
                 $total=0;
@@ -39,9 +47,11 @@
             {
                 echo '<h2>'."Shopping Cart Is Empty".'</h2>';
             }           
-        }        
+        }      
+        //removing ticket from cart  
         public function removeFromCart()
         {
+            //base url refresh
             $url = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']);
             if(isset($_GET["action"]))
             {
