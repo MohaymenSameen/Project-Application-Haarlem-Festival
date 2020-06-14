@@ -25,7 +25,7 @@
                 {
                     $newDate = date("l, F d", strtotime($values["item_date"]));
                     echo '<h2 id="quantity">'.$values["item_name"].'</h2>';
-                    echo '<h2 id="band">'.'<strong>',"Date: ",'</strong>',$newDate.', '.$values["item_time"].'</h2>';                             
+                    echo '<h2 id="band">'.'<strong>',"Date: ",'</strong>',$values["item_date"].', '.$values["item_time"].'</h2>';                             
                     echo '<h2 id="band">'.'<strong>',"Restaurant: ",'</strong>',$values["rest_name"].'</h2>';
                     echo '<h2 id="band">'.'<strong>',"Price: ",'</strong>',"&euro;",$values["item_price"].'</h2>';
                     echo '<h2 id="band">'.'<strong>',"Quantity: ",'</strong>',$values["item_quantity"],"x".'</h2>';
