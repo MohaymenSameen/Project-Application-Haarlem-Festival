@@ -1,5 +1,5 @@
 <?php
-	include('../controller/food_controller.php');  
+	include ('../controller/food_controller.php');  
 	session_start();	
 ?>
 
@@ -17,6 +17,13 @@
 	<script src="js/jquery.js"></script>	
 </head>
 <body>
+	<script>
+		function myFunction()
+		{
+			document.getElementById("myDropdown").classList.toggle("show");
+		}
+
+    </script>
 <!-- wrapper  -->
 <div class="wrapper">
 	<header>
@@ -30,11 +37,21 @@
 					<li><a href="javascript:void(0);">Volunteer</a></li>
 				</ul>
 				<div class="car_lang">
-					<div class="cart"><a href="javascript:void(0);">|0| Items</a></div>
-					<div class="lang">
-						<a href="javascript:void(0);">EN</a>
-						<a href="javascript:void(0);">NL</a>
-					</div>
+					<button class="dropbtn" onclick="myFunction()"><img src="../images/shopping_cart.png"><span>Items</span></button>
+						<div id="myDropdown" class="dropdown-content">
+							<form method="POST">
+								<?php
+									$contr=new FoodController();
+									$contr->shoppingCart();
+									echo("<button type='button' class='checkout' onclick=\"location.href='../../Payment/view/payment_view.php'\">Check Out</button>");
+									if(isset($_POST['delete']))
+									{
+										session_destroy();
+										header("Location: food_view.php");
+									}                    
+								?>    
+							</form>
+						</div>
 				</div>
 				<a class="logo" href="javascript:void(0);"><img src="../images/logo.png"></a>
 			</div>

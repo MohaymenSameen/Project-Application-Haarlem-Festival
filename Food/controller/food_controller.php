@@ -1,5 +1,6 @@
 <?php
     require_once ('../model/food_model.php');
+    include ('../shopping_cart.php');
     
     class FoodController
     {
@@ -19,6 +20,15 @@
             $row = $foodModel->getRestaurant("SELECT * FROM restaurants WHERE id='$count'");     
             $count=$count+1;  
             return $row;
+        }
+
+        
+        //shopping cart
+        public function shoppingCart(){
+            $tickets = array("item_date" => "July 26th, Thursday", "rest_name" => "Ratatuile", "item_time" => "19:00","item_name" => "Ticket", "item_price" => "10", "item_quantity" => "2", "item_id" => "1");
+            $cart = new ShoppingCart();
+            $cart->createShoppingCart($tickets);
+            $cart->displayShoppingCart();
         }
         
 
@@ -89,6 +99,7 @@
         $cs2=$res['cs2'];
     }
 
+
     //storing restaurants data into an array's cells 
     
     $name=array();
@@ -104,7 +115,7 @@
     for ($i = 0; $i <= 8; $i++)
     {
         $restaurants=$contr->recieveRestaurantData($i);
-        foreach($restaurants as $res)
+        foreach((array)$restaurants as $res)
         {
             $name[$i]=$res['name'];    
             $address[$i]=$res['address'];
@@ -117,4 +128,5 @@
             $startTime[$i]=$res['start_time'];
         }
     }
+
 ?>
