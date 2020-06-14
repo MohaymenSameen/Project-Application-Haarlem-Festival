@@ -37,7 +37,7 @@
         }
 
 
-        //dobavi za update DB
+        //dobavi za update DB reservatons
 
 
 
