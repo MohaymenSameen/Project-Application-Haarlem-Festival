@@ -1100,7 +1100,7 @@
 				<form method="POST" action="../controller/food_controller.php">
 					<div class="feild_grid">
 						<label>Restaurant</label>
-						<select name="restaurant_option">
+						<select name="restaurant_option" required>
 							<option value="">Select a restaurant</option>
 							<option value="Mr. & Mrs.">Mr. & Mrs.</option>
 							<option value="Ratatoville">Ratatoville</option>
@@ -1114,7 +1114,7 @@
 					</div>
 					<div class="feild_grid">
 						<label>Date</label>
-						<select name="date_option">
+						<select name="date_option" required>
 							<option value="">Select a date</option>
 							<option value="25th of July 2020">25th of July 2020</option>
 							<option value="26th of July 2020">26th of July 2020</option>
@@ -1125,7 +1125,7 @@
 					</div>
 					<div class="feild_grid">
 						<label>Time</label>
-						<select name="time_option">
+						<select name="time_option" required>
 							<option value="">Select time</option>	
 							<option value="18:00">18:00</option>
 							<option value="19:30">19:30</option>
@@ -1135,7 +1135,7 @@
 					</div>
 					<div class="feild_grid">
 						<label>Number of people</label>
-						<select name="people_option">
+						<select name="people_option" required>
 							<option value="">Select quantity</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
@@ -1157,7 +1157,7 @@
 					</div>
 					<div class="feild_grid">
 						<label>Name</label>
-						<input type="text" name="nameOfPerson"/>
+						<input required type="text" name="nameOfPerson"/>
 					</div>
 					<div class="feild_grid2">
 						<label>Your Note (i.e allergies, extra assistance)</label>

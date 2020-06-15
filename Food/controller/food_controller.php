@@ -149,7 +149,7 @@
         }
     }
 
-    //shopping cart take data from form and check if the required fileds are filled
+    //shopping cart take data from form
 	if(isset($_POST['addToCart'])){
         //variables with all fileds'values from the reservation form
         $price = 10;
@@ -161,17 +161,12 @@
         $note = $_POST['note']; 
         $id = 1;
 
-        //check if the required fileds are filled
-        if($date != "" || $time != "" || $restaurant != ""|| $people != "")  {
-            $tickets = array("item_date" => $date, "rest_name" => $restaurant, "item_time" => $time,"item_name" => "Reservation", "item_price" => $price, "item_quantity" => $people, "item_id" => $id);
-            $cart = new ShoppingCart();
-            $cart->createShoppingCart($tickets);
-            $id = $id +1;
-            header("Location: ../view/food_view.php");
-        } else {
-            //if no seletion is made
-            echo "Please fill all required fields.";
-        }
+        $tickets = array("item_date" => $date, "rest_name" => $restaurant, "item_time" => $time,"item_name" => "Reservation", "item_price" => $price, "item_quantity" => $people, "item_id" => $id);
+        $cart = new ShoppingCart();
+        $cart->createShoppingCart($tickets);
+        $id = $id +1;
+        header("Location: ../view/food_view.php");
+           
     } 
 
 ?>
