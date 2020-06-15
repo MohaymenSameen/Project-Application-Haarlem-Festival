@@ -545,7 +545,7 @@ div.tickets h3
     font-weight: bolder;
     margin-top: -280px;
 }
-div.tickets select.quantity
+div.tickets input.quantity
 {   display: inline-block;
     position: absolute;  
     left: 48%;
@@ -643,7 +643,7 @@ div.access_passes h2
     color: white;
     font-weight: normal;
 }
-div.access_passes select.quantity
+div.access_passes input.quantity
 {    
     position: absolute;
     margin-top: -120px;

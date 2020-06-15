@@ -1,5 +1,7 @@
 <?php
     require_once ('../controller/dance_controller.php');  
+
+    //Create a session, if one is not already present
     if(!isset($_SESSION)){
         session_start();
     }
@@ -9,9 +11,9 @@
     //retrieve text data
     $pageData = $DanceController->recieveData();
     //retrieve timetables
-    $timetable1 = $DanceController->recieveTimetable1();
-    $timetable2 = $DanceController->recieveTimetable2();
-    $timetable3 = $DanceController->recieveTimetable3();
+    $timetable1 = $DanceController->recieveTimetable("July 27th, Friday");
+    $timetable2 = $DanceController->recieveTimetable("July 28th, Saturday");
+    $timetable3 = $DanceController->recieveTimetable("July 29th, Sunday");
 
     //store data from database in variables
     foreach($pageData as $res)
@@ -42,7 +44,10 @@
     <title>Dance</title>
 </head>
 <body>    
+
+
     <script>
+    //shopping cart function
     function myFunction()
     {
         document.getElementById("myDropdown").classList.toggle("show");
@@ -53,8 +58,8 @@
         <ul>
             <li><a href="../../Home/view/home_view.php">Home</a></li>
             <li><a href="../../Jazz/view/jazz_view.php">Jazz</a></li>
-            <li><a href="dance_view.html"><strong>Dance</strong></a></li>
-            <li><a href="../../Food.html">Food</a></li>
+            <li><a href="dance_view.php"><strong>Dance</strong></a></li>
+            <li><a href="../../Food/view/food_view.php">Food</a></li>
             <li><a href="../../CMS/admin.php">Volunteer</a></li>
             </ul>
     </div>
@@ -65,16 +70,14 @@
         <div id="myDropdown" class="dropdown-content">
             <form method="POST">
             <?php
-
+                //dispay cart contents after button clicked
                 $DanceController->DisplayCart();
-
+                
+                //display check out button
                 echo("<button type='button' class='checkout' onclick=\"location.href='../../Payment/view/payment_view.php'\">Check Out</button>");  
 
-                if(isset($_POST['delete']))
-                {
-                    session_destroy();
-                    header("Location: jazz_view.php");
-                }                    
+                //remove item from cart if button is pressed
+                $DanceController->removeFromCart();                 
             ?>    
             </form>
         </div>
@@ -85,6 +88,7 @@
         <img src="../img/header.png">
         <?php echo '<p>'.$title.'</p>';?>
     </div>
+    <!-- link to tickets pane -->
     <button id="ticketButton" type="button"><a href="#tickets">Tickets</a></button>
 
     <div class="information">
@@ -97,6 +101,8 @@
              echo '<p class="bubbles" id="bubble4">'.$bubble4.'</p>';?>
              <p id="disclaimer">*The capacity of some venues is limited and availability for all holders cannot be guaranteed.</p>
     </div>
+
+    <!----------------------------------------------- TIMETABLES ---------------------------------------------->
     <div class="backcolor1">
     <div class="timetable1">
         <?php         
@@ -204,13 +210,13 @@
     </div>   
     </div>
 
-                                        <!-- TICKETS & ACCESS PASSES -->
+    <!---------------------------------- TICKETS --------------------------------->
     <div class="tickets" id="tickets">   
         <form method="POST" action="../controller/dance_controller.php">        
         <h1> Tickets </h1>
         <h2> Select date: </h2>      
         <br>
-
+        <!-- display different dates -->
         <select class="date" name="date">
             <?php            
             foreach($timetable1 as $res)
@@ -233,37 +239,33 @@
 
         <h2 id="dj"> Select event: </h2> 
 
-        <select class="dj" name="dj">
+        <select class="dj" id="dj" name="dj">
             <?php            
-                foreach($timetable1 as $res)
+
+            //merge all timetables' performances into one and output
+            $timetables = array_merge($timetable1, $timetable2, $timetable3);
+                foreach($timetables as $res)
                 {                     
                     echo '<option>'.$res['dj'].'</option>';                   
-                }
-                foreach($timetable2 as $res)
-                {                     
-                    echo '<option>'.$res['dj'].'</option>';                    
-                }
-                foreach($timetable3 as $res)
-                {                     
-                    echo '<option>'.$res['dj'].'</option>';                    
-                }                                  
+                }                                 
             ?>
-        </select>        
-        
-        <h3> Quantity: </h3>     
+        </select>  
 
-        <select class="quantity" name="quantity">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>            
-        </select>
+        <!-- remove duplicate dropdown entries -->
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript">
+        var code = {};
+        $("select[name='dj'] > option").each(function () {
+            if(code[this.text]) {
+                $(this).remove();
+            } else {
+                code[this.text] = this.value;
+            }
+        });
+        </script>
+        
+        <h3> Quantity: </h3>
+        <input type="number" class="quantity" name="quantity" min=1 max=50 value=1>
         <br>                 
             <button type="submit" class="addcart" name="ticket"><span>Add To Cart</span></button>
         </form>
@@ -275,12 +277,14 @@
         <img src="../img/jazz.png">       
         <img src="../img/food.png">    
         <br>
-        <button type="button" class="cross"><span>Jazz</span></button>
-        <button type="button" class="cross"><span>Food</span></button>          
+        <button type="button" class="cross" a href="../../Jazz/view/jazz_view.php"><span>Jazz</span></button>
+        <button type="button" class="cross" a href="../../Food/view/food_view.php"><span>Food</span></button>          
     </div>      
 
+    <!----------------------------------------- ACCESS PASSES ------------------------------------------>
+
     <div class="access_passes">
-        <form method="POST">
+        <form method="POST" action="../controller/dance_controller.php">
         <h1>Access Passes</h1>
         <?php
             echo '<h2>'.$pass1.'</h2>';
@@ -291,7 +295,7 @@
 
         <h3 class="pass"> Select pass: </h3>
         
-        <select class="pass_type" name=pass>
+        <select class="pass_type" name="pass">
             <option><?php echo $pass1?></option>
             <option><?php echo $pass2?></option>
             <option><?php echo $pass3?></option>
@@ -299,28 +303,14 @@
         </select>
         <br>
         <h3>Quantity:</h3>
-        <select class="quantity" name="quantity">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>   
-        </select>  
+        <input type="number" class="quantity" name="quantity" min=1 max=100 value=1>
         <br>
         <button type="submit" class="addcart" name="access_pass"><span>Add To Cart</span></button>
         <br><br>
         </form>
     </div>
 
-    
-
     <div class="footer">
-        
         <p class="left">All rights reserved &copy; 2020</p>            
         <img class="right" src="../../Home/img/facebook.png">
         <img class="right" src="../../Home/img/instagram.png">
