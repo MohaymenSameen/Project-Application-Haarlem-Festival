@@ -1,6 +1,9 @@
 <?php
-    require_once ('../controller/dance_controller.php');   
-
+    require_once ('../controller/dance_controller.php');  
+    if(!isset($_SESSION)){
+        session_start();
+    }
+    
     //new controller module
     $DanceController = new DanceController();
     //retrieve text data
@@ -53,19 +56,30 @@
             <li><a href="dance_view.html"><strong>Dance</strong></a></li>
             <li><a href="../../Food.html">Food</a></li>
             <li><a href="../../CMS/admin.php">Volunteer</a></li>
-
-           
-           <div class="dropdown">
-            <button class="dropbtn" onclick="myFunction()"><img src="../img/shopping_cart.png"><span>Items</span></button>     
-
-            <div id="myDropdown" class="dropdown-content">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
-            </div>
-        </ul>
+            </ul>
     </div>
+           
+    <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction()"><img src="../img/shopping_cart.png"><span>Items</span></button>     
+
+        <div id="myDropdown" class="dropdown-content">
+            <form method="POST">
+            <?php
+
+                $DanceController->DisplayCart();
+
+                echo("<button type='button' class='checkout' onclick=\"location.href='../../Payment/view/payment_view.php'\">Check Out</button>");  
+
+                if(isset($_POST['delete']))
+                {
+                    session_destroy();
+                    header("Location: jazz_view.php");
+                }                    
+            ?>    
+            </form>
+        </div>
+    </div>
+
 
     <div class="header">
         <img src="../img/header.png">
@@ -190,9 +204,124 @@
     </div>   
     </div>
 
+                                        <!-- TICKETS & ACCESS PASSES -->
+    <div class="tickets" id="tickets">   
+        <form method="POST" action="../controller/dance_controller.php">        
+        <h1> Tickets </h1>
+        <h2> Select date: </h2>      
+        <br>
+
+        <select class="date" name="date">
+            <?php            
+            foreach($timetable1 as $res)
+            {                     
+            echo '<option>'.$res['date'].'</option>';
+            break;
+            }
+            foreach($timetable2 as $res)
+            {                     
+            echo '<option>'.$res['date'].'</option>';
+            break;
+            }
+            foreach($timetable3 as $res)
+            {                     
+            echo '<option>'.$res['date'].'</option>';
+            break;
+            }
+            ?>
+        </select>
+
+        <h2 id="dj"> Select event: </h2> 
+
+        <select class="dj" name="dj">
+            <?php            
+                foreach($timetable1 as $res)
+                {                     
+                    echo '<option>'.$res['dj'].'</option>';                   
+                }
+                foreach($timetable2 as $res)
+                {                     
+                    echo '<option>'.$res['dj'].'</option>';                    
+                }
+                foreach($timetable3 as $res)
+                {                     
+                    echo '<option>'.$res['dj'].'</option>';                    
+                }                                  
+            ?>
+        </select>        
+        
+        <h3> Quantity: </h3>     
+
+        <select class="quantity" name="quantity">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>            
+        </select>
+        <br>                 
+            <button type="submit" class="addcart" name="ticket"><span>Add To Cart</span></button>
+        </form>
+    </div>
+    
+
+    <div class="cross_selling">
+        <?php echo '<h1>'.$cross_sell.'</h1>';?>        
+        <img src="../img/jazz.png">       
+        <img src="../img/food.png">    
+        <br>
+        <button type="button" class="cross"><span>Jazz</span></button>
+        <button type="button" class="cross"><span>Food</span></button>          
+    </div>      
+
+    <div class="access_passes">
+        <form method="POST">
+        <h1>Access Passes</h1>
+        <?php
+            echo '<h2>'.$pass1.'</h2>';
+            echo '<h2>'.$pass2.'</h2>';        
+            echo '<h2>'.$pass3.'</h2>';
+            echo '<h2>'.$pass4.'</h2>';                     
+        ?>
+
+        <h3 class="pass"> Select pass: </h3>
+        
+        <select class="pass_type" name=pass>
+            <option><?php echo $pass1?></option>
+            <option><?php echo $pass2?></option>
+            <option><?php echo $pass3?></option>
+            <option><?php echo $pass4?></option>   
+        </select>
+        <br>
+        <h3>Quantity:</h3>
+        <select class="quantity" name="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>   
+        </select>  
+        <br>
+        <button type="submit" class="addcart" name="access_pass"><span>Add To Cart</span></button>
+        <br><br>
+        </form>
+    </div>
+
+    
+
     <div class="footer">
         
-        <p class="left">All rights reserved &copy; 2019</p>            
+        <p class="left">All rights reserved &copy; 2020</p>            
         <img class="right" src="../../Home/img/facebook.png">
         <img class="right" src="../../Home/img/instagram.png">
         <img class="right" src="../../Home/img/youtube.png">

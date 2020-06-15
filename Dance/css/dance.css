@@ -9,6 +9,11 @@ body
 
 /*----------------------------------------------------- Navbar -----------------------------------------------------*/
 
+div.navbar{
+    position: relative;
+    z-index: 1;
+}
+
 div.navbar ul
 {    
     list-style-type: none;
@@ -18,7 +23,7 @@ div.navbar ul
     position: fixed;
     width: 100%;
     background-color:black;    
-    z-index: 999;
+    z-index: 1;
 }
 div.navbar li 
 {
@@ -38,7 +43,8 @@ div.navbar a:hover
 {
     background-color: purple;
 }
-div.navbar button.dropbtn
+
+div.dropdown button.dropbtn
 {
     margin-left: 10px;
     width: 250px;
@@ -46,6 +52,8 @@ div.navbar button.dropbtn
     border-radius: 30px;
     position: relative;
     top: 12px;
+    /*left:370%*/
+    left: 970px;
     background-color: #f4511e;
     border-style: none;
     cursor: pointer;
@@ -55,45 +63,102 @@ div.navbar button.dropbtn
     font-size: 30px;
     color: white;
     font-family: "Century Gothic";
+    z-index: 4;
 }
-div.navbar button.dropbtn:hover
+div.dropdown button.dropbtn:hover
 {
     background-color:rgb(182, 0, 0);    
 }
-div.navbar button.dropbtn img
+div.dropdown button.dropbtn img
 {
     padding-top: 5px;
     height: 30px;   
 }
-div.navbar button.dropbtn span
+div.dropdown button.dropbtn span
 {
     padding-left: 20px;
 } 
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
+div.dropdown 
+{
+    position: fixed;
+    display: inline-block;   
+    z-index: 5;   
+}  
+div.dropdown div.dropdown-content
+{
+    display: none;   
     background-color: #f1f1f1;
-    min-width: 160px;
+    min-width: 160px; 
+    width: 400px;      
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
+    z-index: 5;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0;
+    padding-bottom: 10px;
+}  
+div.dropdown div.dropdown-content h2
+{
+    font-family: "Century Gothic";    
+}
+div.dropdown div.dropdown-content h2#band
+{
+    font-family: "Century Gothic";
+    font-size: 20px;
+    font-weight: normal;
+}
+div.dropdown div.dropdown-content h2#quantity
+{
+    font-family: "Century Gothic";
+    font-size: 20px;
+    font-weight: bold;
+}
+div.dropdown div.show
+{
     display: block;
-  }
-  
-  .dropdown a:hover {background-color: #ddd;}
-  
-  .show {display: block;}
+    position: relative;   
+    top: 30px; 
+    /*left:370%*/
+    left: 920px; 
+    max-height: 500px;   
+}
+div.dropdown button.delete
+{
+    background-color: #f4511e;
+    border-style: none;
+    color: white;
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    position: relative;
+    left: 70%;
+    bottom: 70px;
+    transition: 0.3s;
+}
+div.dropdown button.delete:hover
+{
+    background-color: rgb(182, 0, 0);
+}
+div.dropdown button.checkout
+{
+    background-color: #f4511e;
+    border-style: none;
+    color: white;
+    cursor: pointer;
+    width: 150px;
+    height: 30px;
+    margin-top: 30px;
+    position: relative;
+    left: 18%;    
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.3s;
+}
+div.dropdown button.checkout:hover
+{
+    background-color: rgb(182, 0, 0);
+}
 
 /*----------------------------------------------------- Header -----------------------------------------------------*/
 
@@ -420,6 +485,223 @@ div.backcolor2
 {
     background-color: #E4E4E4;    
     border-radius: 45px;
+}
+
+/*----------------------------------------------------- Tickets access passes --------------------------------------*/
+
+div.tickets
+{     
+    margin-left: 1%; 
+    margin-right: 1%;
+    margin-top: 3%;
+    margin-bottom: -26%;   
+    height: 525px;    
+    font-family: "Century Gothic"; 
+    color: #333333;   
+    border-radius: 45px;
+    background-color: #E4E4E4;     
+}
+div.tickets h1
+{
+    position: relative;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 70px;    
+}
+div.tickets h2
+{  
+    position: relative;
+    margin-top: -25px;
+    margin-bottom: 7px;
+    left: 5%; 
+    font-size: 40px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+div.tickets select.dj
+{
+    position: relative;
+    left: 5%;
+    font-size: 30px;
+    font-family: "Century Gothic";   
+    margin-top: 20px;
+    height: 60px;          
+}
+div.tickets select.date
+{   
+    position: relative;
+    left: 5%;
+    font-size: 30px;   
+    font-family: "Century Gothic";
+    margin-bottom: 85px;  
+    height: 60px;  
+    width: 630px;
+}
+div.tickets h3
+{           
+    position: relative;
+    text-align: center;
+    font-size: 30px; 
+    font-weight: bolder;
+    margin-top: -280px;
+}
+div.tickets select.quantity
+{   display: inline-block;
+    position: absolute;  
+    left: 48%;
+    width: 90px;
+    font-size: 30px;   
+    font-family: "Century Gothic";
+}
+div.tickets button.addcart
+{    
+    display: inline-block;
+    border-radius: 4px;
+    font-weight: bolder;
+    background-color: #663366;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+    width: 310px;
+    cursor: pointer;
+    margin: 5px;   
+    position: relative;
+    left: 41%;
+    bottom: 65%;
+    margin-top: 120px;
+    border-radius: 5px;   
+    font-family: "Century Gothic";
+
+}
+
+div.cross_selling
+{
+    text-align: center;    
+    position: relative;
+    width: 30%;
+    left: 65%;
+    bottom: 15px;
+    font-family: "Century Gothic";    
+}
+div.cross_selling h1
+{
+    position: relative;
+    padding-top: 20px;         
+    font-size: 35px;
+    font-weight: normal;
+    white-space: wrap;
+    color: #000000;
+    margin-bottom: 60px;
+}
+div.cross_selling img
+{
+    position: relative;
+    margin:3%;
+    margin-top: 0;
+    margin-bottom: 0;    
+    height: 130px;
+    width: 130px;    
+}
+div.cross_selling button.cross
+{     
+    border-radius: 4px;
+    background-color: #990033;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 130px;
+    height: 50px;
+    cursor: pointer;
+    position: relative;    
+    margin: 20px;      
+    font-family: "Century Gothic";
+}
+
+div.access_passes
+{      
+    font-family: "Century Gothic"; 
+    color: #333333; 
+    background-color: rgb(120, 36, 76);    
+    margin-right: 1%;
+    margin-left: 1%;
+    border-radius: 45px;
+}
+div.access_passes h1
+{
+    text-align: center;
+    font-size: 70px;
+    color: #ffffff;
+}
+div.access_passes h2
+{
+    margin-left: 30px;;
+    font-size: 30px;
+    color: white;
+    font-weight: normal;
+}
+div.access_passes select.quantity
+{    
+    position: absolute;
+    margin-top: -120px;
+    left: 53%;
+    width: 300px;
+    box-sizing: border-box; 
+    height: 50px;   
+    margin-right: 480px;
+    font-size: 30px;   
+    font-family: "Century Gothic";
+}
+div.access_passes h3.pass
+{
+    margin-top:-190px;
+    position: absolute;
+    left: 27%;
+    display: inline-block; 
+    color: white;
+    font-size: 50px; 
+    font-weight: normal;
+}
+div.access_passes h3
+{
+    position: absolute;
+    margin-top: -210px;
+    left: 53%;
+    display: inline-block; 
+    color: white;
+    font-size: 50px; 
+    font-weight: normal;
+}
+div.access_passes select.pass_type
+{ 
+    position: absolute;
+    margin-top: -100px;
+    left: 27%;
+    box-sizing: border-box;     
+    height: 50px;       
+    font-size: 30px;   
+    font-family: "Century Gothic";
+}
+div.access_passes button.addcart
+{   
+    display: inline-block;
+    border-radius: 4px;
+    position: absolute;
+    left:75%;
+    margin-top: -200px;
+    background-color: #663366;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+    width: 350px;
+    cursor: pointer;   
+    font-family: "Century Gothic";
+    font-weight: bolder;
 }
 
 /*----------------------------------------------------- Footer -----------------------------------------------------*/
