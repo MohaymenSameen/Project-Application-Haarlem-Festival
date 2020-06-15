@@ -1101,7 +1101,7 @@
 					<div class="feild_grid">
 						<label>Restaurant</label>
 						<select name="restaurant_option">
-							<option value="1">Select a restaurant</option>
+							<option value="">Select a restaurant</option>
 							<option value="Mr. & Mrs.">Mr. & Mrs.</option>
 							<option value="Ratatoville">Ratatoville</option>
 							<option value="ML">ML</option>
@@ -1115,7 +1115,7 @@
 					<div class="feild_grid">
 						<label>Date</label>
 						<select name="date_option">
-							<option value="1">Select a date</option>
+							<option value="">Select a date</option>
 							<option value="25th of July 2020">25th of July 2020</option>
 							<option value="26th of July 2020">26th of July 2020</option>
 							<option value="27th of July 2020">27th of July 2020</option>
@@ -1126,6 +1126,7 @@
 					<div class="feild_grid">
 						<label>Time</label>
 						<select name="time_option">
+							<option value="">Select time</option>	
 							<option value="18:00">18:00</option>
 							<option value="19:30">19:30</option>
 							<option value="21:00">21:00</option>
@@ -1135,6 +1136,7 @@
 					<div class="feild_grid">
 						<label>Number of people</label>
 						<select name="people_option">
+							<option value="">Select quantity</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
