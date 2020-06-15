@@ -49,11 +49,7 @@
 									$contr=new FoodController();
 									$contr->shoppingCart();
 									echo("<button type='button' class='checkout' onclick=\"location.href='../../Payment/view/payment_view.php'\">Check Out</button>");
-									if(isset($_POST['delete']))
-									{
-										session_destroy();
-										header("Location: food_view.php");
-									}                    
+									$contr->removeFromSC();                
 								?>    
 							</form>
 						</div>

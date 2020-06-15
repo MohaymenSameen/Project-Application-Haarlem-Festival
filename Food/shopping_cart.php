@@ -1,5 +1,5 @@
 <?php
-    class ShoppingCart
+    class ResShoppingCart
     {
         public function createShoppingCart($reservations)
         {

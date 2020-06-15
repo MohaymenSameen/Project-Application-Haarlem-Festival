@@ -36,14 +36,6 @@
             }            
         }
 
-
-        //dobavi za update DB reservatons
-
-
-
-
-
-
     }
 ?>   
 
