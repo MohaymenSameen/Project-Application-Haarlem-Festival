@@ -7,7 +7,7 @@
         //function for storing the fetched data into an array
         public function get($querys)
         {
-            $db = new Database(); //instead of :Database 
+            $db = new Database(); //instatiate instead of inheritance :Database  /ako go nasledq imam dostyp do vsichko v db classa private
             $sql=$querys;
             $result = $db->connect()->query($sql);              
             $row=$result->fetch_assoc();
@@ -35,14 +35,6 @@
                 return $rows;
             }            
         }
-
-
-        //dobavi za update DB
-
-
-
-
-
 
     }
 ?>   

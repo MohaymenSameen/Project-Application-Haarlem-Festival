@@ -1,6 +1,10 @@
 <?php
-	include('../controller/food_controller.php');  
-	session_start();	
+	include ('../controller/food_controller.php');  
+	if(!isset($_SESSION)){
+		session_start();
+	}
+	
+
 ?>
 
 <!DOCTYPE html>
@@ -17,24 +21,38 @@
 	<script src="js/jquery.js"></script>	
 </head>
 <body>
+	<script>
+		function myFunction()
+		{
+			document.getElementById("myDropdown").classList.toggle("show");
+		}
+
+    </script>
 <!-- wrapper  -->
 <div class="wrapper">
 	<header>
 		<div class="container">
 			<div class="nav_grid">
 				<ul class="nav_link">
-					<li><a href="javascript:void(0);">Home</a></li>
-					<li><a href="javascript:void(0);">Jazz</a></li>
-					<li><a href="javascript:void(0);">Dance</a></li>
-					<li><a href="javascript:void(0);">Food</a></li>
-					<li><a href="javascript:void(0);">Volunteer</a></li>
+					
+					<li><a href="../../../Project-Application-Haarlem-Festival/Home/view/home_view.php">Home</a></li>
+					<li><a href="../../../Project-Application-Haarlem-Festival/Jazz/jazz_view.php">Jazz</a></li>
+					<li><a href="../../../Project-Application-Haarlem-Festival/Dance/view/dance_view.php">Dance</a></li>
+					<li><a href="../../../Project-Application-Haarlem-Festival/Food/view/food_view.php"><strong>Food</strong></a></li>
+					<li><a href="../../../Project-Application-Haarlem-Festival/CMS/login.php">Volunteer</a></li>
 				</ul>
 				<div class="car_lang">
-					<div class="cart"><a href="javascript:void(0);">|0| Items</a></div>
-					<div class="lang">
-						<a href="javascript:void(0);">EN</a>
-						<a href="javascript:void(0);">NL</a>
-					</div>
+					<button class="dropbtn" onclick="myFunction()"><img src="../images/shopping_cart.png"><span>Items</span></button>
+						<div id="myDropdown" class="dropdown-content">
+							<form method="POST">
+								<?php
+									$contr=new FoodController();
+									$contr->shoppingCart();
+									echo("<button type='button' class='checkout' onclick=\"location.href='../../Payment/view/payment_view.php'\">Check Out</button>");
+									$contr->removeFromSC();                
+								?>    
+							</form>
+						</div>
 				</div>
 				<a class="logo" href="javascript:void(0);"><img src="../images/logo.png"></a>
 			</div>
@@ -1075,72 +1093,56 @@
 	<section>
 		<div class="container">
 			<div class="form_grid">
-				<form>
+				<form method="POST" action="../controller/food_controller.php">
 					<div class="feild_grid">
 						<label>Restaurant</label>
-						<select>
-							<option value="1">Select a restaurant</option>
-							<option value="2">Mr. & Mrs.</option>
-							<option value="3">Ratatoville</option>
-							<option value="4">ML</option>
-							<option value="4">Fris</option>
-							<option value="4">Specktakle</option>
-							<option value="4">Grand Cafe Brinkman</option>
-							<option value="4">Urban Frenchy Bistro Toujours</option>
-							<option value="4">The Golden Bull</option>
+						<select name="restaurant_option" required>
+							<option value="">Select a restaurant</option>
+							<option value="Mr. & Mrs.">Mr. & Mrs.</option>
+							<option value="Ratatoville">Ratatoville</option>
+							<option value="ML">ML</option>
+							<option value="Fris">Fris</option>
+							<option value="Specktakle">Specktakle</option>
+							<option value="Grand Cafe Brinkman">Grand Cafe Brinkman</option>
+							<option value="Urban Frenchy Bistro Toujours">Urban Frenchy Bistro Toujours</option>
+							<option value="The Golden Bull">The Golden Bull</option>
 						</select>
 					</div>
 					<div class="feild_grid">
 						<label>Date</label>
-						<select>
-							<option value="1">Select a date</option>
-							<option value="2">25th of July 2020</option>
-							<option value="2">26th of July 2020</option>
-							<option value="2">27th of July 2020</option>
-							<option value="2">28th of July 2020</option>
-							<option value="2">29th of July 2020</option>
+						<select name="date_option" required>
+							<option value="">Select a date</option>
+							<option value="25th of July 2020">25th of July 2020</option>
+							<option value="26th of July 2020">26th of July 2020</option>
+							<option value="27th of July 2020">27th of July 2020</option>
+							<option value="28th of July 2020">28th of July 2020</option>
+							<option value="29th of July 2020">29th of July 2020</option>
 						</select>
 					</div>
 					<div class="feild_grid">
 						<label>Time</label>
-						<select>
-							<option value="1">18:00</option>
-							<option value="2">19:30</option>
-							<option value="3">21:00</option>
+						<select name="time_option" required>
+							<option value="">Select time</option>	
+							<option value="18:00">18:00</option>
+							<option value="19:30">19:30</option>
+							<option value="21:00">21:00</option>
 							
 						</select>
 					</div>
 					<div class="feild_grid">
 						<label>Number of people</label>
-						<select>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="1">5</option>
-							<option value="2">6</option>
-							<option value="3">7</option>
-							<option value="4">8</option>
-							<option value="1">9</option>
-							<option value="2">10</option>
-							<option value="3">11</option>
-							<option value="4">12</option>
-							<option value="1">13</option>
-							<option value="2">14</option>
-							<option value="3">15</option>
-							
-						</select>
+						<input min=1 max=10 required type="number" name="nnbrOfPeople"/>
 					</div>
 					<div class="feild_grid">
 						<label>Name</label>
-						<input type="text" name=""/>
+						<input required type="text" name="nameOfPerson"/>
 					</div>
 					<div class="feild_grid2">
 						<label>Your Note (i.e allergies, extra assistance)</label>
-						<textarea rows="4" cols="50"></textarea> 
+						<textarea name="note" rows="4" cols="50"></textarea> 
 					</div>
 					<div class="submit_grid">
-						<button class="cart_btn">Add to cart</button>
+						<button class="cart_btn" type="submit" name="addToCart">Add to cart</button>
 						<?php echo '<strong>' .$title. '</strong>';?>
 						<?php echo '<p>' .$feeText. '</p>';?>
 					</div>

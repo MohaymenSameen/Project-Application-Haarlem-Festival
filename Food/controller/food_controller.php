@@ -1,5 +1,7 @@
 <?php
     require_once ('../model/food_model.php');
+    include ('../shopping_cart.php');
+    session_start();
     
     class FoodController
     {
@@ -8,7 +10,7 @@
         public function recievePageData()
         {    
             $foodModel= new FoodModel();        
-            $row = $foodModel->get("SELECT * FROM food_content");    //getPageData not working!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11        
+            $row = $foodModel->get("SELECT * FROM food_content");       
             return $row; 
         }
 
@@ -20,58 +22,20 @@
             $count=$count+1;  
             return $row;
         }
+
         
+        //shopping cart
+        public function shoppingCart(){
 
+            $cart = new ResShoppingCart();
+            $cart->displayShoppingCart();
+        }
 
-        // public function recieveRestaurant1()
-        // {   
-        //     $foodModel= new FoodModel();                     
-        //     $row = $foodModel->getRestaurant("SELECT * FROM restaurants WHERE id='1'");       
-        //     return $row;
-        // }
-        // public function recieveRestaurant2()
-        // {   
-        //     $foodModel= new FoodModel();                     
-        //     $row = $foodModel->getRestaurant("SELECT * FROM restaurants WHERE id='2'");       
-        //     return $row;
-        // }
-        // public function recieveRestaurant3()
-        // {   
-        //     $foodModel= new FoodModel();                     
-        //     $row = $foodModel->getRestaurant("SELECT * FROM restaurants WHERE id='3'");       
-        //     return $row;
-        // }
-        // public function recieveRestaurant4()
-        // {   
-        //     $foodModel= new FoodModel();                     
-        //     $row = $foodModel->getRestaurant("SELECT * FROM restaurants WHERE id='4'");       
-        //     return $row;
-        // }
-        // public function recieveRestaurant5()
-        // {   
-        //     $foodModel= new FoodModel();                     
-        //     $row = $foodModel->getRestaurant("SELECT * FROM restaurants WHERE id='5'");       
-        //     return $row;
-        // }
-        // public function recieveRestaurant6()
-        // {   
-        //     $foodModel= new FoodModel();                     
-        //     $row = $foodModel->getRestaurant("SELECT * FROM restaurants WHERE id='6'");       
-        //     return $row;
-        // }
-        // public function recieveRestaurant7()
-        // {   
-        //     $foodModel= new FoodModel();                     
-        //     $row = $foodModel->getRestaurant("SELECT * FROM restaurants WHERE id='7'");       
-        //     return $row;
-        // }
-        // public function recieveRestaurant8()
-        // {   
-        //     $foodModel= new FoodModel();                     
-        //     $row = $foodModel->getRestaurant("SELECT * FROM restaurants WHERE id='8'");       
-        //     return $row;
-        // }
-       
+        public function removeFromSC(){
+            $cart = new ResShoppingCart();
+            $remove = $cart->removeFromCart();
+
+        }
     }
 
     //storing page data into an array cells to display them in food_view
@@ -89,7 +53,8 @@
         $cs2=$res['cs2'];
     }
 
-    //storing restaurants data into an array's cells 
+
+    //storing restaurants data into an array's cells to show them in view
     
     $name=array();
     $address=array();
@@ -104,7 +69,7 @@
     for ($i = 0; $i <= 8; $i++)
     {
         $restaurants=$contr->recieveRestaurantData($i);
-        foreach($restaurants as $res)
+        foreach((array)$restaurants as $res)
         {
             $name[$i]=$res['name'];    
             $address[$i]=$res['address'];
@@ -117,4 +82,24 @@
             $startTime[$i]=$res['start_time'];
         }
     }
+
+    //shopping cart take data from form 
+	if(isset($_POST['addToCart'])){
+        //variables with all fileds'values from the reservation form
+        $price = 10;
+        $date = $_POST['date_option'];
+        $time = $_POST['time_option'];
+        $restaurant = $_POST['restaurant_option'];
+        $people = $_POST['people_option'];
+        $namePerson = $_POST['nameOfPerson'];
+        $note = $_POST['note']; 
+        $id = rand(10,20000);
+        
+        $reservations = array("item_date" => $date, "note" => $note,"rest_name" => $restaurant, "item_time" => $time,"item_name" => "Reservation", "item_price" => $price, "item_quantity" => $people, "item_id" => $id);
+        $cart = new ResShoppingCart();
+        $cart->createShoppingCart($reservations);
+        header("Location: ../view/food_view.php");
+           
+    } 
+
 ?>

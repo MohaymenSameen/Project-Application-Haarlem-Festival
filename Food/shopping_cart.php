@@ -1,29 +1,21 @@
 <?php
-    class ShoppingCart
+    class ResShoppingCart
     {
-        //adding ticket to shopping cart
-        public function createShoppingCart($tickets)
+        public function createShoppingCart($reservations)
         {
-            //if session exists
             if(isset($_SESSION['shopping_cart']))
-            {   
-                //count the elements and add ticket to cart         
+            {            
                 $count = count($_SESSION['shopping_cart']);               
-                $_SESSION['shopping_cart'][$count] = $tickets;                
+                $_SESSION['shopping_cart'][$count] = $reservations;                
             }
             else
-            {        
-                //if session not set add a new ticket      
-                $_SESSION['shopping_cart'][0] = $tickets;                   
+            {              
+                $_SESSION['shopping_cart'][0] = $reservations;                  
             }           
         }
-        //display shopping cart
         public function displayShoppingCart()
         {
-            //getting full url 
             $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
-            //if cart is not empty
             if(!empty($_SESSION['shopping_cart']))
             {
                 $total=0;
@@ -31,8 +23,10 @@
                 echo '<hr>';
                 foreach($_SESSION['shopping_cart'] as $keys => $values)
                 {
+                    $newDate = date("l, F d", strtotime($values["item_date"]));
                     echo '<h2 id="quantity">'.$values["item_name"].'</h2>';
-                    echo '<h2 id="band">'.'<strong>',"Date: ",'</strong>',$values["item_date"].'</h2>';                                
+                    echo '<h2 id="band">'.'<strong>',"Date: ",'</strong>',$values["item_date"].', '.$values["item_time"].'</h2>';                             
+                    echo '<h2 id="band">'.'<strong>',"Restaurant: ",'</strong>',$values["rest_name"].'</h2>';
                     echo '<h2 id="band">'.'<strong>',"Price: ",'</strong>',"&euro;",$values["item_price"].'</h2>';
                     echo '<h2 id="band">'.'<strong>',"Quantity: ",'</strong>',$values["item_quantity"],"x".'</h2>';
                     $total += $values["item_quantity"]*$values["item_price"];                   
@@ -46,11 +40,9 @@
             {
                 echo '<h2>'."Shopping Cart Is Empty".'</h2>';
             }           
-        }      
-        //removing ticket from cart  
+        }        
         public function removeFromCart()
         {
-            //base url refresh
             $url = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']);
             if(isset($_GET["action"]))
             {
