@@ -1,8 +1,6 @@
 <?php
 class Database
 {
-    //IS IT OK FOR THEM TO BE PUBLIC?
-
     //Declaring Variables       
     private $dbServername;
     private $dbUsername;

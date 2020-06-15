@@ -80,7 +80,8 @@ div.dropdown div.dropdown-content
     background-color: #f1f1f1;
     min-width: 160px; 
     width: 400px;      
-    overflow: auto;
+    overflow: scroll;
+    height: 400px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 5;
     padding-left: 10px;
@@ -134,12 +135,16 @@ div.dropdown button.checkout
     background-color: #f4511e;
     border-style: none;
     color: white;
+    font-size: 25px;
+    font-family: "Century Gothic";
+    font-weight: normal;
     cursor: pointer;
-    width: 150px;
-    height: 30px;
-    margin-top: 30px;
+    width: 200px;
+    height: 40px;
+    margin-top: 10px;
     position: relative;
-    left: 18%;    
+    left: 20%;   
+    margin-bottom: 20px; 
     border-radius: 5px;
     text-align: center;
     transition: 0.3s;
@@ -422,14 +427,19 @@ div.tickets h3
     font-size: 50px; 
     font-weight: normal;
 }
-div.tickets select.quantity
-{   display: inline-block;
-    position: relative;  
-    left: 17%;
-    bottom: 100px;
-    width: 60px;
+div.quantity
+{   width: 60px; 
     font-size: 30px;   
     font-family: "Century Gothic";
+}
+input#quantity
+{
+    position: relative;
+    left: 400%;
+    bottom: 100px;
+    width: 50px;
+    height: 30px;
+    font-size: 20px;
 }
 div.tickets button.addcart
 {    
@@ -584,6 +594,12 @@ div.access_passes select.pass_type
     font-size: 30px;   
     font-family: "Century Gothic";
 }
+input#quantity_pass
+{   
+    width: 50px;
+    height: 30px;
+    font-size: 20px;
+}
 div.access_passes h3
 {
     display: inline-block; 
@@ -661,6 +677,26 @@ div.footer
   height: 50px;  
   width: 5%;
   object-fit: scale-down;
+}
+button#plusbtn
+{
+    border-style: none;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: #f4511e;
+    color: white;
+    transition: 0.3s;
+    height: 35px;
+    width: 35px;
+    margin: 10px;
+    display: block;
+    position: relative;
+    left: 14%;
+    bottom: 110px;
+}
+#plusbtn:hover
+{
+    background-color: rgba(120, 36, 76, 1);    
 }
 @media only screen and (max-width: 800px)
 {

@@ -1,14 +1,17 @@
 <?php
     require_once ('../controller/jazz_controller.php');  
-    session_start();          
+    require_once ('../../ShoppingCart/shopping_cart.php');
+    session_start();      
+    
     //initializing jazz controller
     $JazzController = new JazzController();
+
+    //receiving page data
     $data = $JazzController->recieveData();
-    $timetable1 = $JazzController->recieveTimetable1();
-    $timetable2 = $JazzController->recieveTimetable2();
-    $timetable3 = $JazzController->recieveTimetable3();
-    $timetable4 = $JazzController->recieveTimetable4();
     
+    //initializing shopping cart
+    $shoppingCart = new ShoppingCart();
+
     //making variables for seperate data headings
     foreach($data as $res)
     {
@@ -26,18 +29,7 @@
         $label6=$res['label_6'];
         $label7=$res['label_7'];
         $paragraph1=$res['paragraph_1'];
-    }
-    if(isset($_POST["add"]))
-    {
-        $_SESSION['date']=$_POST['date'];
-        $_SESSION['band']=$_POST['band'];
-        $_SESSION['quan']=$_POST['quantity'];         
-    }
-    if(isset($_POST["adda"]))
-    {
-        $_SESSION['pass'] = $_POST['pass'];
-        $_SESSION['quant'] = $_POST['quant'];
-    }       
+    }   
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,9 +38,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="../Jazz-Style.css" type="text/css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Jazz</title>
 </head>
-<body>    
+<body>   
+     
     <script>
             /* When the user clicks on the button, 
     toggle between hiding and showing the dropdown content */
@@ -56,96 +50,46 @@
     {
         document.getElementById("myDropdown").classList.toggle("show");
     }
-    </script>
+    </script>    
     <div class="navbar">
         <ul>
-            <!--<li><a href="../../Home/view/home_view.php">Home</a></li>
-            <li><a href="jazz_view.php"><strong>Jazz</strong></a></li>
-            <li><a href="Dance.html">Dance</a></li>
-            <li><a href="Food.html">Food</a></li>
-            <li><a href="../CMS/admin.php">Volunteer</a></li>-->
             <li><a href="../../Home/view/home_view.php">Home</a></li>
             <li><a href="jazz_view.php"><strong>Jazz</strong></a></li>
             <li><a href="../../Dance/view/dance_view.php">Dance</a></li>
-            <li><a href="../../Food/Food.html">Food</a></li>
+            <li><a href="../../Food/view/food_view.php">Food</a></li>
             <li><a href="../CMS/login.php">Volunteer</a></li>
         </ul>
     </div>
     <div class="dropdown">
-            <button class="dropbtn" onclick="myFunction()"><img src="../img/shopping_cart.png"><span>Items</span></button>     
-
+            <button class="dropbtn" onclick="myFunction()"><img src="../img/shopping_cart.png"><span>Items</span></button>
             <div id="myDropdown" class="dropdown-content">
                 <form method="POST">
                 <?php
-                    if(empty($_SESSION['band']) && empty($_SESSION['pass']))
+                    //if add button is clicked new ticket is made and added to shopping cart                                                        
+                    if(isset($_POST['add']))
+                    {   
+                        //change date format to select specific ticket from database                         
+                        $newDate =  date("Y-m-d", strtotime($_POST['date']));
+                        
+                        //getting ticket 
+                        $ticket = $JazzController->recieveTicket($_POST["band"],$newDate);
+
+                        //adding ticket to cart
+                        $cart = $shoppingCart->createShoppingCart($ticket);                        
+                    }                     
+                    $displayCart = $shoppingCart->displayShoppingCart();
+
+                    //if cart is not empty show checkout button
+                    if(!empty($_SESSION['shopping_cart']))
                     {
-                        echo '<h2 id="empty">Shopping Cart Empty</h2>';
+                        echo("<button type='button' class='checkout' onclick=\"location.href='../../Payment/view/payment_view.php'\">Check Out</button>");
                     }
-                    if(isset($_SESSION['band']))
-                    {
-                        echo '<h2 id="recent">Recently Added Items</h2>';
-                        echo '<h2 id="band">'.$_SESSION['band']," (",$_SESSION['date'],") ".'</h2>';                        
-                        $price = $JazzController->recievePrice($_SESSION['band'], $_SESSION['date']);
-                        $_SESSION['price']=$price;
-                       
-                        if($_SESSION['quan'] != 1)
-                        {
-                            if($price == "Free")
-                            {
-                                echo '<h2 id="quantity">'.$_SESSION['quan'],"x   ",$price.'</h2>';
-                            }
-                            else
-                            {
-                                $newPrice = $_SESSION['quan'] * $price;
-                                echo '<h2 id="quantity">'.$_SESSION['quan'],"x   &euro;",$newPrice.'</h2>';
-                            }                                                       
-                        }
-                        else
-                        {
-                            if($price == "Free")
-                            {
-                                echo '<h2 id="quantity">'.$_SESSION['quan'],"x   ",$price.'</h2>';
-
-                            }
-                            else
-                            {
-                                echo '<h2 id="quantity">'.$_SESSION['quan'],"x   &euro;",$price.'</h2>';
-                            }
-                        }
-                        echo '<input type="hidden" name="delete" value="add"/>';
-                        echo '<button type="submit" class="delete">X</button>';
-
-                        echo("<button type='button' class='checkout' onclick=\"location.href='../../Payment/view/payment_view.php'\">Check Out</button>");
-                    }                                        
-                    if(isset($_SESSION['pass']) && $_SESSION['pass']== "All Access Pass (One Day)")
-                    {
-                        echo '<h2 id="recent">Recently Added Items</h2>';
-                        echo '<h2 id="band">'.$_SESSION['pass'].'</h2>'; 
-                        $_SESSION['accprice']=35;
-                        echo '<h2 id="quantity">'.$_SESSION['quant'],"x &euro;",$_SESSION['accprice'].'</h2>'; 
-                        echo '<input type="hidden" name="delete" value="add"/>';
-                        echo '<button type="submit" class="delete">X</button>';
-                        echo("<button type='button' class='checkout' onclick=\"location.href='../../Payment/view/payment_view.php'\">Check Out</button>");
-                    } 
-                    else if(isset($_SESSION['pass']) && $_SESSION['pass']== "All Access Pass (Thursday, Friday, Sunday)")
-                    {
-                        echo '<h2 id="recent">Recently Added Items</h2>';
-                        echo '<h2 id="band">'.$_SESSION['pass'].'</h2>'; 
-                        $_SESSION['accprice']=80;
-                        echo '<h2 id="quantity">'.$_SESSION['quant'],"x &euro;",$_SESSION['accprice'].'</h2>'; 
-                        echo '<input type="hidden" name="delete" value="add"/>';
-                        echo '<button type="submit" class="delete">X</button>';         
-                        echo("<button type='button' class='checkout' onclick=\"location.href='../../Payment/view/payment_view.php'\">Check Out</button>");              
-                    }                   
-                    if(isset($_POST['delete']))
-                    {
-                        session_destroy();
-                        header("Location: jazz_view.php");
-                    }                    
+                    
+                    //remove ticket from cart
+                    $remove = $shoppingCart->removeFromCart();     
                 ?>    
                 </form>
-            </div>
-            
+            </div>            
     </div>
     <div class="header">
         <img src="../img/header.jpg">
@@ -162,13 +106,9 @@
     </div>
 
     <div class="timetable1">
-        <?php         
-            foreach($timetable1 as $res)
-            {
-                $date1=$res['date'];
-            }        
+        <?php   
             echo '<h1>'.$heading2.'</h1>';
-            echo '<h2>'.$date1.'</h2>';
+            $date = $JazzController->recieveDate("2020-07-26");            
         ?>        
         <table>            
             <tr>
@@ -178,15 +118,8 @@
                 <th>Price</th>
             </tr>
             <tr>
-            <?php        
-                foreach($timetable1 as $res)
-                {                     
-                    echo "<tr><td>"
-                    .$res['location']."</td><td>"
-                    .$res['timing']."</td><td>"
-                    .$res['band']."</td><td>"
-                    ,"&euro;".$res['price']."</td></tr>";
-                }                     
+            <?php                
+                $timetable = $JazzController->recieveTimetables("2020-07-26");              
             ?>                           
             </tr>           
         </table>
@@ -194,12 +127,8 @@
     </div>
     <div class="backcolor2">
     <div class="timetable2"> 
-        <?php         
-            foreach($timetable2 as $res)
-            {
-                $date2=$res['date'];
-            }    
-            echo '<h2>'.$date2.'</h2>';
+        <?php           
+            $date2 = $JazzController->recieveDate("2020-07-27");
         ?>
         
         <table>
@@ -210,15 +139,8 @@
                 <th>Price</th>
             </tr>
             <tr>
-            <?php        
-                foreach($timetable2 as $res)
-                {                     
-                    echo "<tr><td>"
-                    .$res['location']."</td><td>"
-                    .$res['timing']."</td><td>"
-                    .$res['band']."</td><td>"
-                    ,"&euro;".$res['price']."</td></tr>";
-                }                     
+            <?php    
+                $timetable2 = $JazzController->recieveTimetables("2020-07-27");               
             ?>                
             </tr>           
         </table>
@@ -226,12 +148,8 @@
         </div>
     </div>    
     <div class="timetable3">        
-        <?php         
-            foreach($timetable3 as $res)
-            {
-                $date3=$res['date'];
-            }    
-            echo '<h2>'.$date3.'</h2>';
+        <?php      
+            $date3 = $JazzController->recieveDate("2020-07-28");
         ?>
         <table>
             <tr>
@@ -241,15 +159,8 @@
                 <th>Price</th>
             </tr>
             <tr>
-            <?php        
-                foreach($timetable3 as $res)
-                {                     
-                    echo "<tr><td>"
-                    .$res['location']."</td><td>"
-                    .$res['timing']."</td><td>"
-                    .$res['band']."</td><td>"
-                    ,"&euro;".$res['price']."</td></tr>";
-                }                     
+            <?php           
+                $timetable3 = $JazzController->recieveTimetables("2020-07-28");                
             ?>                
             </tr>            
         </table>
@@ -258,11 +169,7 @@
     <div class="backcolor4">
         <div class="timetable4">        
         <?php         
-            foreach($timetable4 as $res)
-            {
-                $date4=$res['date'];
-            }    
-            echo '<h2>'.$date4.'</h2>';
+            $date4 = $JazzController->recieveDate("2020-07-29");
         ?>
         <table>
             <tr>
@@ -272,15 +179,8 @@
                 <th>Price</th>
             </tr>
             <tr>
-            <?php        
-                foreach($timetable4 as $res)
-                {                     
-                    echo "<tr><td>"
-                    .$res['location']."</td><td>"
-                    .$res['timing']."</td><td>"
-                    .$res['band']."</td><td>"
-                    .$res['price']."</td></tr>";
-                }                     
+            <?php                    
+                $timetable4 = $JazzController->recieveTimetables("2020-07-29");        
             ?>                
             </tr>            
         </table>     
@@ -289,74 +189,33 @@
     </div>    
 
     <div class="tickets">   
-        <form method="POST">        
-        <?php echo '<h1>'.$heading3.'</h1>';
-        echo '<h2>'.$label1.'</h2>';?>        
-        <br>
+        <form method="POST" name="tick" onsubmit="return required();">        
+            <?php echo '<h1>'.$heading3.'</h1>';
+            echo '<h2>'.$label1.'</h2>';?>        
+            <br>
 
-        <select class="date" name="date">
-            <?php            
-            foreach($timetable1 as $res)
-            {                     
-            echo '<option>'.$res['date'].'</option>';
-            break;
-            }
-            foreach($timetable2 as $res)
-            {                     
-            echo '<option>'.$res['date'].'</option>';
-            break;
-            }
-            foreach($timetable3 as $res)
-            {                     
-            echo '<option>'.$res['date'].'</option>';
-            break;
-            }
-            foreach($timetable4 as $res)
-            {                     
-            echo '<option>'.$res['date'].'</option>';
-            break;
-            }
-     
-            ?>
-        </select>
-
-        <select class="band" name="band">
-            <?php            
-                foreach($timetable1 as $res)
-                {                     
-                    echo '<option>'.$res['band'].'</option>';                   
-                }
-                foreach($timetable2 as $res)
-                {                     
-                    echo '<option>'.$res['band'].'</option>';                    
-                }
-                foreach($timetable3 as $res)
-                {                     
-                    echo '<option>'.$res['band'].'</option>';                    
-                }                                  
-            ?>
-        </select>        
+            <select class="date" name="date" > 
+                <option>Select Date</option>                              
+                <?php echo '<option value="'.$date.'">'.$date.'</option>';?>
+                <?php echo '<option value="'.$date2.'">'.$date2.'</option>';?>
+                <?php echo '<option value="'.$date3.'">'.$date3.'</option>';?>
+                <?php echo '<option value="'.$date4.'">'.$date4.'</option>';?>                         
+            </select>
         
-        <?php echo '<h3>'.$label2.'</h3>';?>       
+            <select class="band" name="band">                       
+            </select>        
 
-        <select class="quantity" name="quantity">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>            
-        </select>
-        <br>                 
-            <input type="hidden" name="add" value="add"/>
-            <button type="submit" class="addcart"><span>Add To Cart</span></button>
+            <div class="quantity">
+                <?php echo '<h3>'.$label2.'</h3>';?>         
+                <input type="number" id="quantity" name=quantity min="1" max="200" value="1"/>  
+            </div>  
+            
+            <div class="addcart">
+                <input type="hidden" name="add" value="add"/>
+                <button type="submit" class="addcart"><span>Add To Cart</span></button>
+            </div>
         </form>
-    </div>
-    
+    </div>   
 
     <div class="cross_selling">
         <?php echo '<h1>'.$heading4.'</h1>';
@@ -371,32 +230,25 @@
     <div class="access_passes">
         <form method="POST">
         <?php echo '<h1>'.$heading5.'</h1>';
-            echo '<h2>'.$label4.'</h2>';
-            echo '<h2>'.$label5.'</h2>';        
+            echo '<h2>'."&bull;",$label4.'</h2>';
+            echo '<h2>'."&bull;",$label5.'</h2>';        
             echo '<h3>'.$label6.'</h3>';                     
-        ?>
-        
-        <select class="pass_type" name=pass>
-            <option value="All Access Pass (One Day)">All Access Pass (One Day)</option>
-            <option value="All Access Pass (Thursday, Friday, Sunday)">All Access Pass (Thursday, Friday, Sunday)</option>   
+        ?>        
+        <select class="pass_type" name="band">
+            <?php echo '<option value="Access Pass 1 Day">'.$label4.'</option>';?>
+            <?php echo '<option value="Access Pass 3 Days">'.$label5.'</option>';?>            
         </select>
         <br>
+        <select class="date" name="date" hidden>
+            <?php echo '<option value="Thursday, 30 July">'."July 26th, July 27th & July 28th".'</option>';?>
+        </select>
         <?php echo '<h3>'.$label7.'</h3>';?>
-        <select class="quantity" name=quant>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>   
-        </select>  
+        <input type="number" id="quantity_pass" name=quantity min="1" max="200" value="1"/>  
         <br> 
-        <input type="hidden" name="adda" value="adda"/>
-        <button type="submit" class="addcart"><span>Add To Cart</span></button>
+        <div class="addcart">
+                <input type="hidden" name="add" value="add"/>
+                <button type="submit" class="addcart"><span>Add To Cart</span></button>
+        </div>
         <br><br>
         </form>
     </div>
@@ -407,6 +259,26 @@
         <img class="right" src="../../Home/img/instagram.png">
         <img class="right" src="../../Home/img/youtube.png">
         <img class="right" src="../../Home/img/logo_H.png">
-    </div>
+    </div>  
+    
+    <script>
+    $(document).ready(function(){
+        $('.date').change(function(){
+            var date = $(this).val();                 
+            $.ajax({
+                url:"fetch_band.php",
+                method:"POST",
+                data:{date,date},
+                dataType:"text",
+                success:function(data)
+                {
+                    $('.band').html(data);
+                }                
+            });        
+        });
+    });   
+    </script>  
+    <script src="../js/script.js">
+    </script>   
 </body>
 </html>
