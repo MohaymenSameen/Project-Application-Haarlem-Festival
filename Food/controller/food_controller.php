@@ -54,7 +54,7 @@
     }
 
 
-    //storing restaurants data into an array's cells 
+    //storing restaurants data into an array's cells to show them in view
     
     $name=array();
     $address=array();
